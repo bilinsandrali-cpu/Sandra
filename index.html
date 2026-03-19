@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>漫剧有数 - 热度日报汇总</title>
+<style>
+  :root {
+    --douyin-primary: #5B2D8E;
+    --douyin-gradient: linear-gradient(135deg, #5B2D8E 0%, #8B5CF6 50%, #EC4899 100%);
+    --hongguo-primary: #E8652D;
+    --hongguo-gradient: linear-gradient(135deg, #E8652D 0%, #F59E0B 100%);
+    --bg: #0f0f1a;
+    --card-bg: #1a1a2e;
+    --text: #e0e0e0;
+    --text-muted: #888;
+    --border: #2a2a3e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px 32px 0;
+    border-bottom: none;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .top-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .top-tab {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    position: relative;
+    transition: color 0.2s;
+    letter-spacing: 0.5px;
+  }
+
+  .top-tab:hover {
+    color: var(--text);
+  }
+
+  .top-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  .top-tab.active-douyin {
+    color: #A78BFA;
+  }
+
+  .top-tab.active-douyin::after {
+    background: var(--douyin-gradient);
+  }
+
+  .top-tab.active-hongguo {
+    color: #FBBF24;
+  }
+
+  .top-tab.active-hongguo::after {
+    background: var(--hongguo-gradient);
+  }
+
+  .date-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: rgba(26, 26, 46, 0.6);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .date-bar-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .date-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .date-selector input[type="date"] {
+    background: #2a2a3e;
+    border: 1px solid #3a3a4e;
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .date-nav-btn {
+    background: #2a2a3e;
+    border: 1px solid #3a3a4e;
+    color: var(--text);
+    padding: 7px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+
+  .date-nav-btn:hover {
+    background: #3a3a5e;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    color: white;
+  }
+
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: #2a2a3e;
+    color: var(--text);
+    border: 1px solid #3a3a4e;
+  }
+
+  .btn-secondary:hover { background: #3a3a5e; }
+
+  .btn-export {
+    background: linear-gradient(135deg, #059669, #10B981);
+    color: white;
+  }
+
+  .btn-export:hover { opacity: 0.9; }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: #1e1e32;
+    border: 1px solid #3a3a4e;
+    border-radius: 10px;
+    min-width: 200px;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    padding: 6px;
+    animation: dropIn 0.15s ease-out;
+  }
+
+  @keyframes dropIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .dropdown-menu.show { display: block; }
+
+  .dropdown-item {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .dropdown-item:hover {
+    background: rgba(139, 92, 246, 0.15);
+    color: #A78BFA;
+  }
+
+  .dropdown-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 8px;
+  }
+
+  .main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .table-container {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .table-header-bar {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .table-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .table-title.douyin { color: #8B5CF6; }
+  .table-title.hongguo { color: #F59E0B; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  tbody tr:hover {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .rank-cell {
+    font-weight: 700;
+    font-size: 16px;
+    width: 50px;
+    text-align: center;
+  }
+
+  .rank-1 { color: #FFD700; }
+  .rank-2 { color: #C0C0C0; }
+  .rank-3 { color: #CD7F32; }
+
+  .rank-medal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .medal-1 { background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; }
+  .medal-2 { background: linear-gradient(135deg, #C0C0C0, #A0A0A0); color: #000; }
+  .medal-3 { background: linear-gradient(135deg, #CD7F32, #A0522D); color: #fff; }
+
+  .drama-name {
+    font-weight: 600;
+    color: #fff;
+    max-width: 220px;
+  }
+
+  .highlight-value {
+    font-weight: 700;
+  }
+
+  .highlight-value.douyin { color: #8B5CF6; }
+  .highlight-value.hongguo { color: #F59E0B; }
+
+  .type-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background: rgba(139, 92, 246, 0.15);
+    color: #A78BFA;
+  }
+
+  .type-tag.hongguo {
+    background: rgba(245, 158, 11, 0.15);
+    color: #FBBF24;
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.show { display: flex; }
+
+  .modal {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+  }
+
+  .modal h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .form-group select,
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: #2a2a3e;
+    border: 1px solid #3a3a4e;
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .form-group textarea {
+    height: 300px;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .paste-hint {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #A78BFA;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .no-data {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+
+  .no-data-icon { font-size: 48px; margin-bottom: 16px; }
+  .no-data-text { font-size: 16px; }
+
+  .available-dates {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .date-chip {
+    padding: 6px 14px;
+    background: #2a2a3e;
+    border: 1px solid #3a3a4e;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-muted);
+  }
+
+  .date-chip:hover { border-color: #8B5CF6; color: #8B5CF6; }
+  .date-chip.active { background: #8B5CF6; border-color: #8B5CF6; color: white; }
+  .date-chip.active-hongguo { background: var(--hongguo-primary); border-color: var(--hongguo-primary); color: white; }
+  .date-chip.active-hongguo:hover { border-color: var(--hongguo-primary); color: white; }
+
+  @media (max-width: 768px) {
+    .header { padding: 16px; }
+    .main { padding: 16px; }
+    .table-container { overflow-x: auto; }
+    table { min-width: 700px; }
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #3a3a4e; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #5a5a6e; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="header-left">
+      <div>
+        <div class="logo">M 漫剧有数</div>
+        <div class="subtitle">漫剧热度日报汇总系统</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="showAddModal()">＋ 录入数据</button>
+      <div class="dropdown">
+        <button class="btn btn-export" onclick="toggleDropdown()">↓ 导出 ▾</button>
+        <div class="dropdown-menu" id="exportDropdown">
+          <div class="dropdown-item" onclick="exportCurrentCSV()">📄 当前榜单 → CSV</div>
+          <div class="dropdown-item" onclick="exportAllCSV()">📄 全部数据 → CSV</div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" onclick="exportExcel()">📊 全部数据 → Excel</div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" onclick="exportData()">🗂️ 原始数据 → JSON</div>
+        </div>
+      </div>
+      <button class="btn btn-secondary" onclick="importData()">↑ 导入JSON</button>
+    </div>
+  </div>
+  <div class="top-tabs">
+    <button class="top-tab active-douyin" id="tabDouyin" onclick="switchTab('douyin')">🎵 抖音漫剧热播榜</button>
+    <button class="top-tab" id="tabHongguo" onclick="switchTab('hongguo')">🍎 红果漫剧热播榜</button>
+  </div>
+</div>
+
+<div class="date-bar">
+  <div class="date-bar-label">📅 日期筛选</div>
+  <div class="date-selector">
+    <button class="date-nav-btn" onclick="navigateDate(-1)">◀</button>
+    <input type="date" id="dateInput" onchange="loadDate(this.value)">
+    <button class="date-nav-btn" onclick="navigateDate(1)">▶</button>
+  </div>
+  <div class="available-dates" id="dateChips"></div>
+</div>
+
+<div class="main">
+  <div class="table-container" id="douyinTable">
+    <div class="table-header-bar">
+      <div class="table-title douyin">📊 日榜 | 抖音漫剧热播榜</div>
+      <div style="font-size:13px;color:var(--text-muted)" id="douyinDateLabel"></div>
+    </div>
+    <div id="douyinContent"></div>
+  </div>
+  <div class="table-container" id="hongguoTable" style="display:none">
+    <div class="table-header-bar">
+      <div class="table-title hongguo">📊 日榜 | 红果漫剧热播榜</div>
+      <div style="font-size:13px;color:var(--text-muted)" id="hongguoDateLabel"></div>
+    </div>
+    <div id="hongguoContent"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <h2>📝 录入榜单数据</h2>
+    <div class="paste-hint">
+      <strong>💡 快速录入指南：</strong><br>
+      选择日期和榜单类型后，按格式粘贴数据即可。每行一条，字段用制表符（Tab）或竖线（|）分隔。<br>
+      <strong>抖音榜格式：</strong>排名 | 剧名 | 账号 | 关联方 | 集数 | 类型 | 新增播放 | 累计播放<br>
+      <strong>红果榜格式：</strong>排名 | 剧名 | 标签 | 版权方 | 上线时间 | 集数 | 热度值
+    </div>
+    <div class="form-group">
+      <label>📅 统计日期</label>
+      <input type="date" id="modalDate">
+    </div>
+    <div class="form-group">
+      <label>📋 榜单类型</label>
+      <select id="modalType">
+        <option value="douyin">抖音漫剧热播榜</option>
+        <option value="hongguo">红果漫剧热播榜</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>📄 粘贴数据（每行一条，字段用 | 或 Tab 分隔）</label>
+      <textarea id="modalData" placeholder="1 | 头车之争 | 半颗甜柚 | 待确认 | 43 | AI仿真人解说漫 | 4016万 | 5541万&#10;2 | 林家弃我百年 | 一页追影 | 待确认 | 34 | AI仿真人解说漫 | 2881万 | 3036万"></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary" onclick="parseAndSave()">✅ 解析并保存</button>
+      <button class="btn btn-secondary" onclick="closeModal()">取消</button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="fileInput" accept=".json" style="display:none" onchange="handleImport(event)">
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+<script>
+const STORAGE_KEY = 'manju_daily_data';
+
+function getDefaultData() {
+  return {
+    "2026-03-17": {
+      douyin: {
+        date: "2026/3/17",
+        items: [
+          {rank:1, name:"头车之争，我蹬了前夫嫁竹马", account:"半颗甜柚", affiliate:"待确认", episodes:43, type:"AI仿真人解说漫", newPlay:"4016万", totalPlay:"5541万"},
+          {rank:2, name:"林家弃我百年，妖族来犯跪求我出山", account:"一页追影", affiliate:"待确认", episodes:34, type:"AI仿真人解说漫", newPlay:"2881万", totalPlay:"3036万"},
+          {rank:3, name:"祸水村", account:"星光漫剧", affiliate:"待确认", episodes:34, type:"AI仿真人解说漫", newPlay:"2715万", totalPlay:"9760万"},
+          {rank:4, name:"清晨的大爷", account:"马克动漫", affiliate:"待确认", episodes:41, type:"2D解说漫", newPlay:"2549万", totalPlay:"2981万"},
+          {rank:5, name:"红妆换良人", account:"人间小确幸", affiliate:"待确认", episodes:47, type:"AI仿真人解说漫", newPlay:"2272万", totalPlay:"2571万"},
+          {rank:6, name:"重来高考", account:"红脸蛋剧", affiliate:"待确认", episodes:17, type:"AI仿真人解说漫", newPlay:"2009万", totalPlay:"2010万"},
+          {rank:7, name:"螺蛳粉加酸笋", account:"姜缘轻漫", affiliate:"待确认", episodes:44, type:"AI仿真人解说漫", newPlay:"1993万", totalPlay:"1994万"},
+          {rank:8, name:"我要回娘家", account:"有点子短剧", affiliate:"待确认", episodes:36, type:"AI仿真人解说漫", newPlay:"1845万", totalPlay:"1.98亿"},
+          {rank:9, name:"休欺宫婢归乡晚", account:"胶片里的人间", affiliate:"待确认", episodes:48, type:"AI仿真人解说漫", newPlay:"1790万", totalPlay:"1875万"},
+          {rank:10, name:"我靠打猎，娶妻纳妾", account:"虾无尘", affiliate:"待确认", episodes:75, type:"表情包漫", newPlay:"1724万", totalPlay:"1724万"},
+          {rank:11, name:"昭昭如月", account:"枕月绘梦居", affiliate:"待确认", episodes:49, type:"AI仿真人解说漫", newPlay:"1603万", totalPlay:"1.82亿"},
+          {rank:12, name:"煤山皇权", account:"星芒茴漫影", affiliate:"待确认", episodes:29, type:"3D动态漫", newPlay:"1579万", totalPlay:"1586万"},
+          {rank:13, name:"小禾村辣椒", account:"哝哝漫", affiliate:"待确认", episodes:15, type:"AI仿真人解说漫", newPlay:"1544万", totalPlay:"1608万"},
+          {rank:14, name:"致富鼠鼠", account:"炳炳漫", affiliate:"待确认", episodes:15, type:"表情包漫", newPlay:"1527万", totalPlay:"1606万"},
+          {rank:15, name:"他送我绿裙那天，我消失了", account:"淮水竹林", affiliate:"待确认", episodes:41, type:"AI仿真人解说漫", newPlay:"1520万", totalPlay:"1523万"},
+          {rank:16, name:"奶奶的预警", account:"土猫短剧", affiliate:"待确认", episodes:29, type:"AI仿真人剧", newPlay:"1488万", totalPlay:"2041万"},
+          {rank:17, name:"他说年终奖发了5千，同事告诉我是50万", account:"漫观天下", affiliate:"待确认", episodes:35, type:"AI仿真人解说漫", newPlay:"1434万", totalPlay:"4704万"},
+          {rank:18, name:"刚成僵尸，捡个女帝当女儿", account:"17K沙雕剧场", affiliate:"待确认", episodes:67, type:"表情包漫", newPlay:"1333万", totalPlay:"6036万"},
+          {rank:19, name:"三十载恩怨，一米见人心", account:"方盾镜", affiliate:"待确认", episodes:19, type:"AI仿真人解说漫", newPlay:"1230万", totalPlay:"6822万"},
+          {rank:20, name:"孕妻的地铁", account:"数字剧场", affiliate:"待确认", episodes:45, type:"AI仿真人解说漫", newPlay:"1213万", totalPlay:"4460万"},
+          {rank:21, name:"我拆了雨棚，邻居哭了", account:"墨香染指", affiliate:"待确认", episodes:23, type:"2D动态漫", newPlay:"1188万", totalPlay:"2596万"},
+          {rank:22, name:"穿越成抠门大爷，我靠女租客续命", account:"耀扬动漫社", affiliate:"待确认", episodes:80, type:"2D解说漫", newPlay:"1163万", totalPlay:"4046万"},
+          {rank:23, name:"读心奶娃带飞爹", account:"小鱼剧场", affiliate:"待确认", episodes:52, type:"表情包漫", newPlay:"1161万", totalPlay:"2.41亿"},
+          {rank:24, name:"无声的清音", account:"云南生产队的猪", affiliate:"待确认", episodes:27, type:"AI仿真人解说漫", newPlay:"1157万", totalPlay:"2923万"},
+          {rank:25, name:"养熟的堂哥，凉透的亲情", account:"星芒动漫剧场", affiliate:"待确认", episodes:44, type:"AI仿真人解说漫", newPlay:"1157万", totalPlay:"1157万"},
+          {rank:26, name:"六品之女嫁国公：我整顿侯门", account:"梓潼短剧", affiliate:"待确认", episodes:42, type:"AI仿真人解说漫", newPlay:"1145万", totalPlay:"1272万"},
+          {rank:27, name:"草屋皇子", account:"大D动漫解说", affiliate:"待确认", episodes:40, type:"2D解说漫", newPlay:"1131万", totalPlay:"1132万"},
+          {rank:28, name:"那个替嫁的丫鬟，掀翻了京城王府", account:"都市剧能看", affiliate:"待确认", episodes:43, type:"AI仿真人解说漫", newPlay:"1118万", totalPlay:"1153万"},
+          {rank:29, name:"新年第一场葬礼", account:"芸芸剧场", affiliate:"待确认", episodes:40, type:"AI仿真人解说漫", newPlay:"1097万", totalPlay:"1477万"},
+          {rank:30, name:"冥府起义靠烧纸", account:"盛麟剧场", affiliate:"待确认", episodes:65, type:"2D动态漫", newPlay:"1094万", totalPlay:"2435万"}
+        ]
+      },
+      hongguo: null
+    },
+    "2026-03-18": {
+      douyin: null,
+      hongguo: {
+        date: "2026/3/18",
+        items: [
+          {rank:1, name:"重生1985，他靠空间发家致富", tags:"时空之旅", publisher:"tomatotv", onlineDate:"03-09", episodes:51, hotValue:"5581万"},
+          {rank:2, name:"万兽独尊", tags:"玄幻言情/传统玄幻/东方仙侠/武侠", publisher:"短剧版权0642643408", onlineDate:"02-28", episodes:60, hotValue:"5475万"},
+          {rank:3, name:"罪妻缘铁", tags:"剧情/穿越/逆袭/古代", publisher:"短剧版权8302815141", onlineDate:"03-12", episodes:45, hotValue:"5354万"},
+          {rank:4, name:"读心奶娃带飞爹", tags:"古风/剧情", publisher:"短剧版权8707625500", onlineDate:"03-10", episodes:52, hotValue:"5220万"},
+          {rank:5, name:"SSS级天骄，我的卧底身份瞒不住了", tags:"脑洞/都市", publisher:"深圳惊人科技有限公司", onlineDate:"03-11", episodes:51, hotValue:"5136万"},
+          {rank:6, name:"三千庇护第九季", tags:"玄幻脑洞", publisher:"阅文漫鸣剧场", onlineDate:"03-14", episodes:44, hotValue:"5108万"},
+          {rank:7, name:"军文王妃穿越，医好王爷后他非要当我小弟", tags:"剧情/时空之旅/古风", publisher:"爱看互动短剧", onlineDate:"03-11", episodes:64, hotValue:"5006万"},
+          {rank:8, name:"全宗老六", tags:"玄幻/表情包/异界", publisher:"星芒文化", onlineDate:"03-06", episodes:80, hotValue:"4772万"},
+          {rank:9, name:"刚成僵尸，捡个女帝当女儿", tags:"奇幻/穿越/系统/表情包", publisher:"17K一起看小说", onlineDate:"03-13", episodes:67, hotValue:"4770万"},
+          {rank:10, name:"诡异婚配：我诡配，老婆软糯校花", tags:"恋爱/穿越/异能/系统", publisher:"短剧版权8642826809", onlineDate:"02-27", episodes:60, hotValue:"4689万"},
+          {rank:11, name:"三岁判官镇国运，将军爹爹跪着护", tags:"玄幻脑洞/传统玄幻/古言脑洞/古风", publisher:"短剧版权5991838918", onlineDate:"03-05", episodes:60, hotValue:"4688万"},
+          {rank:12, name:"天降福宝助我登基为帝", tags:"玄幻脑洞/东方仙侠", publisher:"爱看互动短剧", onlineDate:"03-05", episodes:60, hotValue:"4687万"},
+          {rank:13, name:"震惊！洞房夜丑妻竟变绝美女帝", tags:"玄幻/穿越/系统/逆袭", publisher:"tomatotv", onlineDate:"02-06", episodes:74, hotValue:"4686万"},
+          {rank:14, name:"绝症后，我误嫁首富老公", tags:"都市日常/豪门总裁", publisher:"短剧版权3933872078", onlineDate:"02-26", episodes:76, hotValue:"4623万"},
+          {rank:15, name:"时间暂停，我在末世无敌了", tags:"末世/系统/都市/校园", publisher:"短剧版权6559576838", onlineDate:"01-16", episodes:60, hotValue:"4586万"},
+          {rank:16, name:"儿媳的重生棋局", tags:"都市日常", publisher:"海看股份", onlineDate:"02-16", episodes:40, hotValue:"4573万"},
+          {rank:17, name:"师尊，机缘给您别骂我", tags:"时空之旅", publisher:"tomatotv", onlineDate:"03-06", episodes:75, hotValue:"4550万"},
+          {rank:18, name:"转生蚊子，吸哭的校花是女帝重生", tags:"脑洞/重生/系统/升级流", publisher:"短剧版权8642826809", onlineDate:"02-13", episodes:60, hotValue:"4540万"},
+          {rank:19, name:"绝世兽尊：我的灵宠吞噬万物", tags:"玄幻脑洞/玄幻言情/传统玄幻/武侠", publisher:"短剧版权0642643408", onlineDate:"02-10", episodes:60, hotValue:"4540万"},
+          {rank:20, name:"穿书末世，我靠系统国货逆袭", tags:"脑洞/穿越/系统/国物资", publisher:"重庆阅品科技有限公司", onlineDate:"03-09", episodes:60, hotValue:"4533万"},
+          {rank:21, name:"三千庇护第八季", tags:"奇幻/异界", publisher:"短剧版权8642826809", onlineDate:"03-09", episodes:42, hotValue:"4531万"},
+          {rank:22, name:"深宫霸批", tags:"古风", publisher:"短剧版权6239592226", onlineDate:"03-09", episodes:45, hotValue:"4505万"},
+          {rank:23, name:"斩仙台下，我震惊了诸神！", tags:"奇幻/穿越/异界", publisher:"智品后台", onlineDate:"12-01", episodes:57, hotValue:"4493万"},
+          {rank:24, name:"救赎歌王", tags:"都市日常/逆袭/剧情/快穿", publisher:"短剧版权0201759569", onlineDate:"03-04", episodes:102, hotValue:"4487万"},
+          {rank:25, name:"假面皇冠", tags:"都市日常/职场婚恋/剧情/反转", publisher:"海看股份", onlineDate:"03-07", episodes:50, hotValue:"4464万"},
+          {rank:26, name:"西游，错把玉帝当亲爹", tags:"玄幻脑洞/传统玄幻/东方仙侠/历史脑洞", publisher:"广州星火深智动漫有限公司", onlineDate:"02-12", episodes:60, hotValue:"4463万"},
+          {rank:27, name:"跨界当倒爷，我的杂货铺通万物", tags:"科幻末世/玄幻脑洞/传统玄幻/都市日常", publisher:"青岛骇奇点文化传媒有限公司", onlineDate:"02-20", episodes:53, hotValue:"4460万"},
+          {rank:28, name:"大明战神朱三爷", tags:"宫廷/重生/逆袭/表情包", publisher:"福州木头软件有限公司", onlineDate:"03-12", episodes:75, hotValue:"4448万"},
+          {rank:29, name:"重生奶娃", tags:"快穿/宫斗宅斗/古言脑洞/剧情", publisher:"柘城县幻点文化传媒有限公司", onlineDate:"02-16", episodes:39, hotValue:"4442万"},
+          {rank:30, name:"踪刀天师", tags:"战神赘婿", publisher:"短剧版权6045376139", onlineDate:"02-26", episodes:80, hotValue:"4437万"}
+        ]
+      }
+    }
+  };
+}
+
+function loadAllData() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    try { return JSON.parse(stored); } catch(e) {}
+  }
+  const defaultData = getDefaultData();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
+  return defaultData;
+}
+
+function saveAllData(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+let allData = loadAllData();
+let currentDate = '';
+let currentTab = 'douyin';
+
+function getAvailableDates() {
+  return Object.keys(allData).sort().reverse();
+}
+
+function init() {
+  const dates = getAvailableDates();
+  if (dates.length > 0) {
+    currentDate = dates[0];
+  } else {
+    const today = new Date().toISOString().split('T')[0];
+    currentDate = today;
+  }
+  document.getElementById('dateInput').value = currentDate;
+  renderDateChips();
+  renderTable();
+}
+
+function renderDateChips() {
+  const container = document.getElementById('dateChips');
+  const dates = getAvailableDates();
+  const activeClass = currentTab === 'hongguo' ? 'active-hongguo' : 'active';
+  container.innerHTML = dates.map(d =>
+    `<div class="date-chip ${d === currentDate ? activeClass : ''}" onclick="loadDate('${d}')">${d}</div>`
+  ).join('');
+}
+
+function loadDate(date) {
+  currentDate = date;
+  document.getElementById('dateInput').value = date;
+  renderDateChips();
+  renderTable();
+}
+
+function navigateDate(dir) {
+  const dates = getAvailableDates();
+  const idx = dates.indexOf(currentDate);
+  if (idx === -1) return;
+  const newIdx = idx - dir;
+  if (newIdx >= 0 && newIdx < dates.length) {
+    loadDate(dates[newIdx]);
+  }
+}
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('tabDouyin').className = tab === 'douyin' ? 'top-tab active-douyin' : 'top-tab';
+  document.getElementById('tabHongguo').className = tab === 'hongguo' ? 'top-tab active-hongguo' : 'top-tab';
+  document.getElementById('douyinTable').style.display = tab === 'douyin' ? 'block' : 'none';
+  document.getElementById('hongguoTable').style.display = tab === 'hongguo' ? 'block' : 'none';
+  renderDateChips();
+}
+
+function getRankHTML(rank) {
+  if (rank <= 3) {
+    return `<span class="rank-medal medal-${rank}">${rank}</span>`;
+  }
+  return `<span style="color:var(--text-muted)">${rank}</span>`;
+}
+
+function renderTable() {
+  const dayData = allData[currentDate] || {};
+  const douyinData = dayData.douyin;
+  const douyinLabel = document.getElementById('douyinDateLabel');
+  const douyinContent = document.getElementById('douyinContent');
+
+  if (douyinData && douyinData.items.length > 0) {
+    douyinLabel.textContent = `统计时间：${douyinData.date || currentDate}`;
+    douyinContent.innerHTML = `<table><thead><tr>
+      <th style="text-align:center;width:60px">排名</th><th>剧名</th><th>账号</th><th>关联方</th>
+      <th style="text-align:center">集数</th><th>类型</th><th style="text-align:right">新增播放</th><th style="text-align:right">累计播放</th>
+    </tr></thead><tbody>${douyinData.items.map(item => `<tr>
+      <td class="rank-cell">${getRankHTML(item.rank)}</td>
+      <td class="drama-name">${item.name}</td><td>${item.account}</td>
+      <td style="color:var(--text-muted)">${item.affiliate}</td>
+      <td style="text-align:center">${item.episodes}</td>
+      <td><span class="type-tag">${item.type}</span></td>
+      <td style="text-align:right" class="highlight-value douyin">${item.newPlay}</td>
+      <td style="text-align:right">${item.totalPlay}</td>
+    </tr>`).join('')}</tbody></table>`;
+  } else {
+    douyinLabel.textContent = '';
+    douyinContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无抖音榜数据</div></div>`;
+  }
+
+  const hongguoData = dayData.hongguo;
+  const hongguoLabel = document.getElementById('hongguoDateLabel');
+  const hongguoContent = document.getElementById('hongguoContent');
+
+  if (hongguoData && hongguoData.items.length > 0) {
+    hongguoLabel.textContent = `统计时间：${hongguoData.date || currentDate}`;
+    hongguoContent.innerHTML = `<table><thead><tr>
+      <th style="text-align:center;width:60px">排名</th><th>剧名</th><th>标签</th><th>版权方</th>
+      <th style="text-align:center">上线时间</th><th style="text-align:center">集数</th><th style="text-align:right">热度值</th>
+    </tr></thead><tbody>${hongguoData.items.map(item => `<tr>
+      <td class="rank-cell">${getRankHTML(item.rank)}</td>
+      <td class="drama-name">${item.name}</td>
+      <td><span class="type-tag hongguo">${item.tags}</span></td>
+      <td style="color:var(--text-muted);font-size:12px;max-width:160px">${item.publisher}</td>
+      <td style="text-align:center">${item.onlineDate}</td>
+      <td style="text-align:center">${item.episodes}</td>
+      <td style="text-align:right" class="highlight-value hongguo">${item.hotValue}</td>
+    </tr>`).join('')}</tbody></table>`;
+  } else {
+    hongguoLabel.textContent = '';
+    hongguoContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无红果榜数据</div></div>`;
+  }
+}
+
+function showAddModal() {
+  document.getElementById('addModal').classList.add('show');
+  document.getElementById('modalDate').value = currentDate || new Date().toISOString().split('T')[0];
+}
+
+function closeModal() {
+  document.getElementById('addModal').classList.remove('show');
+}
+
+function parseAndSave() {
+  const date = document.getElementById('modalDate').value;
+  const type = document.getElementById('modalType').value;
+  const raw = document.getElementById('modalData').value.trim();
+  if (!date) { alert('请选择日期'); return; }
+  if (!raw) { alert('请粘贴数据'); return; }
+  const lines = raw.split('\n').filter(l => l.trim());
+  const items = [];
+  for (const line of lines) {
+    const parts = line.includes('|') ? line.split('|').map(s => s.trim()) : line.split('\t').map(s => s.trim());
+    if (type === 'douyin') {
+      if (parts.length >= 2) {
+        items.push({ rank: parseInt(parts[0]) || items.length + 1, name: parts[1], account: parts[2] || '', affiliate: parts[3] || '', episodes: parseInt(parts[4]) || 0, type: parts[5] || '', newPlay: parts[6] || '', totalPlay: parts[7] || '' });
+      }
+    } else {
+      if (parts.length >= 2) {
+        items.push({ rank: parseInt(parts[0]) || items.length + 1, name: parts[1], tags: parts[2] || '', publisher: parts[3] || '', onlineDate: parts[4] || '', episodes: parseInt(parts[5]) || 0, hotValue: parts[6] || '' });
+      }
+    }
+  }
+  if (items.length === 0) { alert('未能解析出有效数据，请检查格式'); return; }
+  if (!allData[date]) { allData[date] = { douyin: null, hongguo: null }; }
+  const formattedDate = date.replace(/-/g, '/').replace(/^(\d{4})\/0?(\d+)\/0?(\d+)$/, '$1/$2/$3');
+  if (type === 'douyin') { allData[date].douyin = { date: formattedDate, items }; }
+  else { allData[date].hongguo = { date: formattedDate, items }; }
+  saveAllData(allData);
+  alert(`✅ 成功保存 ${items.length} 条${type === 'douyin' ? '抖音' : '红果'}榜数据！`);
+  closeModal();
+  document.getElementById('modalData').value = '';
+  loadDate(date);
+}
+
+function exportData() {
+  const json = JSON.stringify(allData, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `漫剧热度日报_${new Date().toISOString().split('T')[0]}.json`;
+  a.click(); URL.revokeObjectURL(url);
+}
+
+function importData() { document.getElementById('fileInput').click(); }
+
+function handleImport(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const imported = JSON.parse(e.target.result);
+      for (const [date, data] of Object.entries(imported)) {
+        if (!allData[date]) { allData[date] = data; }
+        else { if (data.douyin) allData[date].douyin = data.douyin; if (data.hongguo) allData[date].hongguo = data.hongguo; }
+      }
+      saveAllData(allData);
+      alert('✅ 导入成功！');
+      init();
+    } catch(e) { alert('❌ 导入失败：JSON格式错误'); }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+document.getElementById('addModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+document.addEventListener('click', function(e) { if (!e.target.closest('.dropdown')) { const dd = document.getElementById('exportDropdown'); if (dd) dd.classList.remove('show'); } });
+
+function toggleDropdown() { document.getElementById('exportDropdown').classList.toggle('show'); }
+
+function escapeCSV(val) {
+  const s = String(val == null ? '' : val);
+  if (s.includes(',') || s.includes('"') || s.includes('\n')) { return '"' + s.replace(/"/g, '""') + '"'; }
+  return s;
+}
+
+function downloadCSV(filename, csvContent) {
+  const bom = '\uFEFF';
+  const blob = new Blob([bom + csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.click(); URL.revokeObjectURL(url);
+}
+
+function exportCurrentCSV() {
+  document.getElementById('exportDropdown').classList.remove('show');
+  const dayData = allData[currentDate] || {};
+  if (currentTab === 'douyin') {
+    const data = dayData.douyin;
+    if (!data || data.items.length === 0) { alert('当前日期暂无抖音榜数据'); return; }
+    const headers = ['排名', '剧名', '账号', '关联方', '集数', '类型', '新增播放', '累计播放'];
+    const rows = data.items.map(item => [item.rank, item.name, item.account, item.affiliate, item.episodes, item.type, item.newPlay, item.totalPlay]);
+    const csv = [headers, ...rows].map(row => row.map(escapeCSV).join(',')).join('\n');
+    downloadCSV(`抖音漫剧热播榜_${currentDate}.csv`, csv);
+  } else {
+    const data = dayData.hongguo;
+    if (!data || data.items.length === 0) { alert('当前日期暂无红果榜数据'); return; }
+    const headers = ['排名', '剧名', '标签', '版权方', '上线时间', '集数', '热度值'];
+    const rows = data.items.map(item => [item.rank, item.name, item.tags, item.publisher, item.onlineDate, item.episodes, item.hotValue]);
+    const csv = [headers, ...rows].map(row => row.map(escapeCSV).join(',')).join('\n');
+    downloadCSV(`红果漫剧热播榜_${currentDate}.csv`, csv);
+  }
+}
+
+function exportAllCSV() {
+  document.getElementById('exportDropdown').classList.remove('show');
+  const dates = getAvailableDates().reverse();
+  const douyinHeaders = ['日期', '排名', '剧名', '账号', '关联方', '集数', '类型', '新增播放', '累计播放'];
+  const douyinRows = [];
+  for (const date of dates) { const dayData = allData[date]; if (dayData && dayData.douyin && dayData.douyin.items.length > 0) { for (const item of dayData.douyin.items) { douyinRows.push([date, item.rank, item.name, item.account, item.affiliate, item.episodes, item.type, item.newPlay, item.totalPlay]); } } }
+  const hongguoHeaders = ['日期', '排名', '剧名', '标签', '版权方', '上线时间', '集数', '热度值'];
+  const hongguoRows = [];
+  for (const date of dates) { const dayData = allData[date]; if (dayData && dayData.hongguo && dayData.hongguo.items.length > 0) { for (const item of dayData.hongguo.items) { hongguoRows.push([date, item.rank, item.name, item.tags, item.publisher, item.onlineDate, item.episodes, item.hotValue]); } } }
+  let csv = '=== 抖音漫剧热播榜 ===\n';
+  csv += [douyinHeaders, ...douyinRows].map(row => row.map(escapeCSV).join(',')).join('\n');
+  csv += '\n\n=== 红果漫剧热播榜 ===\n';
+  csv += [hongguoHeaders, ...hongguoRows].map(row => row.map(escapeCSV).join(',')).join('\n');
+  const today = new Date().toISOString().split('T')[0];
+  downloadCSV(`漫剧热度日报_全部数据_${today}.csv`, csv);
+}
+
+function exportExcel() {
+  document.getElementById('exportDropdown').classList.remove('show');
+  if (typeof XLSX === 'undefined') { alert('Excel导出库加载失败，请检查网络连接后刷新页面重试。'); return; }
+  const wb = XLSX.utils.book_new();
+  const dates = getAvailableDates().reverse();
+  const douyinAoa = [['日期', '排名', '剧名', '账号', '关联方', '集数', '类型', '新增播放', '累计播放']];
+  for (const date of dates) { const dayData = allData[date]; if (dayData && dayData.douyin && dayData.douyin.items.length > 0) { for (const item of dayData.douyin.items) { douyinAoa.push([date, item.rank, item.name, item.account, item.affiliate, item.episodes, item.type, item.newPlay, item.totalPlay]); } } }
+  const ws1 = XLSX.utils.aoa_to_sheet(douyinAoa);
+  ws1['!cols'] = [{wch:12},{wch:5},{wch:28},{wch:16},{wch:10},{wch:6},{wch:16},{wch:12},{wch:12}];
+  XLSX.utils.book_append_sheet(wb, ws1, '抖音漫剧热播榜');
+  const hongguoAoa = [['日期', '排名', '剧名', '标签', '版权方', '上线时间', '集数', '热度值']];
+  for (const date of dates) { const dayData = allData[date]; if (dayData && dayData.hongguo && dayData.hongguo.items.length > 0) { for (const item of dayData.hongguo.items) { hongguoAoa.push([date, item.rank, item.name, item.tags, item.publisher, item.onlineDate, item.episodes, item.hotValue]); } } }
+  const ws2 = XLSX.utils.aoa_to_sheet(hongguoAoa);
+  ws2['!cols'] = [{wch:12},{wch:5},{wch:28},{wch:30},{wch:24},{wch:10},{wch:6},{wch:10}];
+  XLSX.utils.book_append_sheet(wb, ws2, '红果漫剧热播榜');
+  const today = new Date().toISOString().split('T')[0];
+  XLSX.writeFile(wb, `漫剧热度日报_${today}.xlsx`);
+}
+
+init();
+</script>
+</body>
+</html>
