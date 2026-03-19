@@ -458,11 +458,239 @@
   .date-chip.active-hongguo { background: var(--hongguo-primary); border-color: var(--hongguo-primary); color: white; }
   .date-chip.active-hongguo:hover { border-color: var(--hongguo-primary); color: white; }
 
+  /* Copilot 样式 */
+  .copilot-fab {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(139,92,246,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    transition: all 0.3s;
+    animation: copilotPulse 2s ease-in-out infinite;
+  }
+
+  .copilot-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(139,92,246,0.6);
+  }
+
+  .copilot-fab svg { width: 26px; height: 26px; fill: white; }
+
+  @keyframes copilotPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(139,92,246,0.4); }
+    50% { box-shadow: 0 4px 28px rgba(236,72,153,0.5); }
+  }
+
+  .copilot-panel {
+    position: fixed;
+    top: 0; right: -420px; bottom: 0;
+    width: 420px;
+    background: #12121f;
+    border-left: 1px solid #2a2a3e;
+    z-index: 950;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  }
+
+  .copilot-panel.open { right: 0; }
+
+  .copilot-header {
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #2a2a3e;
+    background: rgba(26,26,46,0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  .copilot-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .copilot-header-icon {
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .copilot-header-icon svg { width: 18px; height: 18px; fill: white; }
+
+  .copilot-header-title {
+    font-size: 15px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #A78BFA, #F472B6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .copilot-close {
+    background: none; border: none; color: var(--text-muted);
+    cursor: pointer; font-size: 20px; padding: 4px 8px;
+    border-radius: 6px; transition: all 0.2s;
+  }
+
+  .copilot-close:hover { background: rgba(255,255,255,0.08); color: white; }
+
+  .copilot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .copilot-msg {
+    max-width: 92%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    word-break: break-word;
+    animation: msgFadeIn 0.25s ease-out;
+  }
+
+  @keyframes msgFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .copilot-msg.bot {
+    background: #1e1e32;
+    border: 1px solid #2a2a3e;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    color: var(--text);
+  }
+
+  .copilot-msg.user {
+    background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(236,72,153,0.15));
+    border: 1px solid rgba(139,92,246,0.3);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    color: #e8e0ff;
+  }
+
+  .copilot-msg strong { color: #A78BFA; }
+  .copilot-msg .highlight { color: #FBBF24; font-weight: 600; }
+  .copilot-msg .tag { display: inline-block; padding: 1px 7px; border-radius: 4px; font-size: 12px; background: rgba(139,92,246,0.15); color: #A78BFA; margin: 1px 2px; }
+  .copilot-msg .num { color: #34D399; font-weight: 600; }
+
+  .copilot-suggestions {
+    padding: 0 16px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .copilot-suggest-btn {
+    padding: 6px 12px;
+    border-radius: 18px;
+    border: 1px solid #3a3a4e;
+    background: rgba(42,42,62,0.6);
+    color: var(--text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .copilot-suggest-btn:hover {
+    border-color: #8B5CF6;
+    color: #A78BFA;
+    background: rgba(139,92,246,0.1);
+  }
+
+  .copilot-input-area {
+    padding: 14px 16px;
+    border-top: 1px solid #2a2a3e;
+    display: flex;
+    gap: 10px;
+    background: rgba(26,26,46,0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  .copilot-input {
+    flex: 1;
+    background: #1e1e32;
+    border: 1px solid #3a3a4e;
+    border-radius: 22px;
+    padding: 10px 18px;
+    font-size: 13.5px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .copilot-input:focus { border-color: #8B5CF6; }
+
+  .copilot-input::placeholder { color: #555; }
+
+  .copilot-send {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .copilot-send:hover { transform: scale(1.08); }
+  .copilot-send svg { width: 18px; height: 18px; fill: white; }
+
+  .copilot-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 940;
+  }
+
+  .copilot-overlay.show { display: block; }
+
+  .copilot-typing {
+    display: flex; gap: 4px; padding: 4px 0;
+  }
+
+  .copilot-typing span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #8B5CF6;
+    animation: typingBounce 1.2s ease-in-out infinite;
+  }
+
+  .copilot-typing span:nth-child(2) { animation-delay: 0.15s; }
+  .copilot-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes typingBounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-6px); opacity: 1; }
+  }
+
   @media (max-width: 768px) {
     .header { padding: 16px; }
     .main { padding: 16px; }
     .table-container { overflow-x: auto; }
     table { min-width: 700px; }
+    .copilot-panel { width: 100%; right: -100%; }
+    .copilot-fab { bottom: 20px; right: 20px; width: 50px; height: 50px; }
   }
 
   ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -562,6 +790,35 @@
 </div>
 
 <input type="file" id="fileInput" accept=".json" style="display:none" onchange="handleImport(event)">
+
+<!-- Copilot 悬浮按钮 -->
+<button class="copilot-fab" onclick="toggleCopilot()" title="数据分析助手">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+</button>
+
+<!-- Copilot 遮罩层 -->
+<div class="copilot-overlay" id="copilotOverlay" onclick="toggleCopilot()"></div>
+
+<!-- Copilot 侧边面板 -->
+<div class="copilot-panel" id="copilotPanel">
+  <div class="copilot-header">
+    <div class="copilot-header-left">
+      <div class="copilot-header-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <span class="copilot-header-title">漫剧数据分析助手</span>
+    </div>
+    <button class="copilot-close" onclick="toggleCopilot()">✕</button>
+  </div>
+  <div class="copilot-messages" id="copilotMessages"></div>
+  <div class="copilot-suggestions" id="copilotSuggestions"></div>
+  <div class="copilot-input-area">
+    <input class="copilot-input" id="copilotInput" placeholder="问我关于漫剧数据的问题..." onkeydown="if(event.key==='Enter')sendCopilotMessage()">
+    <button class="copilot-send" onclick="sendCopilotMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
 
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 
@@ -992,6 +1249,608 @@ function exportExcel() {
   XLSX.utils.book_append_sheet(wb, ws2, '红果漫剧热播榜');
   const today = new Date().toISOString().split('T')[0];
   XLSX.writeFile(wb, `漫剧热度日报_${today}.xlsx`);
+}
+
+// ============ Copilot 数据分析引擎 ============
+let copilotOpen = false;
+let copilotInited = false;
+
+function toggleCopilot() {
+  copilotOpen = !copilotOpen;
+  document.getElementById('copilotPanel').classList.toggle('open', copilotOpen);
+  document.getElementById('copilotOverlay').classList.toggle('show', copilotOpen);
+  if (copilotOpen && !copilotInited) {
+    copilotInited = true;
+    addBotMessage('你好！我是<strong>漫剧数据分析助手</strong>，可以帮你分析榜单数据。试试问我：');
+    showSuggestions([
+      'Top10 题材有什么变化？',
+      '抖音和红果都上榜的作品',
+      '哪些是新上榜作品？',
+      '版权方排名',
+      '热度值最高的作品',
+      '漫剧类型分布'
+    ]);
+  }
+  if (copilotOpen) {
+    setTimeout(() => document.getElementById('copilotInput').focus(), 350);
+  }
+}
+
+function addBotMessage(html) {
+  const container = document.getElementById('copilotMessages');
+  const div = document.createElement('div');
+  div.className = 'copilot-msg bot';
+  div.innerHTML = html;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function addUserMessage(text) {
+  const container = document.getElementById('copilotMessages');
+  const div = document.createElement('div');
+  div.className = 'copilot-msg user';
+  div.textContent = text;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function showSuggestions(items) {
+  const container = document.getElementById('copilotSuggestions');
+  container.innerHTML = items.map(t =>
+    `<button class="copilot-suggest-btn" onclick="askCopilot('${t.replace(/'/g, "\\'")}')">${t}</button>`
+  ).join('');
+}
+
+function showTyping() {
+  const container = document.getElementById('copilotMessages');
+  const div = document.createElement('div');
+  div.className = 'copilot-msg bot';
+  div.id = 'copilotTyping';
+  div.innerHTML = '<div class="copilot-typing"><span></span><span></span><span></span></div>';
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('copilotTyping');
+  if (el) el.remove();
+}
+
+function sendCopilotMessage() {
+  const input = document.getElementById('copilotInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  askCopilot(text);
+}
+
+function askCopilot(question) {
+  addUserMessage(question);
+  showTyping();
+  setTimeout(() => {
+    removeTyping();
+    const answer = analyzeQuestion(question);
+    addBotMessage(answer.html);
+    if (answer.suggestions) showSuggestions(answer.suggestions);
+    else showSuggestions(['Top10 题材变化', '新上榜作品', '版权方排名', '跨平台对比']);
+  }, 400 + Math.random() * 300);
+}
+
+// 核心分析函数
+function analyzeQuestion(q) {
+  const dates = getAvailableDates();
+  const ql = q.toLowerCase();
+
+  // 题材/标签分析
+  if (ql.includes('题材') || ql.includes('标签') || ql.includes('类型分布') || ql.includes('tag')) {
+    return analyzeGenres(dates, ql);
+  }
+
+  // 跨平台对比
+  if ((ql.includes('抖音') && ql.includes('红果')) || ql.includes('都上榜') || ql.includes('跨平台') || ql.includes('两个平台')) {
+    return analyzeCrossPlatform(dates);
+  }
+
+  // 新上榜分析
+  if (ql.includes('新上榜') || ql.includes('新作') || ql.includes('新入榜') || ql.includes('新剧')) {
+    return analyzeNewEntries(dates);
+  }
+
+  // 版权方/出品方分析
+  if (ql.includes('版权') || ql.includes('出品') || ql.includes('publisher') || ql.includes('制作方')) {
+    return analyzePublishers(dates);
+  }
+
+  // 热度/播放量最高
+  if (ql.includes('热度最高') || ql.includes('最热') || ql.includes('播放最高') || ql.includes('top1') || ql.includes('榜首')) {
+    return analyzeTopPerformers(dates);
+  }
+
+  // 排名变化
+  if (ql.includes('排名变化') || ql.includes('上升') || ql.includes('下降') || ql.includes('排名')) {
+    return analyzeRankChanges(dates);
+  }
+
+  // 账号分析（抖音）
+  if (ql.includes('账号') || ql.includes('发布者') || ql.includes('account')) {
+    return analyzeAccounts(dates);
+  }
+
+  // 集数分析
+  if (ql.includes('集数') || ql.includes('最长') || ql.includes('最短') || ql.includes('episode')) {
+    return analyzeEpisodes(dates);
+  }
+
+  // 概览/总结
+  if (ql.includes('概览') || ql.includes('总结') || ql.includes('概况') || ql.includes('数据量') || ql.includes('有多少')) {
+    return analyzeOverview(dates);
+  }
+
+  // 具体作品查询
+  const matchedDrama = findDramaByName(q, dates);
+  if (matchedDrama) {
+    return analyzeDrama(matchedDrama, dates);
+  }
+
+  // 默认：智能概览
+  return {
+    html: `我可以帮你分析以下方面的数据：<br><br>
+      📊 <strong>题材趋势</strong> — 各标签/类型的上榜分布和变化<br>
+      🔄 <strong>跨平台对比</strong> — 同时出现在抖音和红果的作品<br>
+      🆕 <strong>新上榜作品</strong> — 当天新进入榜单的作品<br>
+      🏢 <strong>版权方分析</strong> — 出品方/版权方的上榜数量<br>
+      📈 <strong>排名变化</strong> — 作品在不同日期的排名变动<br>
+      🎬 <strong>作品查询</strong> — 直接输入剧名查看详情<br><br>
+      试试上面的快捷按钮，或直接提问！`,
+    suggestions: ['Top10 题材变化', '跨平台对比', '新上榜作品', '数据概览', '版权方排名', '集数分析']
+  };
+}
+
+function analyzeGenres(dates, ql) {
+  const genreMap = {};
+  const dateGenres = {};
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    dateGenres[date] = {};
+
+    // 红果标签
+    if (dayData.hongguo && dayData.hongguo.items) {
+      for (const item of dayData.hongguo.items) {
+        const tags = (item.tags || '').split('/').map(t => t.trim()).filter(Boolean);
+        for (const tag of tags) {
+          genreMap[tag] = (genreMap[tag] || 0) + 1;
+          dateGenres[date][tag] = (dateGenres[date][tag] || 0) + 1;
+        }
+      }
+    }
+    // 抖音类型
+    if (dayData.douyin && dayData.douyin.items) {
+      for (const item of dayData.douyin.items) {
+        const type = (item.type || '').trim();
+        if (type && type !== '0') {
+          genreMap[type] = (genreMap[type] || 0) + 1;
+          dateGenres[date][type] = (dateGenres[date][type] || 0) + 1;
+        }
+      }
+    }
+  }
+
+  const sorted = Object.entries(genreMap).sort((a, b) => b[1] - a[1]);
+  const top10 = sorted.slice(0, 10);
+
+  let html = `<strong>📊 题材/标签 Top 10 分布</strong>（全部 ${dates.length} 天数据汇总）<br><br>`;
+  top10.forEach((item, i) => {
+    const bar = '█'.repeat(Math.min(Math.ceil(item[1] / 2), 15));
+    html += `${i + 1}. <span class="tag">${item[0]}</span> — 出现 <span class="num">${item[1]}</span> 次 <span style="color:#8B5CF6;font-size:11px">${bar}</span><br>`;
+  });
+
+  // 变化趋势（如果有多天数据）
+  if (dates.length >= 2) {
+    const latest = dates[0];
+    const prev = dates[1];
+    const latestTags = dateGenres[latest] || {};
+    const prevTags = dateGenres[prev] || {};
+
+    const rising = [];
+    const falling = [];
+    const allTags = new Set([...Object.keys(latestTags), ...Object.keys(prevTags)]);
+
+    for (const tag of allTags) {
+      const diff = (latestTags[tag] || 0) - (prevTags[tag] || 0);
+      if (diff > 0) rising.push({ tag, diff });
+      else if (diff < 0) falling.push({ tag, diff: Math.abs(diff) });
+    }
+
+    rising.sort((a, b) => b.diff - a.diff);
+    falling.sort((a, b) => b.diff - a.diff);
+
+    if (rising.length > 0 || falling.length > 0) {
+      html += `<br><strong>📈 最近趋势</strong>（${prev} → ${latest}）<br>`;
+      if (rising.length > 0) {
+        html += `🔺 热度上升：${rising.slice(0, 5).map(r => `<span class="tag">${r.tag}</span> +${r.diff}`).join('、')}<br>`;
+      }
+      if (falling.length > 0) {
+        html += `🔻 热度下降：${falling.slice(0, 5).map(r => `<span class="tag">${r.tag}</span> -${r.diff}`).join('、')}<br>`;
+      }
+    }
+  }
+
+  return { html, suggestions: ['新上榜作品', '版权方排名', '跨平台对比'] };
+}
+
+function analyzeCrossPlatform(dates) {
+  let html = '<strong>🔄 抖音 & 红果跨平台上榜分析</strong><br><br>';
+  let foundAny = false;
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (!dayData.douyin || !dayData.hongguo) continue;
+
+    const douyinNames = new Set(dayData.douyin.items.map(i => i.name));
+    const hongguoNames = new Set(dayData.hongguo.items.map(i => i.name));
+    const both = [...douyinNames].filter(n => hongguoNames.has(n));
+
+    if (both.length > 0) {
+      foundAny = true;
+      html += `📅 <strong>${date}</strong> — 共 <span class="num">${both.length}</span> 部同时上榜：<br>`;
+      for (const name of both) {
+        const dy = dayData.douyin.items.find(i => i.name === name);
+        const hg = dayData.hongguo.items.find(i => i.name === name);
+        html += `&nbsp;&nbsp;• <span class="highlight">${name}</span> — 抖音 #${dy.rank}（新增${dy.newPlay}），红果 #${hg.rank}（热度${hg.hotValue}）<br>`;
+      }
+      html += '<br>';
+    }
+  }
+
+  if (!foundAny) {
+    html += '目前各日期的数据中，暂未发现同时出现在两个平台 Top 30 的作品。<br><br>';
+    html += '这可能说明两个平台的用户偏好差异较大，或者数据收集的时间不同步。';
+  }
+
+  return { html, suggestions: ['题材分布', '排名变化', '热度最高作品'] };
+}
+
+function analyzeNewEntries(dates) {
+  if (dates.length < 2) {
+    return { html: '需要至少两天的数据才能分析新上榜作品，目前数据还不够。', suggestions: ['数据概览'] };
+  }
+
+  const latest = dates[0];
+  const prev = dates[1];
+  const latestData = allData[latest] || {};
+  const prevData = allData[prev] || {};
+
+  let html = `<strong>🆕 新上榜作品分析</strong>（${prev} → ${latest}）<br><br>`;
+
+  // 红果新上榜
+  if (latestData.hongguo && prevData.hongguo) {
+    const prevNames = new Set(prevData.hongguo.items.map(i => i.name));
+    const newItems = latestData.hongguo.items.filter(i => !prevNames.has(i.name));
+    const exitItems = prevData.hongguo.items.filter(i => !latestData.hongguo.items.find(j => j.name === i.name));
+
+    html += `🍎 <strong>红果榜</strong>：<br>`;
+    if (newItems.length > 0) {
+      html += `&nbsp;&nbsp;新入榜 <span class="num">${newItems.length}</span> 部：<br>`;
+      newItems.forEach(item => {
+        html += `&nbsp;&nbsp;&nbsp;&nbsp;📗 <span class="highlight">${item.name}</span> #${item.rank}（${item.hotValue}）<span class="tag">${item.tags}</span><br>`;
+      });
+    } else {
+      html += '&nbsp;&nbsp;无新入榜作品（Top 30 完全一致）<br>';
+    }
+    if (exitItems.length > 0) {
+      html += `&nbsp;&nbsp;掉出榜单 <span class="num">${exitItems.length}</span> 部：${exitItems.map(i => i.name).join('、')}<br>`;
+    }
+    html += '<br>';
+  }
+
+  // 抖音新上榜
+  if (latestData.douyin && prevData.douyin) {
+    const prevNames = new Set(prevData.douyin.items.map(i => i.name));
+    const newItems = latestData.douyin.items.filter(i => !prevNames.has(i.name));
+    const exitItems = prevData.douyin.items.filter(i => !latestData.douyin.items.find(j => j.name === i.name));
+
+    html += `🎵 <strong>抖音榜</strong>：<br>`;
+    if (newItems.length > 0) {
+      html += `&nbsp;&nbsp;新入榜 <span class="num">${newItems.length}</span> 部：<br>`;
+      newItems.forEach(item => {
+        html += `&nbsp;&nbsp;&nbsp;&nbsp;📘 <span class="highlight">${item.name}</span> #${item.rank}（新增${item.newPlay}）<br>`;
+      });
+    } else {
+      html += '&nbsp;&nbsp;无新入榜作品<br>';
+    }
+    if (exitItems.length > 0) {
+      html += `&nbsp;&nbsp;掉出榜单 <span class="num">${exitItems.length}</span> 部：${exitItems.map(i => i.name).join('、')}<br>`;
+    }
+  }
+
+  return { html, suggestions: ['排名变化', '题材变化', '跨平台对比'] };
+}
+
+function analyzePublishers(dates) {
+  const pubMap = {};
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.hongguo && dayData.hongguo.items) {
+      for (const item of dayData.hongguo.items) {
+        const pub = item.publisher || '未知';
+        if (!pubMap[pub]) pubMap[pub] = { count: 0, dramas: new Set(), bestRank: 999 };
+        pubMap[pub].count++;
+        pubMap[pub].dramas.add(item.name);
+        pubMap[pub].bestRank = Math.min(pubMap[pub].bestRank, item.rank);
+      }
+    }
+  }
+
+  const sorted = Object.entries(pubMap).sort((a, b) => b[1].count - a[1].count);
+  const top10 = sorted.slice(0, 10);
+
+  let html = `<strong>🏢 版权方上榜排名 Top 10</strong>（红果榜 ${dates.length} 天汇总）<br><br>`;
+  top10.forEach((item, i) => {
+    const [name, data] = item;
+    const dramaList = [...data.dramas].slice(0, 3).join('、');
+    html += `${i + 1}. <strong>${name}</strong><br>`;
+    html += `&nbsp;&nbsp;&nbsp;上榜 <span class="num">${data.count}</span> 次 | ${data.dramas.size} 部作品 | 最高 #${data.bestRank}<br>`;
+    html += `&nbsp;&nbsp;&nbsp;代表作：${dramaList}<br><br>`;
+  });
+
+  return { html, suggestions: ['题材分布', '新上榜作品', '账号分析'] };
+}
+
+function analyzeTopPerformers(dates) {
+  let html = '<strong>🏆 各日期榜首作品</strong><br><br>';
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    html += `📅 <strong>${date}</strong><br>`;
+
+    if (dayData.douyin && dayData.douyin.items.length > 0) {
+      const top = dayData.douyin.items[0];
+      html += `&nbsp;&nbsp;🎵 抖音：<span class="highlight">${top.name}</span> — 新增播放 <span class="num">${top.newPlay}</span>，累计 ${top.totalPlay}<br>`;
+    }
+    if (dayData.hongguo && dayData.hongguo.items.length > 0) {
+      const top = dayData.hongguo.items[0];
+      html += `&nbsp;&nbsp;🍎 红果：<span class="highlight">${top.name}</span> — 热度 <span class="num">${top.hotValue}</span><br>`;
+    }
+    html += '<br>';
+  }
+
+  return { html, suggestions: ['排名变化', '新上榜作品', '跨平台对比'] };
+}
+
+function analyzeRankChanges(dates) {
+  if (dates.length < 2) {
+    return { html: '需要至少两天的数据才能分析排名变化。', suggestions: ['数据概览'] };
+  }
+
+  const latest = dates[0];
+  const prev = dates[1];
+  let html = `<strong>📈 排名变化分析</strong>（${prev} → ${latest}）<br><br>`;
+
+  // 红果排名变化
+  const latestHG = (allData[latest] || {}).hongguo;
+  const prevHG = (allData[prev] || {}).hongguo;
+
+  if (latestHG && prevHG) {
+    html += `🍎 <strong>红果榜排名变化：</strong><br>`;
+    const changes = [];
+    for (const item of latestHG.items) {
+      const prevItem = prevHG.items.find(i => i.name === item.name);
+      if (prevItem) {
+        const diff = prevItem.rank - item.rank;
+        changes.push({ name: item.name, rank: item.rank, diff, prevRank: prevItem.rank });
+      }
+    }
+
+    const risers = changes.filter(c => c.diff > 0).sort((a, b) => b.diff - a.diff).slice(0, 5);
+    const fallers = changes.filter(c => c.diff < 0).sort((a, b) => a.diff - b.diff).slice(0, 5);
+
+    if (risers.length > 0) {
+      html += '&nbsp;&nbsp;🔺 上升最快：<br>';
+      risers.forEach(c => {
+        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↑<span class="num">${c.diff}</span>位）<br>`;
+      });
+    }
+    if (fallers.length > 0) {
+      html += '&nbsp;&nbsp;🔻 下降最多：<br>';
+      fallers.forEach(c => {
+        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↓${Math.abs(c.diff)}位）<br>`;
+      });
+    }
+    html += '<br>';
+  }
+
+  // 抖音排名变化
+  const latestDY = (allData[latest] || {}).douyin;
+  const prevDY = (allData[prev] || {}).douyin;
+
+  if (latestDY && prevDY) {
+    html += `🎵 <strong>抖音榜排名变化：</strong><br>`;
+    const changes = [];
+    for (const item of latestDY.items) {
+      const prevItem = prevDY.items.find(i => i.name === item.name);
+      if (prevItem) {
+        const diff = prevItem.rank - item.rank;
+        changes.push({ name: item.name, rank: item.rank, diff, prevRank: prevItem.rank });
+      }
+    }
+
+    const risers = changes.filter(c => c.diff > 0).sort((a, b) => b.diff - a.diff).slice(0, 5);
+    const fallers = changes.filter(c => c.diff < 0).sort((a, b) => a.diff - b.diff).slice(0, 5);
+
+    if (risers.length > 0) {
+      html += '&nbsp;&nbsp;🔺 上升最快：<br>';
+      risers.forEach(c => {
+        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↑<span class="num">${c.diff}</span>位）<br>`;
+      });
+    }
+    if (fallers.length > 0) {
+      html += '&nbsp;&nbsp;🔻 下降最多：<br>';
+      fallers.forEach(c => {
+        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↓${Math.abs(c.diff)}位）<br>`;
+      });
+    }
+  }
+
+  return { html, suggestions: ['新上榜作品', '题材变化', '热度最高作品'] };
+}
+
+function analyzeAccounts(dates) {
+  const acctMap = {};
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.douyin && dayData.douyin.items) {
+      for (const item of dayData.douyin.items) {
+        const acct = item.account || '未知';
+        if (!acctMap[acct]) acctMap[acct] = { count: 0, dramas: new Set(), bestRank: 999 };
+        acctMap[acct].count++;
+        acctMap[acct].dramas.add(item.name);
+        acctMap[acct].bestRank = Math.min(acctMap[acct].bestRank, item.rank);
+      }
+    }
+  }
+
+  const sorted = Object.entries(acctMap).sort((a, b) => b[1].count - a[1].count);
+  const top10 = sorted.slice(0, 10);
+
+  let html = `<strong>📺 抖音账号上榜排名 Top 10</strong>（${dates.length} 天汇总）<br><br>`;
+  top10.forEach((item, i) => {
+    const [name, data] = item;
+    html += `${i + 1}. <strong>${name}</strong> — 上榜 <span class="num">${data.count}</span> 次，${data.dramas.size} 部作品，最高 #${data.bestRank}<br>`;
+  });
+
+  return { html, suggestions: ['版权方排名', '题材分布', '跨平台对比'] };
+}
+
+function analyzeEpisodes(dates) {
+  const allEpisodes = [];
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.hongguo && dayData.hongguo.items) {
+      for (const item of dayData.hongguo.items) {
+        allEpisodes.push({ name: item.name, episodes: item.episodes, platform: '红果', date });
+      }
+    }
+    if (dayData.douyin && dayData.douyin.items) {
+      for (const item of dayData.douyin.items) {
+        allEpisodes.push({ name: item.name, episodes: item.episodes, platform: '抖音', date });
+      }
+    }
+  }
+
+  // 去重
+  const seen = new Set();
+  const unique = allEpisodes.filter(e => {
+    const key = e.name + e.platform;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  unique.sort((a, b) => b.episodes - a.episodes);
+  const longest = unique.slice(0, 5);
+  const shortest = [...unique].sort((a, b) => a.episodes - b.episodes).slice(0, 5);
+
+  const avg = Math.round(unique.reduce((s, e) => s + e.episodes, 0) / unique.length);
+
+  let html = `<strong>🎬 集数分析</strong><br><br>`;
+  html += `平均集数：<span class="num">${avg}</span> 集<br><br>`;
+
+  html += '📏 <strong>集数最多</strong>：<br>';
+  longest.forEach(e => {
+    html += `&nbsp;&nbsp;• <span class="highlight">${e.name}</span> — <span class="num">${e.episodes}</span> 集（${e.platform}）<br>`;
+  });
+
+  html += '<br>📐 <strong>集数最少</strong>：<br>';
+  shortest.forEach(e => {
+    html += `&nbsp;&nbsp;• <span class="highlight">${e.name}</span> — <span class="num">${e.episodes}</span> 集（${e.platform}）<br>`;
+  });
+
+  return { html, suggestions: ['题材分布', '版权方排名', '热度最高作品'] };
+}
+
+function analyzeOverview(dates) {
+  let totalDouyin = 0, totalHongguo = 0;
+  const allDramas = new Set();
+
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.douyin && dayData.douyin.items) {
+      totalDouyin += dayData.douyin.items.length;
+      dayData.douyin.items.forEach(i => allDramas.add(i.name));
+    }
+    if (dayData.hongguo && dayData.hongguo.items) {
+      totalHongguo += dayData.hongguo.items.length;
+      dayData.hongguo.items.forEach(i => allDramas.add(i.name));
+    }
+  }
+
+  let html = `<strong>📋 数据概览</strong><br><br>`;
+  html += `📅 收录天数：<span class="num">${dates.length}</span> 天（${dates[dates.length - 1]} ~ ${dates[0]}）<br>`;
+  html += `🎬 独立作品数：<span class="num">${allDramas.size}</span> 部<br>`;
+  html += `🎵 抖音榜记录：<span class="num">${totalDouyin}</span> 条<br>`;
+  html += `🍎 红果榜记录：<span class="num">${totalHongguo}</span> 条<br>`;
+  html += `📊 总数据量：<span class="num">${totalDouyin + totalHongguo}</span> 条<br><br>`;
+
+  html += '<strong>各日期数据情况：</strong><br>';
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    const dy = dayData.douyin ? `抖音 ${dayData.douyin.items.length} 条` : '抖音 ❌';
+    const hg = dayData.hongguo ? `红果 ${dayData.hongguo.items.length} 条` : '红果 ❌';
+    html += `&nbsp;&nbsp;${date}：${dy} | ${hg}<br>`;
+  }
+
+  return { html, suggestions: ['题材分布', '版权方排名', '新上榜作品', '热度最高作品'] };
+}
+
+function findDramaByName(query, dates) {
+  const q = query.replace(/[？?。，,！!]/g, '').trim();
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.douyin && dayData.douyin.items) {
+      const found = dayData.douyin.items.find(i => q.includes(i.name) || i.name.includes(q));
+      if (found) return { ...found, platform: 'douyin', date };
+    }
+    if (dayData.hongguo && dayData.hongguo.items) {
+      const found = dayData.hongguo.items.find(i => q.includes(i.name) || i.name.includes(q));
+      if (found) return { ...found, platform: 'hongguo', date };
+    }
+  }
+  return null;
+}
+
+function analyzeDrama(drama, dates) {
+  let html = `<strong>🎬 「${drama.name}」详情</strong><br><br>`;
+
+  // 在所有日期中查找
+  const appearances = [];
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.douyin && dayData.douyin.items) {
+      const found = dayData.douyin.items.find(i => i.name === drama.name);
+      if (found) appearances.push({ ...found, platform: '抖音', date });
+    }
+    if (dayData.hongguo && dayData.hongguo.items) {
+      const found = dayData.hongguo.items.find(i => i.name === drama.name);
+      if (found) appearances.push({ ...found, platform: '红果', date });
+    }
+  }
+
+  html += `上榜记录：<span class="num">${appearances.length}</span> 次<br><br>`;
+
+  for (const app of appearances) {
+    html += `📅 ${app.date} | ${app.platform} #${app.rank}`;
+    if (app.newPlay) html += ` | 新增 ${app.newPlay}`;
+    if (app.hotValue) html += ` | 热度 ${app.hotValue}`;
+    if (app.tags) html += ` | <span class="tag">${app.tags}</span>`;
+    if (app.type && app.type !== '0') html += ` | <span class="tag">${app.type}</span>`;
+    html += '<br>';
+  }
+
+  return { html, suggestions: ['排名变化', '题材分布', '跨平台对比'] };
 }
 
 init();
