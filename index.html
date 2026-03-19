@@ -327,6 +327,52 @@
     font-weight: 600;
     color: #fff;
     max-width: 220px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .drama-name:hover { color: #A78BFA; }
+
+  .drama-name .synopsis-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(139,92,246,0.2);
+    color: #A78BFA;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    margin-left: 4px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  .synopsis-row td {
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(139,92,246,0.1) !important;
+  }
+
+  .synopsis-content {
+    padding: 12px 20px 12px 76px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #aaa;
+    background: rgba(139,92,246,0.04);
+    border-left: 3px solid rgba(139,92,246,0.3);
+    margin: 0;
+    animation: synopsisFadeIn 0.2s ease-out;
+  }
+
+  .synopsis-content strong {
+    color: #A78BFA;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+
+  @keyframes synopsisFadeIn {
+    from { opacity: 0; max-height: 0; }
+    to { opacity: 1; max-height: 200px; }
   }
 
   .highlight-value {
@@ -1066,15 +1112,19 @@ function renderTable() {
     douyinContent.innerHTML = `<table><thead><tr>
       <th style="text-align:center;width:60px">排名</th><th>剧名</th><th>账号</th><th>关联方</th>
       <th style="text-align:center">集数</th><th>类型</th><th style="text-align:right">新增播放</th><th style="text-align:right">累计播放</th>
-    </tr></thead><tbody>${douyinData.items.map(item => `<tr>
+    </tr></thead><tbody>${douyinData.items.map(item => {
+      const hasSynopsis = item.synopsis && item.synopsis.trim();
+      const synopsisIcon = hasSynopsis ? '<span class="synopsis-icon" title="点击查看简介">📖</span>' : '';
+      return `<tr class="drama-row" ${hasSynopsis ? `onclick="toggleSynopsis(this)"` : ''}>
       <td class="rank-cell">${getRankHTML(item.rank)}</td>
-      <td class="drama-name">${item.name}</td><td>${item.account}</td>
+      <td class="drama-name">${item.name}${synopsisIcon}</td><td>${item.account}</td>
       <td style="color:var(--text-muted)">${item.affiliate}</td>
       <td style="text-align:center">${item.episodes}</td>
       <td><span class="type-tag">${item.type}</span></td>
       <td style="text-align:right" class="highlight-value douyin">${item.newPlay}</td>
       <td style="text-align:right">${item.totalPlay}</td>
-    </tr>`).join('')}</tbody></table>`;
+    </tr>${hasSynopsis ? `<tr class="synopsis-row" style="display:none"><td colspan="8"><div class="synopsis-content"><strong>📝 简介</strong>${item.synopsis}</div></td></tr>` : ''}`;
+    }).join('')}</tbody></table>`;
   } else {
     douyinLabel.textContent = '';
     douyinContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无抖音榜数据</div></div>`;
@@ -1089,15 +1139,19 @@ function renderTable() {
     hongguoContent.innerHTML = `<table><thead><tr>
       <th style="text-align:center;width:60px">排名</th><th>剧名</th><th>标签</th><th>版权方</th>
       <th style="text-align:center">上线时间</th><th style="text-align:center">集数</th><th style="text-align:right">热度值</th>
-    </tr></thead><tbody>${hongguoData.items.map(item => `<tr>
+    </tr></thead><tbody>${hongguoData.items.map(item => {
+      const hasSynopsis = item.synopsis && item.synopsis.trim();
+      const synopsisIcon = hasSynopsis ? '<span class="synopsis-icon" title="点击查看简介">📖</span>' : '';
+      return `<tr class="drama-row" ${hasSynopsis ? `onclick="toggleSynopsis(this)"` : ''}>
       <td class="rank-cell">${getRankHTML(item.rank)}</td>
-      <td class="drama-name">${item.name}</td>
+      <td class="drama-name">${item.name}${synopsisIcon}</td>
       <td><span class="type-tag hongguo">${item.tags}</span></td>
       <td style="color:var(--text-muted);font-size:12px;max-width:160px">${item.publisher}</td>
       <td style="text-align:center">${item.onlineDate}</td>
       <td style="text-align:center">${item.episodes}</td>
       <td style="text-align:right" class="highlight-value hongguo">${item.hotValue}</td>
-    </tr>`).join('')}</tbody></table>`;
+    </tr>${hasSynopsis ? `<tr class="synopsis-row" style="display:none"><td colspan="7"><div class="synopsis-content"><strong>📝 简介</strong>${item.synopsis}</div></td></tr>` : ''}`;
+    }).join('')}</tbody></table>`;
   } else {
     hongguoLabel.textContent = '';
     hongguoContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无红果榜数据</div></div>`;
@@ -1107,6 +1161,14 @@ function renderTable() {
 function showAddModal() {
   document.getElementById('addModal').classList.add('show');
   document.getElementById('modalDate').value = currentDate || new Date().toISOString().split('T')[0];
+}
+
+function toggleSynopsis(row) {
+  const synopsisRow = row.nextElementSibling;
+  if (synopsisRow && synopsisRow.classList.contains('synopsis-row')) {
+    const isVisible = synopsisRow.style.display !== 'none';
+    synopsisRow.style.display = isVisible ? 'none' : 'table-row';
+  }
 }
 
 function closeModal() {
@@ -1824,6 +1886,24 @@ function findDramaByName(query, dates) {
 
 function analyzeDrama(drama, dates) {
   let html = `<strong>🎬 「${drama.name}」详情</strong><br><br>`;
+
+  // 查找简介
+  let synopsis = '';
+  for (const date of dates) {
+    const dayData = allData[date] || {};
+    if (dayData.douyin && dayData.douyin.items) {
+      const found = dayData.douyin.items.find(i => i.name === drama.name);
+      if (found && found.synopsis) { synopsis = found.synopsis; break; }
+    }
+    if (dayData.hongguo && dayData.hongguo.items) {
+      const found = dayData.hongguo.items.find(i => i.name === drama.name);
+      if (found && found.synopsis) { synopsis = found.synopsis; break; }
+    }
+  }
+
+  if (synopsis) {
+    html += `📝 <strong>简介：</strong>${synopsis}<br><br>`;
+  }
 
   // 在所有日期中查找
   const appearances = [];
