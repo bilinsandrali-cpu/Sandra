@@ -1353,14 +1353,14 @@ function toggleCopilot() {
   document.getElementById('copilotOverlay').classList.toggle('show', copilotOpen);
   if (copilotOpen && !copilotInited) {
     copilotInited = true;
-    addBotMessage('你好！我是<strong>漫剧数据分析助手</strong>，可以帮你分析榜单数据。试试问我：');
+    addBotMessage('你好！我是<strong>漫剧数据分析助手</strong>，可以帮你分析榜单数据。<br><br>💡 你可以指定 <strong>平台</strong>（红果/抖音）和 <strong>排名范围</strong>（前10/前20），例如："红果前10题材分布"、"抖音前20排名变化"');
     showSuggestions([
-      'Top10 题材有什么变化？',
-      '抖音和红果都上榜的作品',
-      '哪些是新上榜作品？',
-      '版权方排名',
-      '热度值最高的作品',
-      '漫剧类型分布'
+      '红果前10题材分布',
+      '抖音前10题材分布',
+      '红果制作类型分布',
+      '跨平台对比',
+      '新上榜作品',
+      '版权方排名'
     ]);
   }
   if (copilotOpen) {
@@ -1428,54 +1428,143 @@ function askCopilot(question) {
   }, 400 + Math.random() * 300);
 }
 
+// ---- 智能意图解析工具函数 ----
+
+// 从问题中解析平台意图
+function parsePlatformIntent(ql) {
+  const mentionDouyin = ql.includes('抖音') || ql.includes('douyin');
+  const mentionHongguo = ql.includes('红果') || ql.includes('hongguo');
+  if (mentionDouyin && mentionHongguo) return 'both';
+  if (mentionDouyin) return 'douyin';
+  if (mentionHongguo) return 'hongguo';
+  return 'all'; // 未指定 → 默认分析全部
+}
+
+function platformLabel(platform) {
+  if (platform === 'douyin') return '🎵 抖音榜';
+  if (platform === 'hongguo') return '🍎 红果榜';
+  if (platform === 'both') return '🎵 抖音榜 + 🍎 红果榜';
+  return '🎵 抖音榜 + 🍎 红果榜（全平台）';
+}
+
+// 从问题中解析排名范围（前N名）
+function parseRankLimit(ql) {
+  const patterns = [
+    /前(\d+)/,
+    /top\s*(\d+)/i,
+    /前(\d+)名/,
+    /top(\d+)/i,
+    /(\d+)名以内/,
+    /排名(\d+)以内/
+  ];
+  for (const p of patterns) {
+    const m = ql.match(p);
+    if (m) return parseInt(m[1]);
+  }
+  return 30; // 默认全部 Top30
+}
+
+// 从问题中解析时间范围
+function parseDateRange(ql, allDates) {
+  if (allDates.length === 0) return { dates: [], label: '无数据' };
+
+  if (ql.includes('今天') || ql.includes('今日') || ql.includes('最新')) {
+    return { dates: [allDates[0]], label: allDates[0] };
+  }
+  if (ql.includes('昨天') || ql.includes('昨日')) {
+    if (allDates.length >= 2) return { dates: [allDates[1]], label: allDates[1] };
+    return { dates: [allDates[0]], label: allDates[0] + '（仅有最新一天数据）' };
+  }
+  // 匹配具体日期 如 3/19、03-19、2026-03-19
+  const dateMatch = ql.match(/(\d{4}[-/])?\d{1,2}[-/]\d{1,2}/);
+  if (dateMatch) {
+    let ds = dateMatch[0].replace(/\//g, '-');
+    if (!ds.match(/^\d{4}/)) ds = new Date().getFullYear() + '-' + ds;
+    ds = ds.replace(/-(\d)(?=-|$)/g, '-0$1'); // 补零
+    const found = allDates.find(d => d === ds);
+    if (found) return { dates: [found], label: found };
+  }
+  // 最近N天
+  const recentMatch = ql.match(/最近(\d+)天/);
+  if (recentMatch) {
+    const n = Math.min(parseInt(recentMatch[1]), allDates.length);
+    const subset = allDates.slice(0, n);
+    return { dates: subset, label: `最近 ${n} 天（${subset[subset.length - 1]} ~ ${subset[0]}）` };
+  }
+
+  // 默认：全部日期
+  return {
+    dates: allDates,
+    label: allDates.length === 1 ? allDates[0] : `全部 ${allDates.length} 天（${allDates[allDates.length - 1]} ~ ${allDates[0]}）`
+  };
+}
+
+// 生成数据来源标签（每条回答开头都显示）
+function sourceTag(platformStr, dateLabel, rankLimit) {
+  let tag = `<div style="background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);border-radius:8px;padding:6px 10px;margin-bottom:10px;font-size:12px;color:#A78BFA;">`;
+  tag += `📋 数据范围：${platformStr}`;
+  if (rankLimit < 30) tag += ` | 排名前 ${rankLimit}`;
+  tag += ` | ${dateLabel}`;
+  tag += `</div>`;
+  return tag;
+}
+
 // 核心分析函数
 function analyzeQuestion(q) {
   const dates = getAvailableDates();
   const ql = q.toLowerCase();
+  const platform = parsePlatformIntent(ql);
+  const rankLimit = parseRankLimit(ql);
+  const dateRange = parseDateRange(ql, dates);
 
   // 题材/标签分析
-  if (ql.includes('题材') || ql.includes('标签') || ql.includes('类型分布') || ql.includes('tag')) {
-    return analyzeGenres(dates, ql);
+  if (ql.includes('题材') || ql.includes('标签') || ql.includes('类型分布') || ql.includes('tag') || ql.includes('分类') || ql.includes('类别')) {
+    return analyzeGenres(dateRange, ql, platform, rankLimit);
   }
 
-  // 跨平台对比
+  // 跨平台对比 — 强制使用 both
   if ((ql.includes('抖音') && ql.includes('红果')) || ql.includes('都上榜') || ql.includes('跨平台') || ql.includes('两个平台')) {
-    return analyzeCrossPlatform(dates);
+    return analyzeCrossPlatform(dateRange);
   }
 
   // 新上榜分析
   if (ql.includes('新上榜') || ql.includes('新作') || ql.includes('新入榜') || ql.includes('新剧')) {
-    return analyzeNewEntries(dates);
+    return analyzeNewEntries(dates, platform);
   }
 
   // 版权方/出品方分析
   if (ql.includes('版权') || ql.includes('出品') || ql.includes('publisher') || ql.includes('制作方')) {
-    return analyzePublishers(dates);
+    return analyzePublishers(dateRange, platform, rankLimit);
   }
 
   // 热度/播放量最高
   if (ql.includes('热度最高') || ql.includes('最热') || ql.includes('播放最高') || ql.includes('top1') || ql.includes('榜首')) {
-    return analyzeTopPerformers(dates);
+    return analyzeTopPerformers(dateRange, platform);
   }
 
   // 排名变化
   if (ql.includes('排名变化') || ql.includes('上升') || ql.includes('下降') || ql.includes('排名')) {
-    return analyzeRankChanges(dates);
+    return analyzeRankChanges(dates, platform);
   }
 
   // 账号分析（抖音）
   if (ql.includes('账号') || ql.includes('发布者') || ql.includes('account')) {
-    return analyzeAccounts(dates);
+    return analyzeAccounts(dateRange, rankLimit);
   }
 
   // 集数分析
   if (ql.includes('集数') || ql.includes('最长') || ql.includes('最短') || ql.includes('episode')) {
-    return analyzeEpisodes(dates);
+    return analyzeEpisodes(dateRange, platform, rankLimit);
   }
 
   // 概览/总结
   if (ql.includes('概览') || ql.includes('总结') || ql.includes('概况') || ql.includes('数据量') || ql.includes('有多少')) {
     return analyzeOverview(dates);
+  }
+
+  // 制作类型分布（红果榜特有）
+  if (ql.includes('制作类型') || ql.includes('ai仿真') || ql.includes('2d') || ql.includes('3d') || ql.includes('表情包')) {
+    return analyzeProductionType(dateRange, rankLimit);
   }
 
   // 具体作品查询
@@ -1492,23 +1581,29 @@ function analyzeQuestion(q) {
       🆕 <strong>新上榜作品</strong> — 当天新进入榜单的作品<br>
       🏢 <strong>版权方分析</strong> — 出品方/版权方的上榜数量<br>
       📈 <strong>排名变化</strong> — 作品在不同日期的排名变动<br>
-      🎬 <strong>作品查询</strong> — 直接输入剧名查看详情<br><br>
-      试试上面的快捷按钮，或直接提问！`,
-    suggestions: ['Top10 题材变化', '跨平台对比', '新上榜作品', '数据概览', '版权方排名', '集数分析']
+      🎬 <strong>作品查询</strong> — 直接输入剧名查看详情<br>
+      🎨 <strong>制作类型</strong> — AI仿真人/2D/3D/表情包分布<br><br>
+      💡 <strong>高级用法</strong>：可以限定平台和范围，如：<br>
+      &nbsp;&nbsp;• "红果榜前10题材分布"<br>
+      &nbsp;&nbsp;• "抖音榜前20排名变化"<br>
+      &nbsp;&nbsp;• "红果前5版权方"<br>`,
+    suggestions: ['红果前10题材分布', '抖音前10题材分布', '跨平台对比', '红果制作类型分布', '版权方排名', '集数分析']
   };
 }
 
-function analyzeGenres(dates, ql) {
+function analyzeGenres(dateRange, ql, platform, rankLimit) {
   const genreMap = {};
   const dateGenres = {};
+  const pLabel = platformLabel(platform);
 
-  for (const date of dates) {
+  for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
     dateGenres[date] = {};
 
     // 红果标签
-    if (dayData.hongguo && dayData.hongguo.items) {
-      for (const item of dayData.hongguo.items) {
+    if ((platform === 'all' || platform === 'hongguo' || platform === 'both') && dayData.hongguo && dayData.hongguo.items) {
+      const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
         const tags = (item.tags || '').split('/').map(t => t.trim()).filter(Boolean);
         for (const tag of tags) {
           genreMap[tag] = (genreMap[tag] || 0) + 1;
@@ -1517,8 +1612,9 @@ function analyzeGenres(dates, ql) {
       }
     }
     // 抖音类型
-    if (dayData.douyin && dayData.douyin.items) {
-      for (const item of dayData.douyin.items) {
+    if ((platform === 'all' || platform === 'douyin' || platform === 'both') && dayData.douyin && dayData.douyin.items) {
+      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
         const type = (item.type || '').trim();
         if (type && type !== '0') {
           genreMap[type] = (genreMap[type] || 0) + 1;
@@ -1530,17 +1626,20 @@ function analyzeGenres(dates, ql) {
 
   const sorted = Object.entries(genreMap).sort((a, b) => b[1] - a[1]);
   const top10 = sorted.slice(0, 10);
+  const totalTags = sorted.reduce((s, e) => s + e[1], 0);
 
-  let html = `<strong>📊 题材/标签 Top 10 分布</strong>（全部 ${dates.length} 天数据汇总）<br><br>`;
+  let html = sourceTag(pLabel, dateRange.label, rankLimit);
+  html += `<strong>📊 题材/标签 Top 10 分布</strong><br><br>`;
   top10.forEach((item, i) => {
+    const pct = totalTags > 0 ? Math.round(item[1] / totalTags * 100) : 0;
     const bar = '█'.repeat(Math.min(Math.ceil(item[1] / 2), 15));
-    html += `${i + 1}. <span class="tag">${item[0]}</span> — 出现 <span class="num">${item[1]}</span> 次 <span style="color:#8B5CF6;font-size:11px">${bar}</span><br>`;
+    html += `${i + 1}. <span class="tag">${item[0]}</span> — 出现 <span class="num">${item[1]}</span> 次（${pct}%） <span style="color:#8B5CF6;font-size:11px">${bar}</span><br>`;
   });
 
-  // 变化趋势（如果有多天数据）
-  if (dates.length >= 2) {
-    const latest = dates[0];
-    const prev = dates[1];
+  // 变化趋势
+  if (dateRange.dates.length >= 2) {
+    const latest = dateRange.dates[0];
+    const prev = dateRange.dates[1];
     const latestTags = dateGenres[latest] || {};
     const prevTags = dateGenres[prev] || {};
 
@@ -1568,14 +1667,15 @@ function analyzeGenres(dates, ql) {
     }
   }
 
-  return { html, suggestions: ['新上榜作品', '版权方排名', '跨平台对比'] };
+  return { html, suggestions: ['红果前10题材分布', '抖音前10题材分布', '新上榜作品', '版权方排名'] };
 }
 
-function analyzeCrossPlatform(dates) {
-  let html = '<strong>🔄 抖音 & 红果跨平台上榜分析</strong><br><br>';
+function analyzeCrossPlatform(dateRange) {
+  let html = sourceTag('🎵 抖音榜 + 🍎 红果榜（交叉对比）', dateRange.label, 30);
+  html += '<strong>🔄 抖音 & 红果跨平台上榜分析</strong><br><br>';
   let foundAny = false;
 
-  for (const date of dates) {
+  for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
     if (!dayData.douyin || !dayData.hongguo) continue;
 
@@ -1603,7 +1703,7 @@ function analyzeCrossPlatform(dates) {
   return { html, suggestions: ['题材分布', '排名变化', '热度最高作品'] };
 }
 
-function analyzeNewEntries(dates) {
+function analyzeNewEntries(dates, platform) {
   if (dates.length < 2) {
     return { html: '需要至少两天的数据才能分析新上榜作品，目前数据还不够。', suggestions: ['数据概览'] };
   }
@@ -1612,11 +1712,13 @@ function analyzeNewEntries(dates) {
   const prev = dates[1];
   const latestData = allData[latest] || {};
   const prevData = allData[prev] || {};
+  const pLabel = platformLabel(platform);
 
-  let html = `<strong>🆕 新上榜作品分析</strong>（${prev} → ${latest}）<br><br>`;
+  let html = sourceTag(pLabel, `${prev} → ${latest}`, 30);
+  html += `<strong>🆕 新上榜作品分析</strong><br><br>`;
 
   // 红果新上榜
-  if (latestData.hongguo && prevData.hongguo) {
+  if ((platform === 'all' || platform === 'hongguo' || platform === 'both') && latestData.hongguo && prevData.hongguo) {
     const prevNames = new Set(prevData.hongguo.items.map(i => i.name));
     const newItems = latestData.hongguo.items.filter(i => !prevNames.has(i.name));
     const exitItems = prevData.hongguo.items.filter(i => !latestData.hongguo.items.find(j => j.name === i.name));
@@ -1637,7 +1739,7 @@ function analyzeNewEntries(dates) {
   }
 
   // 抖音新上榜
-  if (latestData.douyin && prevData.douyin) {
+  if ((platform === 'all' || platform === 'douyin' || platform === 'both') && latestData.douyin && prevData.douyin) {
     const prevNames = new Set(prevData.douyin.items.map(i => i.name));
     const newItems = latestData.douyin.items.filter(i => !prevNames.has(i.name));
     const exitItems = prevData.douyin.items.filter(i => !latestData.douyin.items.find(j => j.name === i.name));
@@ -1659,15 +1761,27 @@ function analyzeNewEntries(dates) {
   return { html, suggestions: ['排名变化', '题材变化', '跨平台对比'] };
 }
 
-function analyzePublishers(dates) {
+function analyzePublishers(dateRange, platform, rankLimit) {
   const pubMap = {};
+  const pLabel = platformLabel(platform);
 
-  for (const date of dates) {
+  for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
-    if (dayData.hongguo && dayData.hongguo.items) {
-      for (const item of dayData.hongguo.items) {
+    if ((platform === 'all' || platform === 'hongguo' || platform === 'both') && dayData.hongguo && dayData.hongguo.items) {
+      const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
         const pub = item.publisher || '未知';
-        if (!pubMap[pub]) pubMap[pub] = { count: 0, dramas: new Set(), bestRank: 999 };
+        if (!pubMap[pub]) pubMap[pub] = { count: 0, dramas: new Set(), bestRank: 999, platform: '红果' };
+        pubMap[pub].count++;
+        pubMap[pub].dramas.add(item.name);
+        pubMap[pub].bestRank = Math.min(pubMap[pub].bestRank, item.rank);
+      }
+    }
+    if ((platform === 'all' || platform === 'douyin' || platform === 'both') && dayData.douyin && dayData.douyin.items) {
+      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
+        const pub = item.account || '未知';
+        if (!pubMap[pub]) pubMap[pub] = { count: 0, dramas: new Set(), bestRank: 999, platform: '抖音' };
         pubMap[pub].count++;
         pubMap[pub].dramas.add(item.name);
         pubMap[pub].bestRank = Math.min(pubMap[pub].bestRank, item.rank);
@@ -1678,7 +1792,8 @@ function analyzePublishers(dates) {
   const sorted = Object.entries(pubMap).sort((a, b) => b[1].count - a[1].count);
   const top10 = sorted.slice(0, 10);
 
-  let html = `<strong>🏢 版权方上榜排名 Top 10</strong>（红果榜 ${dates.length} 天汇总）<br><br>`;
+  let html = sourceTag(pLabel, dateRange.label, rankLimit);
+  html += `<strong>🏢 版权方/账号上榜排名 Top 10</strong><br><br>`;
   top10.forEach((item, i) => {
     const [name, data] = item;
     const dramaList = [...data.dramas].slice(0, 3).join('、');
@@ -1687,21 +1802,23 @@ function analyzePublishers(dates) {
     html += `&nbsp;&nbsp;&nbsp;代表作：${dramaList}<br><br>`;
   });
 
-  return { html, suggestions: ['题材分布', '新上榜作品', '账号分析'] };
+  return { html, suggestions: ['题材分布', '新上榜作品', '红果制作类型分布'] };
 }
 
-function analyzeTopPerformers(dates) {
-  let html = '<strong>🏆 各日期榜首作品</strong><br><br>';
+function analyzeTopPerformers(dateRange, platform) {
+  const pLabel = platformLabel(platform);
+  let html = sourceTag(pLabel, dateRange.label, 30);
+  html += '<strong>🏆 各日期榜首作品</strong><br><br>';
 
-  for (const date of dates) {
+  for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
     html += `📅 <strong>${date}</strong><br>`;
 
-    if (dayData.douyin && dayData.douyin.items.length > 0) {
+    if ((platform === 'all' || platform === 'douyin' || platform === 'both') && dayData.douyin && dayData.douyin.items.length > 0) {
       const top = dayData.douyin.items[0];
       html += `&nbsp;&nbsp;🎵 抖音：<span class="highlight">${top.name}</span> — 新增播放 <span class="num">${top.newPlay}</span>，累计 ${top.totalPlay}<br>`;
     }
-    if (dayData.hongguo && dayData.hongguo.items.length > 0) {
+    if ((platform === 'all' || platform === 'hongguo' || platform === 'both') && dayData.hongguo && dayData.hongguo.items.length > 0) {
       const top = dayData.hongguo.items[0];
       html += `&nbsp;&nbsp;🍎 红果：<span class="highlight">${top.name}</span> — 热度 <span class="num">${top.hotValue}</span><br>`;
     }
@@ -1711,90 +1828,97 @@ function analyzeTopPerformers(dates) {
   return { html, suggestions: ['排名变化', '新上榜作品', '跨平台对比'] };
 }
 
-function analyzeRankChanges(dates) {
+function analyzeRankChanges(dates, platform) {
   if (dates.length < 2) {
     return { html: '需要至少两天的数据才能分析排名变化。', suggestions: ['数据概览'] };
   }
 
   const latest = dates[0];
   const prev = dates[1];
-  let html = `<strong>📈 排名变化分析</strong>（${prev} → ${latest}）<br><br>`;
+  const pLabel = platformLabel(platform);
+  let html = sourceTag(pLabel, `${prev} → ${latest}`, 30);
+  html += `<strong>📈 排名变化分析</strong><br><br>`;
 
   // 红果排名变化
-  const latestHG = (allData[latest] || {}).hongguo;
-  const prevHG = (allData[prev] || {}).hongguo;
+  if (platform === 'all' || platform === 'hongguo' || platform === 'both') {
+    const latestHG = (allData[latest] || {}).hongguo;
+    const prevHG = (allData[prev] || {}).hongguo;
 
-  if (latestHG && prevHG) {
-    html += `🍎 <strong>红果榜排名变化：</strong><br>`;
-    const changes = [];
-    for (const item of latestHG.items) {
-      const prevItem = prevHG.items.find(i => i.name === item.name);
-      if (prevItem) {
-        const diff = prevItem.rank - item.rank;
-        changes.push({ name: item.name, rank: item.rank, diff, prevRank: prevItem.rank });
+    if (latestHG && prevHG) {
+      html += `🍎 <strong>红果榜排名变化：</strong><br>`;
+      const changes = [];
+      for (const item of latestHG.items) {
+        const prevItem = prevHG.items.find(i => i.name === item.name);
+        if (prevItem) {
+          const diff = prevItem.rank - item.rank;
+          changes.push({ name: item.name, rank: item.rank, diff, prevRank: prevItem.rank });
+        }
       }
-    }
 
-    const risers = changes.filter(c => c.diff > 0).sort((a, b) => b.diff - a.diff).slice(0, 5);
-    const fallers = changes.filter(c => c.diff < 0).sort((a, b) => a.diff - b.diff).slice(0, 5);
+      const risers = changes.filter(c => c.diff > 0).sort((a, b) => b.diff - a.diff).slice(0, 5);
+      const fallers = changes.filter(c => c.diff < 0).sort((a, b) => a.diff - b.diff).slice(0, 5);
 
-    if (risers.length > 0) {
-      html += '&nbsp;&nbsp;🔺 上升最快：<br>';
-      risers.forEach(c => {
-        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↑<span class="num">${c.diff}</span>位）<br>`;
-      });
+      if (risers.length > 0) {
+        html += '&nbsp;&nbsp;🔺 上升最快：<br>';
+        risers.forEach(c => {
+          html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↑<span class="num">${c.diff}</span>位）<br>`;
+        });
+      }
+      if (fallers.length > 0) {
+        html += '&nbsp;&nbsp;🔻 下降最多：<br>';
+        fallers.forEach(c => {
+          html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↓${Math.abs(c.diff)}位）<br>`;
+        });
+      }
+      html += '<br>';
     }
-    if (fallers.length > 0) {
-      html += '&nbsp;&nbsp;🔻 下降最多：<br>';
-      fallers.forEach(c => {
-        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↓${Math.abs(c.diff)}位）<br>`;
-      });
-    }
-    html += '<br>';
   }
 
   // 抖音排名变化
-  const latestDY = (allData[latest] || {}).douyin;
-  const prevDY = (allData[prev] || {}).douyin;
+  if (platform === 'all' || platform === 'douyin' || platform === 'both') {
+    const latestDY = (allData[latest] || {}).douyin;
+    const prevDY = (allData[prev] || {}).douyin;
 
-  if (latestDY && prevDY) {
-    html += `🎵 <strong>抖音榜排名变化：</strong><br>`;
-    const changes = [];
-    for (const item of latestDY.items) {
-      const prevItem = prevDY.items.find(i => i.name === item.name);
-      if (prevItem) {
-        const diff = prevItem.rank - item.rank;
-        changes.push({ name: item.name, rank: item.rank, diff, prevRank: prevItem.rank });
+    if (latestDY && prevDY) {
+      html += `🎵 <strong>抖音榜排名变化：</strong><br>`;
+      const changes = [];
+      for (const item of latestDY.items) {
+        const prevItem = prevDY.items.find(i => i.name === item.name);
+        if (prevItem) {
+          const diff = prevItem.rank - item.rank;
+          changes.push({ name: item.name, rank: item.rank, diff, prevRank: prevItem.rank });
+        }
       }
-    }
 
-    const risers = changes.filter(c => c.diff > 0).sort((a, b) => b.diff - a.diff).slice(0, 5);
-    const fallers = changes.filter(c => c.diff < 0).sort((a, b) => a.diff - b.diff).slice(0, 5);
+      const risers = changes.filter(c => c.diff > 0).sort((a, b) => b.diff - a.diff).slice(0, 5);
+      const fallers = changes.filter(c => c.diff < 0).sort((a, b) => a.diff - b.diff).slice(0, 5);
 
-    if (risers.length > 0) {
-      html += '&nbsp;&nbsp;🔺 上升最快：<br>';
-      risers.forEach(c => {
-        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↑<span class="num">${c.diff}</span>位）<br>`;
-      });
-    }
-    if (fallers.length > 0) {
-      html += '&nbsp;&nbsp;🔻 下降最多：<br>';
-      fallers.forEach(c => {
-        html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↓${Math.abs(c.diff)}位）<br>`;
-      });
+      if (risers.length > 0) {
+        html += '&nbsp;&nbsp;🔺 上升最快：<br>';
+        risers.forEach(c => {
+          html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↑<span class="num">${c.diff}</span>位）<br>`;
+        });
+      }
+      if (fallers.length > 0) {
+        html += '&nbsp;&nbsp;🔻 下降最多：<br>';
+        fallers.forEach(c => {
+          html += `&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">${c.name}</span> #${c.prevRank} → #${c.rank}（↓${Math.abs(c.diff)}位）<br>`;
+        });
+      }
     }
   }
 
   return { html, suggestions: ['新上榜作品', '题材变化', '热度最高作品'] };
 }
 
-function analyzeAccounts(dates) {
+function analyzeAccounts(dateRange, rankLimit) {
   const acctMap = {};
 
-  for (const date of dates) {
+  for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
     if (dayData.douyin && dayData.douyin.items) {
-      for (const item of dayData.douyin.items) {
+      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
         const acct = item.account || '未知';
         if (!acctMap[acct]) acctMap[acct] = { count: 0, dramas: new Set(), bestRank: 999 };
         acctMap[acct].count++;
@@ -1807,7 +1931,8 @@ function analyzeAccounts(dates) {
   const sorted = Object.entries(acctMap).sort((a, b) => b[1].count - a[1].count);
   const top10 = sorted.slice(0, 10);
 
-  let html = `<strong>📺 抖音账号上榜排名 Top 10</strong>（${dates.length} 天汇总）<br><br>`;
+  let html = sourceTag('🎵 抖音榜', dateRange.label, rankLimit);
+  html += `<strong>📺 抖音账号上榜排名 Top 10</strong><br><br>`;
   top10.forEach((item, i) => {
     const [name, data] = item;
     html += `${i + 1}. <strong>${name}</strong> — 上榜 <span class="num">${data.count}</span> 次，${data.dramas.size} 部作品，最高 #${data.bestRank}<br>`;
@@ -1816,18 +1941,21 @@ function analyzeAccounts(dates) {
   return { html, suggestions: ['版权方排名', '题材分布', '跨平台对比'] };
 }
 
-function analyzeEpisodes(dates) {
+function analyzeEpisodes(dateRange, platform, rankLimit) {
   const allEpisodes = [];
+  const pLabel = platformLabel(platform);
 
-  for (const date of dates) {
+  for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
-    if (dayData.hongguo && dayData.hongguo.items) {
-      for (const item of dayData.hongguo.items) {
+    if ((platform === 'all' || platform === 'hongguo' || platform === 'both') && dayData.hongguo && dayData.hongguo.items) {
+      const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
         allEpisodes.push({ name: item.name, episodes: item.episodes, platform: '红果', date });
       }
     }
-    if (dayData.douyin && dayData.douyin.items) {
-      for (const item of dayData.douyin.items) {
+    if ((platform === 'all' || platform === 'douyin' || platform === 'both') && dayData.douyin && dayData.douyin.items) {
+      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
         allEpisodes.push({ name: item.name, episodes: item.episodes, platform: '抖音', date });
       }
     }
@@ -1846,9 +1974,10 @@ function analyzeEpisodes(dates) {
   const longest = unique.slice(0, 5);
   const shortest = [...unique].sort((a, b) => a.episodes - b.episodes).slice(0, 5);
 
-  const avg = Math.round(unique.reduce((s, e) => s + e.episodes, 0) / unique.length);
+  const avg = unique.length > 0 ? Math.round(unique.reduce((s, e) => s + e.episodes, 0) / unique.length) : 0;
 
-  let html = `<strong>🎬 集数分析</strong><br><br>`;
+  let html = sourceTag(pLabel, dateRange.label, rankLimit);
+  html += `<strong>🎬 集数分析</strong><br><br>`;
   html += `平均集数：<span class="num">${avg}</span> 集<br><br>`;
 
   html += '📏 <strong>集数最多</strong>：<br>';
@@ -1862,6 +1991,79 @@ function analyzeEpisodes(dates) {
   });
 
   return { html, suggestions: ['题材分布', '版权方排名', '热度最高作品'] };
+}
+
+function analyzeProductionType(dateRange, rankLimit) {
+  const typeMap = {};
+  const dateTypes = {};
+
+  for (const date of dateRange.dates) {
+    const dayData = allData[date] || {};
+    dateTypes[date] = {};
+    if (dayData.hongguo && dayData.hongguo.items) {
+      const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
+        const t = item.type || '未分类';
+        typeMap[t] = (typeMap[t] || 0) + 1;
+        dateTypes[date][t] = (dateTypes[date][t] || 0) + 1;
+      }
+    }
+  }
+
+  const sorted = Object.entries(typeMap).sort((a, b) => b[1] - a[1]);
+  const total = sorted.reduce((s, e) => s + e[1], 0);
+  const colorMap = {'AI仿真人': '#C4B5FD', '2D': '#93C5FD', '3D': '#6EE7B7', '表情包': '#FCD34D'};
+
+  let html = sourceTag('🍎 红果榜', dateRange.label, rankLimit);
+  html += `<strong>🎨 红果榜制作类型分布</strong><br><br>`;
+
+  sorted.forEach((item, i) => {
+    const [name, count] = item;
+    const pct = total > 0 ? Math.round(count / total * 100) : 0;
+    const bar = '█'.repeat(Math.min(Math.ceil(count / 2), 15));
+    const color = colorMap[name] || '#888';
+    html += `${i + 1}. <span style="color:${color};font-weight:600">${name}</span> — <span class="num">${count}</span> 条（${pct}%） <span style="color:${color};font-size:11px">${bar}</span><br>`;
+  });
+
+  // 各类型代表作
+  html += '<br><strong>各类型代表作品：</strong><br>';
+  const typeDramas = {};
+  for (const date of dateRange.dates) {
+    const dayData = allData[date] || {};
+    if (dayData.hongguo && dayData.hongguo.items) {
+      const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
+        const t = item.type || '未分类';
+        if (!typeDramas[t]) typeDramas[t] = new Set();
+        typeDramas[t].add(item.name);
+      }
+    }
+  }
+  for (const [type, dramas] of Object.entries(typeDramas)) {
+    const color = colorMap[type] || '#888';
+    const list = [...dramas].slice(0, 4).join('、');
+    html += `&nbsp;&nbsp;<span style="color:${color}">${type}</span>：${list}<br>`;
+  }
+
+  // 日间变化
+  if (dateRange.dates.length >= 2) {
+    const latest = dateRange.dates[0];
+    const prev = dateRange.dates[1];
+    html += `<br><strong>📈 类型变化</strong>（${prev} → ${latest}）<br>`;
+    const allTypes = new Set([...Object.keys(dateTypes[latest] || {}), ...Object.keys(dateTypes[prev] || {})]);
+    for (const t of allTypes) {
+      const cur = (dateTypes[latest] || {})[t] || 0;
+      const pre = (dateTypes[prev] || {})[t] || 0;
+      const diff = cur - pre;
+      if (diff !== 0) {
+        const color = colorMap[t] || '#888';
+        const arrow = diff > 0 ? '🔺' : '🔻';
+        html += `&nbsp;&nbsp;${arrow} <span style="color:${color}">${t}</span>：${pre} → ${cur}（${diff > 0 ? '+' : ''}${diff}）<br>`;
+      }
+    }
+  }
+
+  return { html, suggestions: ['红果前10题材分布', '版权方排名', '跨平台对比'] };
 }
 
 function analyzeOverview(dates) {
@@ -1968,7 +2170,7 @@ init();
 <script>
 // 自动检测页面更新 —— 绕过 GitHub Pages CDN 缓存
 (function() {
-  const BUILD_TS = "2026032006043";
+  const BUILD_TS = "2026032006204";
   const metaEl = document.createElement('meta');
   metaEl.name = 'build-version';
   metaEl.content = BUILD_TS;
