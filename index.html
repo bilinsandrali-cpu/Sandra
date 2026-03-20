@@ -1227,7 +1227,7 @@ function getDefaultData() {
           {rank:23, name:"时间暂停，我在末世无敌了", tags:"末世/系统/都市/校园", publisher:"短剧版权6559576838", onlineDate:"01-16", episodes:60, type:"2D", hotValue:"4473万", synopsis:"末世降临，主角觉醒时间暂停异能。当所有人都在末世中苦苦挣扎时，他可以随意冻结时间搜刮物资、碾压变异体，在校园和都市中所向披靡。"},
           {rank:24, name:"大明战神朱三爷", tags:"宫廷/重生/逆袭/表情包", publisher:"福州木头软件有限公司", onlineDate:"03-12", episodes:75, type:"表情包", hotValue:"4468万", synopsis:"以'大明战神'明英宗朱祁镇为灵感创作的搞笑逆袭漫剧。主角重生为朱三爷，在宫廷权谋中以表情包式的画风展现重生逆袭、整顿朝纲的爆笑故事。"},
           {rank:25, name:"透视：我的双眼能鉴定万物", tags:"都市脑洞", publisher:"海看股份", onlineDate:"03-17", episodes:80, type:"其他", hotValue:"4467万", synopsis:"陈天赐遭女友背叛，被卖至翡翠矿场。一次意外令其双眼觉醒，获得鉴定万物价格之能。他凭此玩转珠宝古董，积累巨额财富，更助红颜渡过危机。"},
-          {rank:26, name:"人在修仙世界，和谁都能五五开？", tags:"古风/反转/逆袭", publisher:"短剧版权4980606402", onlineDate:"03-11", episodes:70, type:"其他", hotValue:"4461万", synopsis:"李舟君穿越成为仙门山主的第四十年，终于得到一个和谁都能五五开的系统。无论万年老怪还是绝世仙帝，他都能五五开。"},
+          {rank:26, name:"人在修仙世界，和谁都能五五开", tags:"古风/反转/逆袭", publisher:"短剧版权4980606402", onlineDate:"03-11", episodes:70, type:"其他", hotValue:"4461万", synopsis:"李舟君穿越成为仙门山主的第四十年，终于得到一个和谁都能五五开的系统。无论万年老怪还是绝世仙帝，他都能五五开。"},
           {rank:27, name:"师尊，机缘给您别骂我", tags:"时空之旅", publisher:"tomatotv", onlineDate:"03-06", episodes:75, type:"其他", hotValue:"4455万", synopsis:"缺少公开信息"},
           {rank:28, name:"爹且慢，我来了", tags:"萌宝/古代", publisher:"短剧版权3141518918", onlineDate:"03-09", episodes:34, type:"3D", hotValue:"4453万", synopsis:"缺少公开信息"},
           {rank:29, name:"三千庇护第八季", tags:"奇幻/异界", publisher:"短剧版权8642826809", onlineDate:"03-09", episodes:42, type:"2D", hotValue:"4444万", synopsis:"陈凡在荒原上率众抵御诡物入侵，升级蕴灵阁解锁批量制造能力，以弑神炮提升战力。各方势力纷纷造访，陈凡在乱局中守护三千避难所。"},
@@ -1235,7 +1235,7 @@ function getDefaultData() {
         ]
       }
     },
-    "2026-03-19": {
+"2026-03-19": {
       douyin: {
         date: "2026/3/19",
         items: [
@@ -1307,7 +1307,7 @@ function getDefaultData() {
         ]
       }
     },
-    "2026-03-18": {
+"2026-03-18": {
       douyin: {
         date: "2026/3/18",
         items: [
@@ -1379,7 +1379,7 @@ function getDefaultData() {
         ]
       }
     },
-    "2026-03-17": {
+"2026-03-17": {
       douyin: {
         date: "2026/3/17",
         items: [
@@ -1684,7 +1684,7 @@ async function pushToGitHub() {
 
     // 更新 CURRENT_BUILD 版本号
     const buildTs = new Date().toISOString().replace(/[-:T]/g, '').substring(0, 13);
-    const finalContent = newContent.replace(/CURRENT_BUILD\s*=\s*"[^"]*"/, `CURRENT_BUILD = "${buildTs}"`);
+    const finalContent = newContent.replace(/CURRENT_BUILD\s*=\s*"[^"]*"/, `CURRENT_BUILD = "2026032013252"`);
 
     setSyncProgress(70, '正在推送到 GitHub...');
 
