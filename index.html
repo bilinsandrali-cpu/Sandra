@@ -1938,5 +1938,30 @@ function analyzeDrama(drama, dates) {
 
 init();
 </script>
+<script>
+// 自动检测页面更新 —— 绕过 GitHub Pages CDN 缓存
+(function() {
+  const BUILD_TS = "20260320-1150";
+  const metaEl = document.createElement('meta');
+  metaEl.name = 'build-version';
+  metaEl.content = BUILD_TS;
+  document.head.appendChild(metaEl);
+
+  // 页面加载 2 秒后检测一次是否有新版本
+  setTimeout(async () => {
+    try {
+      const url = location.href.split('#')[0].split('?')[0];
+      const resp = await fetch(url + '?_t=' + Date.now(), { cache: 'no-store' });
+      if (!resp.ok) return;
+      const text = await resp.text();
+      const match = text.match(/BUILD_TS\s*=\s*"([^"]+)"/);
+      if (match && match[1] !== BUILD_TS) {
+        console.log('[auto-refresh] 检测到新版本:', match[1], '当前:', BUILD_TS);
+        location.reload(true);
+      }
+    } catch(e) { /* 静默失败 */ }
+  }, 2000);
+})();
+</script>
 </body>
 </html>
