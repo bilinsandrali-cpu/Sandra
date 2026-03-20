@@ -1756,9 +1756,9 @@ function analyzeQuestion(q) {
   const rankLimit = parseRankLimit(ql);
   const dateRange = parseDateRange(ql, dates);
 
-  // 制作类型分布（红果榜特有）— 必须在"题材"之前匹配，避免"制作类型分布"被"类型分布"误匹配
+  // 制作类型分布 — 必须在"题材"之前匹配，避免"制作类型分布"被"类型分布"误匹配
   if (ql.includes('制作类型') || ql.includes('ai仿真') || ql.includes('2d') || ql.includes('3d') || ql.includes('表情包')) {
-    return analyzeProductionType(dateRange, rankLimit);
+    return analyzeProductionType(dateRange, platform, rankLimit);
   }
 
   // 题材/标签分析（仅红果榜有题材标签数据，抖音没有）
@@ -2232,33 +2232,32 @@ function analyzeEpisodes(dateRange, platform, rankLimit) {
   return { html, suggestions: ['题材分布', '版权方排名', '热度最高作品'] };
 }
 
-function analyzeProductionType(dateRange, rankLimit) {
+function analyzeProductionType(dateRange, platform, rankLimit) {
   const typeMap = {};
   const dateTypes = {};
-  const platformTypeMap = { douyin: {}, hongguo: {} };
+  const includeHongguo = platform === 'all' || platform === 'hongguo' || platform === 'both';
+  const includeDouyin = platform === 'all' || platform === 'douyin' || platform === 'both';
 
   for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
     dateTypes[date] = {};
     // 红果
-    if (dayData.hongguo && dayData.hongguo.items) {
+    if (includeHongguo && dayData.hongguo && dayData.hongguo.items) {
       const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
       for (const item of items) {
         const t = item.type || '未分类';
         typeMap[t] = (typeMap[t] || 0) + 1;
         dateTypes[date][t] = (dateTypes[date][t] || 0) + 1;
-        platformTypeMap.hongguo[t] = (platformTypeMap.hongguo[t] || 0) + 1;
       }
     }
-    // 抖音也有制作类型
-    if (dayData.douyin && dayData.douyin.items) {
+    // 抖音
+    if (includeDouyin && dayData.douyin && dayData.douyin.items) {
       const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
       for (const item of items) {
         const t = (item.type || '').trim();
         if (t && t !== '0') {
           typeMap[t] = (typeMap[t] || 0) + 1;
           dateTypes[date][t] = (dateTypes[date][t] || 0) + 1;
-          platformTypeMap.douyin[t] = (platformTypeMap.douyin[t] || 0) + 1;
         }
       }
     }
@@ -2268,8 +2267,19 @@ function analyzeProductionType(dateRange, rankLimit) {
   const total = sorted.reduce((s, e) => s + e[1], 0);
   const colorMap = {'AI仿真人': '#C4B5FD', '2D': '#93C5FD', '3D': '#6EE7B7', '表情包': '#FCD34D'};
 
-  let html = sourceTag('🍎🎵 红果+抖音', dateRange.label, rankLimit);
-  html += `<strong>🎨 制作类型分布（双平台）</strong><br><br>`;
+  // 根据实际平台生成标题
+  const pLabel = (includeHongguo && includeDouyin) ? '🍎🎵 红果+抖音'
+    : includeHongguo ? '🍎 红果榜'
+    : '🎵 抖音榜';
+  const titleSuffix = (includeHongguo && includeDouyin) ? '（双平台）' : '';
+
+  let html = sourceTag(pLabel, dateRange.label, rankLimit);
+  html += `<strong>🎨 制作类型分布${titleSuffix}</strong><br><br>`;
+
+  if (sorted.length === 0) {
+    html += '暂无制作类型数据。';
+    return { html, suggestions: ['红果制作类型分布', '跨平台对比', '版权方排名'] };
+  }
 
   sorted.forEach((item, i) => {
     const [name, count] = item;
@@ -2282,23 +2292,24 @@ function analyzeProductionType(dateRange, rankLimit) {
   // 各类型代表作
   html += '<br><strong>各类型代表作品：</strong><br>';
   const typeDramas = {};
+  const showPlatformTag = includeHongguo && includeDouyin;
   for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
-    if (dayData.hongguo && dayData.hongguo.items) {
+    if (includeHongguo && dayData.hongguo && dayData.hongguo.items) {
       const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
       for (const item of items) {
         const t = item.type || '未分类';
         if (!typeDramas[t]) typeDramas[t] = new Set();
-        typeDramas[t].add(item.name + '（红果）');
+        typeDramas[t].add(item.name + (showPlatformTag ? '（红果）' : ''));
       }
     }
-    if (dayData.douyin && dayData.douyin.items) {
+    if (includeDouyin && dayData.douyin && dayData.douyin.items) {
       const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
       for (const item of items) {
         const t = (item.type || '').trim();
         if (t && t !== '0') {
           if (!typeDramas[t]) typeDramas[t] = new Set();
-          typeDramas[t].add(item.name + '（抖音）');
+          typeDramas[t].add(item.name + (showPlatformTag ? '（抖音）' : ''));
         }
       }
     }
