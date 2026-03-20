@@ -191,6 +191,107 @@
 
   .btn-secondary:hover { background: #3a3a5e; }
 
+  .btn-sync {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border: none;
+    position: relative;
+  }
+  .btn-sync:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-sync.has-changes::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+  }
+
+  .sync-modal {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 28px;
+    width: min(520px, 90vw);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .sync-modal h3 { margin: 0 0 16px; font-size: 18px; }
+  .sync-info {
+    background: rgba(99,102,241,0.1);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: #c4b5fd;
+  }
+  .sync-info a { color: #a78bfa; }
+  .sync-diff {
+    background: #1a1a2e;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  .sync-diff .diff-add { color: #4ade80; }
+  .sync-diff .diff-remove { color: #f87171; }
+  .sync-diff .diff-section { color: #94a3b8; font-weight: bold; margin-top: 8px; }
+  .sync-diff .diff-summary {
+    background: rgba(99,102,241,0.15);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  .sync-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+  }
+  .btn-text {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  .btn-text:hover { color: var(--text); }
+  .sync-progress-bar {
+    height: 6px;
+    background: #2a2a3e;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .sync-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  .sync-status {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .sync-success { color: #4ade80 !important; }
+  .sync-error { color: #f87171 !important; }
+
   .btn-export {
     background: linear-gradient(135deg, #059669, #10B981);
     color: white;
@@ -922,6 +1023,7 @@
         </div>
       </div>
       <button class="btn btn-secondary" onclick="importData()">↑ 导入JSON</button>
+      <button class="btn btn-sync" id="syncBtn" onclick="showSyncPanel()" title="同步到 GitHub">🔄 同步</button>
     </div>
   </div>
   <div class="top-tabs">
@@ -999,6 +1101,36 @@
     <div class="edit-actions">
       <button class="btn btn-secondary" onclick="closeEditModal()">取消</button>
       <button class="btn btn-primary" onclick="saveEdit()">💾 保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- GitHub 同步面板 -->
+<div class="modal-overlay" id="syncModal">
+  <div class="sync-modal">
+    <h3>🔄 同步到 GitHub</h3>
+    <div id="syncSetup" style="display:none">
+      <div class="sync-info">首次使用需配置 GitHub Token（<a href="https://github.com/settings/tokens/new?scopes=repo&description=manju-daily-sync" target="_blank">点此创建</a>，勾选 repo 权限）</div>
+      <div class="form-group">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="syncToken" placeholder="ghp_xxxxxxxxxxxx">
+      </div>
+      <div class="sync-actions">
+        <button class="btn btn-primary" onclick="saveGitHubToken()">💾 保存 Token</button>
+        <button class="btn btn-secondary" onclick="closeSyncPanel()">取消</button>
+      </div>
+    </div>
+    <div id="syncReady" style="display:none">
+      <div class="sync-diff" id="syncDiffArea"></div>
+      <div class="sync-actions">
+        <button class="btn btn-primary" id="syncPushBtn" onclick="pushToGitHub()">🚀 推送到 GitHub</button>
+        <button class="btn btn-secondary" onclick="closeSyncPanel()">关闭</button>
+        <button class="btn btn-text" onclick="showTokenSetup()" style="margin-left:auto;font-size:12px;">⚙️ 更换 Token</button>
+      </div>
+    </div>
+    <div id="syncProgress" style="display:none">
+      <div class="sync-progress-bar"><div class="sync-progress-fill" id="syncProgressFill"></div></div>
+      <div class="sync-status" id="syncStatusText">准备中...</div>
     </div>
   </div>
 </div>
@@ -1300,7 +1432,314 @@ function loadAllData() {
 
 function saveAllData(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  checkSyncStatus();
 }
+
+// ============ GitHub 同步功能 ============
+const GITHUB_TOKEN_KEY = 'manju_github_token';
+const GITHUB_OWNER = 'bilinsandrali-cpu';
+const GITHUB_REPO = 'Sandra';
+const GITHUB_FILE_PATH = 'index.html';
+const GITHUB_BRANCH = 'main';
+
+function getGitHubToken() {
+  return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+}
+
+function saveGitHubToken() {
+  const token = document.getElementById('syncToken').value.trim();
+  if (!token) { alert('请输入 Token'); return; }
+  localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  showSyncReady();
+}
+
+function showTokenSetup() {
+  document.getElementById('syncSetup').style.display = '';
+  document.getElementById('syncReady').style.display = 'none';
+  document.getElementById('syncProgress').style.display = 'none';
+  document.getElementById('syncToken').value = getGitHubToken();
+}
+
+function showSyncPanel() {
+  document.getElementById('syncModal').classList.add('show');
+  if (!getGitHubToken()) {
+    showTokenSetup();
+  } else {
+    showSyncReady();
+  }
+}
+
+function closeSyncPanel() {
+  document.getElementById('syncModal').classList.remove('show');
+}
+
+function showSyncReady() {
+  document.getElementById('syncSetup').style.display = 'none';
+  document.getElementById('syncReady').style.display = '';
+  document.getElementById('syncProgress').style.display = 'none';
+  renderDiffPreview();
+}
+
+function checkSyncStatus() {
+  const btn = document.getElementById('syncBtn');
+  if (!btn) return;
+  const defaultData = getDefaultData();
+  const currentJson = JSON.stringify(allData);
+  const defaultJson = JSON.stringify(defaultData);
+  if (currentJson !== defaultJson) {
+    btn.classList.add('has-changes');
+    btn.title = '有未同步的修改，点击推送到 GitHub';
+  } else {
+    btn.classList.remove('has-changes');
+    btn.title = '同步到 GitHub';
+  }
+}
+
+function renderDiffPreview() {
+  const area = document.getElementById('syncDiffArea');
+  const defaultData = getDefaultData();
+  const diffs = [];
+
+  for (const [date, dayData] of Object.entries(allData)) {
+    for (const platform of ['douyin', 'hongguo']) {
+      const cur = dayData && dayData[platform];
+      const def = defaultData[date] && defaultData[date][platform];
+
+      // 新增的日期/平台
+      if (cur && cur.items && cur.items.length > 0 && (!def || !def.items || def.items.length === 0)) {
+        diffs.push({ type: 'add', date, platform, desc: `新增 ${cur.items.length} 条数据` });
+        continue;
+      }
+      if (!cur || !cur.items || !def || !def.items) continue;
+
+      // 逐条对比
+      const maxLen = Math.max(cur.items.length, def.items.length);
+      for (let i = 0; i < maxLen; i++) {
+        const ci = cur.items[i];
+        const di = def.items[i];
+        if (!ci && di) {
+          diffs.push({ type: 'remove', date, platform, desc: `#${di.rank} ${di.name} 已删除` });
+        } else if (ci && !di) {
+          diffs.push({ type: 'add', date, platform, desc: `#${ci.rank} ${ci.name} 新增` });
+        } else if (ci && di) {
+          const changes = [];
+          for (const key of Object.keys(ci)) {
+            if (String(ci[key]) !== String(di[key])) {
+              changes.push(`${key}: ${di[key]} → ${ci[key]}`);
+            }
+          }
+          if (changes.length > 0) {
+            diffs.push({ type: 'change', date, platform, rank: ci.rank, name: ci.name || di.name, changes });
+          }
+        }
+      }
+    }
+  }
+
+  if (diffs.length === 0) {
+    area.innerHTML = '<div class="diff-summary">✅ 本地数据和源文件一致，无需同步。</div>';
+    document.getElementById('syncPushBtn').disabled = true;
+    document.getElementById('syncPushBtn').style.opacity = '0.5';
+    return;
+  }
+
+  document.getElementById('syncPushBtn').disabled = false;
+  document.getElementById('syncPushBtn').style.opacity = '';
+
+  let html = `<div class="diff-summary">📝 发现 <strong>${diffs.length}</strong> 处改动</div>`;
+  const grouped = {};
+  for (const d of diffs) {
+    const key = `${d.date} ${d.platform === 'douyin' ? '🎵抖音' : '🍎红果'}`;
+    if (!grouped[key]) grouped[key] = [];
+    grouped[key].push(d);
+  }
+  for (const [section, items] of Object.entries(grouped)) {
+    html += `<div class="diff-section">${section}</div>`;
+    for (const item of items) {
+      if (item.type === 'add') {
+        html += `<div class="diff-add">+ ${item.desc}</div>`;
+      } else if (item.type === 'remove') {
+        html += `<div class="diff-remove">- ${item.desc}</div>`;
+      } else if (item.type === 'change') {
+        html += `<div class="diff-add">~ #${item.rank} ${item.name}</div>`;
+        for (const c of item.changes) {
+          html += `<div style="padding-left:20px;color:#94a3b8;font-size:12px;">${c}</div>`;
+        }
+      }
+    }
+  }
+  area.innerHTML = html;
+}
+
+function setSyncProgress(pct, text, cls) {
+  document.getElementById('syncProgressFill').style.width = pct + '%';
+  const el = document.getElementById('syncStatusText');
+  el.textContent = text;
+  el.className = 'sync-status' + (cls ? ' ' + cls : '');
+}
+
+function serializeDataBlock(data) {
+  // 把 allData 序列化成和源文件一致的 JS 对象字面量格式
+  const lines = [];
+  const dates = Object.keys(data).sort().reverse();
+  for (const date of dates) {
+    const dayData = data[date];
+    lines.push(`"${date}": {`);
+
+    for (const platform of ['douyin', 'hongguo']) {
+      const pData = dayData[platform];
+      if (!pData || !pData.items || pData.items.length === 0) {
+        lines.push(`      ${platform}: null${platform === 'douyin' ? ',' : ''}`);
+        continue;
+      }
+      lines.push(`      ${platform}: {`);
+      lines.push(`        date: "${pData.date}",`);
+      lines.push(`        items: [`);
+
+      for (let i = 0; i < pData.items.length; i++) {
+        const item = pData.items[i];
+        const comma = i < pData.items.length - 1 ? ',' : '';
+        if (platform === 'douyin') {
+          const parts = [
+            `rank:${item.rank}`,
+            `name:${JSON.stringify(item.name)}`,
+            `account:${JSON.stringify(item.account || '')}`,
+            `affiliate:${JSON.stringify(item.affiliate || '')}`,
+            `episodes:${item.episodes || 0}`,
+            `type:${JSON.stringify(item.type || '')}`,
+            `newPlay:${JSON.stringify(item.newPlay || '')}`,
+            `totalPlay:${JSON.stringify(item.totalPlay || '')}`,
+            `synopsis:${JSON.stringify(item.synopsis || '')}`
+          ];
+          lines.push(`          {${parts.join(', ')}}${comma}`);
+        } else {
+          const parts = [
+            `rank:${item.rank}`,
+            `name:${JSON.stringify(item.name)}`,
+            `tags:${JSON.stringify(item.tags || '')}`,
+            `publisher:${JSON.stringify(item.publisher || '')}`,
+            `onlineDate:${JSON.stringify(item.onlineDate || '')}`,
+            `episodes:${item.episodes || 0}`,
+            `type:${JSON.stringify(item.type || '')}`,
+            `hotValue:${JSON.stringify(item.hotValue || '')}`,
+            `synopsis:${JSON.stringify(item.synopsis || '')}`
+          ];
+          lines.push(`          {${parts.join(', ')}}${comma}`);
+        }
+      }
+
+      lines.push(`        ]`);
+      lines.push(`      }${platform === 'douyin' ? ',' : ''}`);
+    }
+
+    const isLast = date === dates[dates.length - 1];
+    lines.push(`    }${isLast ? '' : ','}`);
+  }
+  return lines.join('\n');
+}
+
+async function pushToGitHub() {
+  const token = getGitHubToken();
+  if (!token) { showTokenSetup(); return; }
+
+  document.getElementById('syncReady').style.display = 'none';
+  document.getElementById('syncProgress').style.display = '';
+  setSyncProgress(10, '正在获取最新文件...');
+
+  try {
+    // Step 1: 获取当前文件的 sha 和内容
+    const getResp = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}?ref=${GITHUB_BRANCH}`,
+      { headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
+    );
+    if (!getResp.ok) {
+      if (getResp.status === 401) throw new Error('Token 无效或已过期，请重新配置');
+      if (getResp.status === 404) throw new Error('仓库或文件不存在');
+      throw new Error(`GitHub API 错误: ${getResp.status}`);
+    }
+    const fileInfo = await getResp.json();
+    const sha = fileInfo.sha;
+    setSyncProgress(30, '正在解码文件内容...');
+
+    // Step 2: 解码文件内容
+    const content = decodeURIComponent(escape(atob(fileInfo.content.replace(/\n/g, ''))));
+    setSyncProgress(50, '正在替换数据...');
+
+    // Step 3: 替换数据块
+    const marker = 'function getDefaultData() {';
+    const dataBlockStart = content.indexOf(marker);
+    if (dataBlockStart === -1) throw new Error('无法在源文件中找到数据块');
+
+    const returnIdx = content.indexOf('return {', dataBlockStart);
+    if (returnIdx === -1) throw new Error('无法找到 return 语句');
+    const afterReturn = content.indexOf('\n', returnIdx) + 1; // "return {\n" 之后的位置
+
+    // 找 getDefaultData 函数结束后紧跟的 loadAllData 函数作为锚点
+    const endAnchor = 'function loadAllData()';
+    const endIdx = content.indexOf(endAnchor, afterReturn);
+    if (endIdx === -1) throw new Error('无法找到数据块结束锚点');
+
+    const newDataBlock = serializeDataBlock(allData);
+    const newContent = content.substring(0, afterReturn) + newDataBlock + '\n  };\n}\n\n' + content.substring(endIdx);
+
+    // 更新 BUILD_TS
+    const buildTs = new Date().toISOString().replace(/[-:T]/g, '').substring(0, 13);
+    const finalContent = newContent.replace(/BUILD_TS\s*=\s*"[^"]*"/, `BUILD_TS = "${buildTs}"`);
+
+    setSyncProgress(70, '正在推送到 GitHub...');
+
+    // Step 4: 推送更新
+    const encoded = btoa(unescape(encodeURIComponent(finalContent)));
+    const putResp = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `sync: 从网页同步数据更新 (${new Date().toLocaleString('zh-CN')})`,
+          content: encoded,
+          sha: sha,
+          branch: GITHUB_BRANCH
+        })
+      }
+    );
+
+    if (!putResp.ok) {
+      const errBody = await putResp.text();
+      if (putResp.status === 409) throw new Error('文件冲突，请刷新页面后重试');
+      if (putResp.status === 422) throw new Error('文件内容编码错误');
+      throw new Error(`推送失败: ${putResp.status} ${errBody.substring(0, 100)}`);
+    }
+
+    setSyncProgress(100, '✅ 同步成功！GitHub Pages 将在 1-2 分钟后自动更新', 'sync-success');
+
+    // 同步成功后更新按钮状态
+    document.getElementById('syncBtn').classList.remove('has-changes');
+
+    // 3秒后关闭
+    setTimeout(() => {
+      closeSyncPanel();
+      document.getElementById('syncProgress').style.display = 'none';
+    }, 3000);
+
+  } catch (err) {
+    setSyncProgress(0, '❌ ' + err.message, 'sync-error');
+    // 显示重试按钮
+    setTimeout(() => {
+      document.getElementById('syncProgress').style.display = 'none';
+      showSyncReady();
+    }, 3000);
+  }
+}
+
+// 页面加载时检查同步状态
+setTimeout(checkSyncStatus, 500);
+
+document.getElementById('syncModal').addEventListener('click', function(e) { if (e.target === this) closeSyncPanel(); });
 
 let allData = loadAllData();
 let currentDate = '';
