@@ -1682,9 +1682,9 @@ async function pushToGitHub() {
     const newDataBlock = serializeDataBlock(allData);
     const newContent = content.substring(0, afterReturn) + newDataBlock + '\n  };\n}\n\n' + content.substring(endIdx);
 
-    // 更新 BUILD_TS
+    // 更新 CURRENT_BUILD 版本号
     const buildTs = new Date().toISOString().replace(/[-:T]/g, '').substring(0, 13);
-    const finalContent = newContent.replace(/BUILD_TS\s*=\s*"[^"]*"/, `BUILD_TS = "${buildTs}"`);
+    const finalContent = newContent.replace(/CURRENT_BUILD\s*=\s*"[^"]*"/, `CURRENT_BUILD = "${buildTs}"`);
 
     setSyncProgress(70, '正在推送到 GitHub...');
 
@@ -3144,26 +3144,41 @@ init();
 <script>
 // 自动检测页面更新 —— 绕过 GitHub Pages CDN 缓存
 (function() {
-  const BUILD_TS = "2026032012313";
-  const metaEl = document.createElement('meta');
-  metaEl.name = 'build-version';
-  metaEl.content = BUILD_TS;
-  document.head.appendChild(metaEl);
+  var CURRENT_BUILD = "2026032012313";
 
-  // 页面加载 2 秒后检测一次是否有新版本
-  setTimeout(async () => {
+  // 防循环：如果 URL 已经带了 _reloaded 参数，说明刚刷新过，不再检测
+  if (location.search.indexOf('_reloaded=') !== -1) {
+    // 清理 URL 中的 _reloaded 参数，保持地址栏干净
     try {
-      const url = location.href.split('#')[0].split('?')[0];
-      const resp = await fetch(url + '?_t=' + Date.now(), { cache: 'no-store' });
+      var cleanUrl = location.href.replace(/[?&]_reloaded=[^&]+/, '').replace(/\?$/, '');
+      if (cleanUrl !== location.href) {
+        history.replaceState(null, '', cleanUrl);
+      }
+    } catch(e) {}
+    return;
+  }
+
+  // 页面加载 3 秒后检测一次是否有新版本
+  setTimeout(async function() {
+    try {
+      var baseUrl = location.href.split('#')[0].split('?')[0];
+      var resp = await fetch(baseUrl + '?_t=' + Date.now(), { cache: 'no-store' });
       if (!resp.ok) return;
-      const text = await resp.text();
-      const match = text.match(/BUILD_TS\s*=\s*"([^"]+)"/);
-      if (match && match[1] !== BUILD_TS) {
-        console.log('[auto-refresh] 检测到新版本:', match[1], '当前:', BUILD_TS);
-        location.reload(true);
+      var text = await resp.text();
+      // 只匹配第二个 script 块中的 CURRENT_BUILD 声明
+      var marker = '// 自动检测页面更新';
+      var blockStart = text.indexOf(marker);
+      if (blockStart === -1) return;
+      var block = text.substring(blockStart, blockStart + 500);
+      var match = block.match(/CURRENT_BUILD\s*=\s*"([^"]+)"/);
+      if (match && match[1] !== CURRENT_BUILD) {
+        console.log('[auto-refresh] 检测到新版本:', match[1], '当前:', CURRENT_BUILD);
+        // 带 _reloaded 参数刷新，防止无限循环
+        var separator = location.href.indexOf('?') === -1 ? '?' : '&';
+        location.href = location.href.split('#')[0] + separator + '_reloaded=' + Date.now() + (location.hash || '');
       }
     } catch(e) { /* 静默失败 */ }
-  }, 2000);
+  }, 3000);
 })();
 </script>
 </body>
