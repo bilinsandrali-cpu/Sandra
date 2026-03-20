@@ -771,6 +771,46 @@
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #3a3a4e; border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: #5a5a6e; }
+
+  /* AI Settings Panel */
+  .copilot-header-actions { display: flex; align-items: center; gap: 6px; }
+  .copilot-header-actions button {
+    background: transparent; border: none; color: var(--text-muted);
+    font-size: 16px; cursor: pointer; padding: 4px 6px; border-radius: 6px; transition: all 0.15s;
+  }
+  .copilot-header-actions button:hover { background: rgba(255,255,255,0.1); color: white; }
+
+  .ai-badge {
+    font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600;
+    margin-left: 6px; vertical-align: middle;
+  }
+  .ai-badge.ai-on { background: rgba(16,185,129,0.2); color: #10B981; }
+  .ai-badge.ai-off { background: rgba(100,100,120,0.2); color: #888; }
+
+  .copilot-settings {
+    display: none; padding: 16px; border-bottom: 1px solid #2a2a3e;
+    background: rgba(20,20,35,0.95);
+  }
+  .copilot-settings.show { display: block; }
+  .copilot-settings h4 { font-size: 13px; margin: 0 0 12px; color: #A78BFA; }
+  .settings-group { margin-bottom: 10px; }
+  .settings-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  .settings-group input, .settings-group select {
+    width: 100%; background: #2a2a3e; border: 1px solid #3a3a4e; color: var(--text);
+    padding: 8px 10px; border-radius: 8px; font-size: 13px; font-family: inherit; box-sizing: border-box;
+  }
+  .settings-save {
+    margin-top: 12px; width: 100%; padding: 8px; background: #8B5CF6;
+    border: none; border-radius: 8px; color: white; font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .settings-save:hover { opacity: 0.85; }
+  .settings-status { font-size: 11px; color: #10B981; margin-top: 6px; display: none; }
+  .settings-status.show { display: block; }
+
+  .copilot-msg .ai-source {
+    display: inline-block; font-size: 10px; color: var(--text-muted);
+    margin-top: 6px; opacity: 0.7;
+  }
 </style>
 </head>
 <body>
@@ -881,8 +921,34 @@
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
       </div>
       <span class="copilot-header-title">漫剧数据分析助手</span>
+      <span class="ai-badge ai-off" id="aiBadge">本地引擎</span>
     </div>
-    <button class="copilot-close" onclick="toggleCopilot()">✕</button>
+    <div class="copilot-header-actions">
+      <button onclick="toggleAISettings()" title="AI 设置">⚙️</button>
+      <button onclick="clearCopilotChat()" title="清空对话">🗑️</button>
+      <button class="copilot-close" onclick="toggleCopilot()" style="font-size:20px">✕</button>
+    </div>
+  </div>
+  <!-- AI Settings -->
+  <div class="copilot-settings" id="copilotAISettings">
+    <h4>⚙️ AI 增强设置</h4>
+    <div class="settings-group">
+      <label>Worker URL（Cloudflare Worker 代理地址）</label>
+      <input type="text" id="settingsWorkerUrl" placeholder="https://manju-ai-proxy.xxx.workers.dev">
+    </div>
+    <div class="settings-group">
+      <label>AI 提供商</label>
+      <select id="settingsProvider">
+        <option value="openai">OpenAI (GPT-4o-mini)</option>
+        <option value="claude">Claude (Haiku)</option>
+      </select>
+    </div>
+    <div class="settings-group">
+      <label>自定义模型名称（可选，留空用默认）</label>
+      <input type="text" id="settingsModel" placeholder="">
+    </div>
+    <button class="settings-save" onclick="saveAISettings()">保存设置</button>
+    <div class="settings-status" id="settingsStatus">✅ 设置已保存</div>
   </div>
   <div class="copilot-messages" id="copilotMessages"></div>
   <div class="copilot-suggestions" id="copilotSuggestions"></div>
@@ -1353,7 +1419,9 @@ function toggleCopilot() {
   document.getElementById('copilotOverlay').classList.toggle('show', copilotOpen);
   if (copilotOpen && !copilotInited) {
     copilotInited = true;
-    addBotMessage('你好！我是<strong>漫剧数据分析助手</strong>，可以帮你分析榜单数据。<br><br>💡 你可以指定 <strong>平台</strong>（红果/抖音）和 <strong>排名范围</strong>（前10/前20），例如："红果前10题材分布"、"抖音前20排名变化"');
+    initAISettings();
+    const badge = getAISettings().workerUrl ? '配置了 AI 增强后，可以用自然语言提任何问题。' : '💡 点击 ⚙️ 可配置 AI 增强（Worker URL），支持自然语言提问。';
+    addBotMessage('你好！我是<strong>漫剧数据分析助手</strong>，可以帮你分析榜单数据。<br><br>💡 你可以指定 <strong>平台</strong>（红果/抖音）和 <strong>排名范围</strong>（前10/前20），例如："红果前10题材分布"、"抖音前20排名变化"<br><br><span style="font-size:12px;color:#888;">' + badge + '</span>');
     showSuggestions([
       '红果前10题材分布',
       '抖音前10题材分布',
@@ -1416,16 +1484,187 @@ function sendCopilotMessage() {
   askCopilot(text);
 }
 
-function askCopilot(question) {
+let copilotProcessing = false;
+
+async function askCopilot(question) {
+  if (copilotProcessing) return;
   addUserMessage(question);
   showTyping();
-  setTimeout(() => {
-    removeTyping();
-    const answer = analyzeQuestion(question);
-    addBotMessage(answer.html);
-    if (answer.suggestions) showSuggestions(answer.suggestions);
-    else showSuggestions(['Top10 题材变化', '新上榜作品', '版权方排名', '跨平台对比']);
-  }, 400 + Math.random() * 300);
+  
+  const settings = getAISettings();
+  
+  if (settings.workerUrl) {
+    // AI 增强模式：先尝试 Worker AI
+    copilotProcessing = true;
+    try {
+      const aiResult = await callWorkerAI(question, settings);
+      removeTyping();
+      const source = `via ${aiResult.model || settings.provider}` + 
+        (aiResult.usage ? ` · ${aiResult.usage.total_tokens} tokens` : '');
+      addBotMessage(formatAIResponse(aiResult.content) + `<br><span class="ai-source">— ${source}</span>`);
+      showSuggestions(['继续深入分析', '换个角度看', '对比其他平台']);
+    } catch (aiErr) {
+      console.warn('AI call failed, falling back to local engine:', aiErr);
+      removeTyping();
+      // Fallback 到本地引擎
+      const answer = analyzeQuestion(question);
+      addBotMessage(answer.html + `<br><span class="ai-source">⚠️ AI 调用失败（${aiErr.message}），已使用本地引擎回答</span>`);
+      if (answer.suggestions) showSuggestions(answer.suggestions);
+      else showSuggestions(['Top10 题材变化', '新上榜作品', '版权方排名', '跨平台对比']);
+    } finally {
+      copilotProcessing = false;
+    }
+  } else {
+    // 纯本地引擎模式
+    setTimeout(() => {
+      removeTyping();
+      const answer = analyzeQuestion(question);
+      addBotMessage(answer.html);
+      if (answer.suggestions) showSuggestions(answer.suggestions);
+      else showSuggestions(['Top10 题材变化', '新上榜作品', '版权方排名', '跨平台对比']);
+    }, 400 + Math.random() * 300);
+  }
+}
+
+// ---- AI 增强功能 ----
+
+const AI_SETTINGS_KEY = 'manju_copilot_ai_settings';
+
+function getAISettings() {
+  try {
+    const s = localStorage.getItem(AI_SETTINGS_KEY);
+    return s ? JSON.parse(s) : {};
+  } catch(e) { return {}; }
+}
+
+function initAISettings() {
+  const settings = getAISettings();
+  document.getElementById('settingsWorkerUrl').value = settings.workerUrl || '';
+  document.getElementById('settingsProvider').value = settings.provider || 'openai';
+  document.getElementById('settingsModel').value = settings.model || '';
+  updateAIBadge();
+}
+
+function updateAIBadge() {
+  const settings = getAISettings();
+  const badge = document.getElementById('aiBadge');
+  if (settings.workerUrl) {
+    badge.textContent = settings.provider === 'claude' ? 'Claude AI' : 'OpenAI';
+    badge.className = 'ai-badge ai-on';
+  } else {
+    badge.textContent = '本地引擎';
+    badge.className = 'ai-badge ai-off';
+  }
+}
+
+function saveAISettings() {
+  const settings = {
+    workerUrl: document.getElementById('settingsWorkerUrl').value.trim().replace(/\/+$/, ''),
+    provider: document.getElementById('settingsProvider').value,
+    model: document.getElementById('settingsModel').value.trim()
+  };
+  localStorage.setItem(AI_SETTINGS_KEY, JSON.stringify(settings));
+  updateAIBadge();
+  const status = document.getElementById('settingsStatus');
+  status.classList.add('show');
+  setTimeout(() => status.classList.remove('show'), 2000);
+}
+
+function toggleAISettings() {
+  const panel = document.getElementById('copilotAISettings');
+  panel.classList.toggle('show');
+}
+
+function clearCopilotChat() {
+  const container = document.getElementById('copilotMessages');
+  container.innerHTML = '';
+  addBotMessage('对话已清空，可以重新开始提问。');
+  showSuggestions(['红果前10题材分布', '抖音前10题材分布', '跨平台对比', '版权方排名']);
+}
+
+function getCurrentDataContext() {
+  const dates = getAvailableDates();
+  const context = { dates: dates.slice(0, 3) }; // 最近3天
+  const dataByDate = {};
+  
+  for (const date of context.dates) {
+    const dayData = allData[date] || {};
+    dataByDate[date] = {};
+    if (dayData.douyin && dayData.douyin.items && dayData.douyin.items.length > 0) {
+      dataByDate[date].douyin = dayData.douyin.items.map(i => ({
+        rank: i.rank, name: i.name, account: i.account,
+        type: i.type, newPlay: i.newPlay, totalPlay: i.totalPlay, episodes: i.episodes
+      }));
+    }
+    if (dayData.hongguo && dayData.hongguo.items && dayData.hongguo.items.length > 0) {
+      dataByDate[date].hongguo = dayData.hongguo.items.map(i => ({
+        rank: i.rank, name: i.name, tags: i.tags,
+        publisher: i.publisher, hotValue: i.hotValue, episodes: i.episodes, type: i.type
+      }));
+    }
+  }
+  context.data = dataByDate;
+  return context;
+}
+
+async function callWorkerAI(question, settings) {
+  const context = getCurrentDataContext();
+  
+  let dataDesc = '';
+  for (const date of context.dates) {
+    const d = context.data[date];
+    if (d.douyin) {
+      dataDesc += `\n📊 抖音漫剧热播榜（${date}）TOP${d.douyin.length}：\n${JSON.stringify(d.douyin, null, 2)}\n`;
+    }
+    if (d.hongguo) {
+      dataDesc += `\n📊 红果漫剧热播榜（${date}）TOP${d.hongguo.length}：\n${JSON.stringify(d.hongguo, null, 2)}\n`;
+    }
+  }
+  if (!dataDesc) dataDesc = '（当前无榜单数据）';
+
+  const systemPrompt = `你是"漫剧有数"数据分析助手。你需要基于以下榜单数据回答用户的问题。
+
+可用数据日期：${context.dates.join(', ')}
+${dataDesc}
+
+回答要求：
+1. 回答简洁有条理，善用数据佐证
+2. 如果数据中没有相关信息，如实说明
+3. 适当使用 emoji 让回答更易读
+4. 播放量/热度值带上单位
+5. 对比分析时标注数据来源（抖音榜/红果榜）
+6. 用 Markdown 格式（**加粗**、列表等）`;
+
+  const body = {
+    provider: settings.provider || 'openai',
+    model: settings.model || undefined,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: question }
+    ]
+  };
+
+  const response = await fetch(settings.workerUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Worker ${response.status}: ${err.substring(0, 100)}`);
+  }
+
+  const data = await response.json();
+  if (!data.success) throw new Error(data.error || '未知错误');
+  return { content: data.content, model: data.model, usage: data.usage };
+}
+
+function formatAIResponse(text) {
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
 }
 
 // ---- 智能意图解析工具函数 ----
