@@ -1424,11 +1424,11 @@ function toggleCopilot() {
     addBotMessage('你好！我是<strong>漫剧数据分析助手</strong>，可以帮你分析榜单数据。<br><br>💡 你可以指定 <strong>平台</strong>（红果/抖音）和 <strong>排名范围</strong>（前10/前20），例如："红果前10题材分布"、"抖音前20排名变化"<br><br><span style="font-size:12px;color:#888;">' + badge + '</span>');
     showSuggestions([
       '红果前10题材分布',
-      '抖音前10题材分布',
       '红果制作类型分布',
       '跨平台对比',
       '新上榜作品',
-      '版权方排名'
+      '版权方排名',
+      '数据概况'
     ]);
   }
   if (copilotOpen) {
@@ -1579,7 +1579,7 @@ function clearCopilotChat() {
   const container = document.getElementById('copilotMessages');
   container.innerHTML = '';
   addBotMessage('对话已清空，可以重新开始提问。');
-  showSuggestions(['红果前10题材分布', '抖音前10题材分布', '跨平台对比', '版权方排名']);
+  showSuggestions(['红果前10题材分布', '红果制作类型分布', '跨平台对比', '版权方排名']);
 }
 
 function getCurrentDataContext() {
@@ -1756,8 +1756,20 @@ function analyzeQuestion(q) {
   const rankLimit = parseRankLimit(ql);
   const dateRange = parseDateRange(ql, dates);
 
-  // 题材/标签分析
+  // 制作类型分布（红果榜特有）— 必须在"题材"之前匹配，避免"制作类型分布"被"类型分布"误匹配
+  if (ql.includes('制作类型') || ql.includes('ai仿真') || ql.includes('2d') || ql.includes('3d') || ql.includes('表情包')) {
+    return analyzeProductionType(dateRange, rankLimit);
+  }
+
+  // 题材/标签分析（仅红果榜有题材标签数据，抖音没有）
   if (ql.includes('题材') || ql.includes('标签') || ql.includes('类型分布') || ql.includes('tag') || ql.includes('分类') || ql.includes('类别')) {
+    // 如果用户指定了抖音，提示抖音无此数据
+    if (platform === 'douyin') {
+      return {
+        html: '⚠️ 抖音榜暂无题材标签数据，题材/标签分析仅支持<strong>红果榜</strong>。<br><br>💡 你可以试试：<br>• "红果题材分布" — 查看红果榜题材标签分布<br>• "制作类型分布" — 查看制作类型（AI仿真人/2D/3D/表情包），红果和抖音都有',
+        suggestions: ['红果前10题材分布', '红果制作类型分布', '跨平台对比', '版权方排名']
+      };
+    }
     return analyzeGenres(dateRange, ql, platform, rankLimit);
   }
 
@@ -1801,11 +1813,6 @@ function analyzeQuestion(q) {
     return analyzeOverview(dates);
   }
 
-  // 制作类型分布（红果榜特有）
-  if (ql.includes('制作类型') || ql.includes('ai仿真') || ql.includes('2d') || ql.includes('3d') || ql.includes('表情包')) {
-    return analyzeProductionType(dateRange, rankLimit);
-  }
-
   // 具体作品查询
   const matchedDrama = findDramaByName(q, dates);
   if (matchedDrama) {
@@ -1826,7 +1833,7 @@ function analyzeQuestion(q) {
       &nbsp;&nbsp;• "红果榜前10题材分布"<br>
       &nbsp;&nbsp;• "抖音榜前20排名变化"<br>
       &nbsp;&nbsp;• "红果前5版权方"<br>`,
-    suggestions: ['红果前10题材分布', '抖音前10题材分布', '跨平台对比', '红果制作类型分布', '版权方排名', '集数分析']
+    suggestions: ['红果前10题材分布', '红果制作类型分布', '跨平台对比', '版权方排名', '集数分析', '数据概况']
   };
 }
 
@@ -1839,8 +1846,8 @@ function analyzeGenres(dateRange, ql, platform, rankLimit) {
     const dayData = allData[date] || {};
     dateGenres[date] = {};
 
-    // 红果标签
-    if ((platform === 'all' || platform === 'hongguo' || platform === 'both') && dayData.hongguo && dayData.hongguo.items) {
+    // 红果标签（仅红果榜有题材标签，抖音没有此字段）
+    if (dayData.hongguo && dayData.hongguo.items) {
       const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
       for (const item of items) {
         const tags = (item.tags || '').split('/').map(t => t.trim()).filter(Boolean);
@@ -1850,25 +1857,18 @@ function analyzeGenres(dateRange, ql, platform, rankLimit) {
         }
       }
     }
-    // 抖音类型
-    if ((platform === 'all' || platform === 'douyin' || platform === 'both') && dayData.douyin && dayData.douyin.items) {
-      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
-      for (const item of items) {
-        const type = (item.type || '').trim();
-        if (type && type !== '0') {
-          genreMap[type] = (genreMap[type] || 0) + 1;
-          dateGenres[date][type] = (dateGenres[date][type] || 0) + 1;
-        }
-      }
-    }
   }
 
   const sorted = Object.entries(genreMap).sort((a, b) => b[1] - a[1]);
   const top10 = sorted.slice(0, 10);
   const totalTags = sorted.reduce((s, e) => s + e[1], 0);
 
-  let html = sourceTag(pLabel, dateRange.label, rankLimit);
-  html += `<strong>📊 题材/标签 Top 10 分布</strong><br><br>`;
+  let html = sourceTag('🍎 红果榜', dateRange.label, rankLimit);
+  html += `<strong>📊 红果榜题材/标签 Top 10 分布</strong><br><br>`;
+  if (top10.length === 0) {
+    html += '暂无题材标签数据。<br><br>💡 题材/标签分析仅支持红果榜。';
+    return { html, suggestions: ['红果制作类型分布', '跨平台对比', '版权方排名'] };
+  }
   top10.forEach((item, i) => {
     const pct = totalTags > 0 ? Math.round(item[1] / totalTags * 100) : 0;
     const bar = '█'.repeat(Math.min(Math.ceil(item[1] / 2), 15));
@@ -1906,7 +1906,7 @@ function analyzeGenres(dateRange, ql, platform, rankLimit) {
     }
   }
 
-  return { html, suggestions: ['红果前10题材分布', '抖音前10题材分布', '新上榜作品', '版权方排名'] };
+  return { html, suggestions: ['红果前10题材分布', '红果制作类型分布', '新上榜作品', '版权方排名'] };
 }
 
 function analyzeCrossPlatform(dateRange) {
@@ -2235,16 +2235,31 @@ function analyzeEpisodes(dateRange, platform, rankLimit) {
 function analyzeProductionType(dateRange, rankLimit) {
   const typeMap = {};
   const dateTypes = {};
+  const platformTypeMap = { douyin: {}, hongguo: {} };
 
   for (const date of dateRange.dates) {
     const dayData = allData[date] || {};
     dateTypes[date] = {};
+    // 红果
     if (dayData.hongguo && dayData.hongguo.items) {
       const items = dayData.hongguo.items.filter(i => i.rank <= rankLimit);
       for (const item of items) {
         const t = item.type || '未分类';
         typeMap[t] = (typeMap[t] || 0) + 1;
         dateTypes[date][t] = (dateTypes[date][t] || 0) + 1;
+        platformTypeMap.hongguo[t] = (platformTypeMap.hongguo[t] || 0) + 1;
+      }
+    }
+    // 抖音也有制作类型
+    if (dayData.douyin && dayData.douyin.items) {
+      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
+        const t = (item.type || '').trim();
+        if (t && t !== '0') {
+          typeMap[t] = (typeMap[t] || 0) + 1;
+          dateTypes[date][t] = (dateTypes[date][t] || 0) + 1;
+          platformTypeMap.douyin[t] = (platformTypeMap.douyin[t] || 0) + 1;
+        }
       }
     }
   }
@@ -2253,8 +2268,8 @@ function analyzeProductionType(dateRange, rankLimit) {
   const total = sorted.reduce((s, e) => s + e[1], 0);
   const colorMap = {'AI仿真人': '#C4B5FD', '2D': '#93C5FD', '3D': '#6EE7B7', '表情包': '#FCD34D'};
 
-  let html = sourceTag('🍎 红果榜', dateRange.label, rankLimit);
-  html += `<strong>🎨 红果榜制作类型分布</strong><br><br>`;
+  let html = sourceTag('🍎🎵 红果+抖音', dateRange.label, rankLimit);
+  html += `<strong>🎨 制作类型分布（双平台）</strong><br><br>`;
 
   sorted.forEach((item, i) => {
     const [name, count] = item;
@@ -2274,7 +2289,17 @@ function analyzeProductionType(dateRange, rankLimit) {
       for (const item of items) {
         const t = item.type || '未分类';
         if (!typeDramas[t]) typeDramas[t] = new Set();
-        typeDramas[t].add(item.name);
+        typeDramas[t].add(item.name + '（红果）');
+      }
+    }
+    if (dayData.douyin && dayData.douyin.items) {
+      const items = dayData.douyin.items.filter(i => i.rank <= rankLimit);
+      for (const item of items) {
+        const t = (item.type || '').trim();
+        if (t && t !== '0') {
+          if (!typeDramas[t]) typeDramas[t] = new Set();
+          typeDramas[t].add(item.name + '（抖音）');
+        }
       }
     }
   }
