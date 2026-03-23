@@ -118,6 +118,46 @@
     background: var(--hongguo-gradient);
   }
 
+  .table-title-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .table-title-icon {
+    font-size: 18px;
+  }
+
+  .table-title-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .platform-select {
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: auto;
+    appearance: auto;
+  }
+
+  .platform-select:hover {
+    border-color: var(--text-muted);
+  }
+
+  .platform-select:focus {
+    border-color: #A78BFA;
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.15);
+  }
+
   .date-bar {
     display: flex;
     align-items: center;
@@ -1026,9 +1066,6 @@
       <button class="btn btn-sync" id="syncBtn" onclick="showSyncPanel()" title="同步到 GitHub">🔄 同步</button>
     </div>
   </div>
-  <div class="top-tabs">
-    <button class="top-tab" id="tabDouyin" onclick="switchTab('douyin')">🎵 抖音漫剧热播榜</button>
-    <button class="top-tab active-hongguo" id="tabHongguo" onclick="switchTab('hongguo')">🍎 红果漫剧热播榜</button>
   </div>
 </div>
 
@@ -1043,18 +1080,19 @@
 </div>
 
 <div class="main">
-  <div class="table-container" id="douyinTable" style="display:none">
+  <div class="table-container">
     <div class="table-header-bar">
-      <div class="table-title douyin">📊 日榜 | 抖音漫剧热播榜</div>
-      <div style="font-size:13px;color:var(--text-muted)" id="douyinDateLabel"></div>
+      <div class="table-title-area">
+        <span class="table-title-icon">📊</span>
+        <span class="table-title-label">日榜</span>
+        <select id="platformSelect" class="platform-select" onchange="switchTab(this.value)">
+          <option value="hongguo">🍎 红果漫剧热播榜</option>
+          <option value="douyin">🎵 抖音漫剧热播榜</option>
+        </select>
+      </div>
+      <div style="font-size:13px;color:var(--text-muted)" id="tableDateLabel"></div>
     </div>
-    <div id="douyinContent"></div>
-  </div>
-  <div class="table-container" id="hongguoTable">
-    <div class="table-header-bar">
-      <div class="table-title hongguo">📊 日榜 | 红果漫剧热播榜</div>
-      <div style="font-size:13px;color:var(--text-muted)" id="hongguoDateLabel"></div>
-    </div>
+    <div id="douyinContent" style="display:none"></div>
     <div id="hongguoContent"></div>
   </div>
 </div>
@@ -1866,11 +1904,11 @@ function navigateDate(dir) {
 
 function switchTab(tab) {
   currentTab = tab;
-  document.getElementById('tabDouyin').className = tab === 'douyin' ? 'top-tab active-douyin' : 'top-tab';
-  document.getElementById('tabHongguo').className = tab === 'hongguo' ? 'top-tab active-hongguo' : 'top-tab';
-  document.getElementById('douyinTable').style.display = tab === 'douyin' ? 'block' : 'none';
-  document.getElementById('hongguoTable').style.display = tab === 'hongguo' ? 'block' : 'none';
+  document.getElementById('platformSelect').value = tab;
+  document.getElementById('douyinContent').style.display = tab === 'douyin' ? 'block' : 'none';
+  document.getElementById('hongguoContent').style.display = tab === 'hongguo' ? 'block' : 'none';
   renderDateChips();
+  renderTable();
 }
 
 function getRankHTML(rank) {
@@ -1882,12 +1920,13 @@ function getRankHTML(rank) {
 
 function renderTable() {
   const dayData = allData[currentDate] || {};
-  const douyinData = dayData.douyin;
-  const douyinLabel = document.getElementById('douyinDateLabel');
+  const dateLabel = document.getElementById('tableDateLabel');
   const douyinContent = document.getElementById('douyinContent');
+  const hongguoContent = document.getElementById('hongguoContent');
 
+  // 渲染抖音数据
+  const douyinData = dayData.douyin;
   if (douyinData && douyinData.items.length > 0) {
-    douyinLabel.textContent = `统计时间：${douyinData.date || currentDate}`;
     douyinContent.innerHTML = `<table><thead><tr>
       <th style="text-align:center;width:60px">排名</th><th>剧名</th><th>账号</th><th>关联方</th>
       <th style="text-align:center">集数</th><th>类型</th><th style="text-align:right">新增播放</th><th style="text-align:right">累计播放</th><th style="width:36px"></th>
@@ -1906,16 +1945,12 @@ function renderTable() {
     </tr>${hasSynopsis ? `<tr class="synopsis-row" style="display:none"><td colspan="9"><div class="synopsis-content"><strong>📝 简介</strong>${item.synopsis}</div></td></tr>` : ''}`;
     }).join('')}</tbody></table>`;
   } else {
-    douyinLabel.textContent = '';
     douyinContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无抖音榜数据</div></div>`;
   }
 
+  // 渲染红果数据
   const hongguoData = dayData.hongguo;
-  const hongguoLabel = document.getElementById('hongguoDateLabel');
-  const hongguoContent = document.getElementById('hongguoContent');
-
   if (hongguoData && hongguoData.items.length > 0) {
-    hongguoLabel.textContent = `统计时间：${hongguoData.date || currentDate}`;
     hongguoContent.innerHTML = `<table><thead><tr>
       <th style="text-align:center;width:60px">排名</th><th>剧名</th><th>类型</th><th>标签</th><th>版权方</th>
       <th style="text-align:center">上线时间</th><th style="text-align:center">集数</th><th style="text-align:right">热度值</th><th style="width:36px"></th>
@@ -1936,9 +1971,13 @@ function renderTable() {
     </tr>${hasSynopsis ? `<tr class="synopsis-row" style="display:none"><td colspan="9"><div class="synopsis-content"><strong>📝 简介</strong>${item.synopsis}</div></td></tr>` : ''}`;
     }).join('')}</tbody></table>`;
   } else {
-    hongguoLabel.textContent = '';
     hongguoContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无红果榜数据</div></div>`;
   }
+
+  // 更新日期标签（根据当前选中的平台）
+  const activeData = currentTab === 'douyin' ? douyinData : hongguoData;
+  dateLabel.textContent = activeData && activeData.items && activeData.items.length > 0
+    ? `统计时间：${activeData.date || currentDate}` : '';
 }
 
 function showAddModal() {
