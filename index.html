@@ -1758,9 +1758,9 @@ async function pushToGitHub() {
     const newDataBlock = serializeDataBlock(allData);
     const newContent = content.substring(0, afterReturn) + newDataBlock + '\n  };\n}\n\n' + content.substring(endIdx);
 
-    // 更新 CURRENT_BUILD 版本号
-    const buildTs = new Date().toISOString().replace(/[-:T]/g, '').substring(0, 13);
-    const finalContent = newContent.replace(/CURRENT_BUILD\s*=\s*"[^"]*"/, `CURRENT_BUILD = "2026032013252"`);
+    // 更新 CURRENT_BUILD 版本号（用当前时间戳）
+    const buildTs = new Date().toISOString().replace(/[-:T]/g, '').substring(0, 14);
+    const finalContent = newContent.replace(/CURRENT_BUILD\s*=\s*"[^"]*"/, `CURRENT_BUILD = "${buildTs}"`);
 
     setSyncProgress(70, '正在推送到 GitHub...');
 
@@ -3218,43 +3218,94 @@ function analyzeDrama(drama, dates) {
 init();
 </script>
 <script>
-// 自动检测页面更新 —— 绕过 GitHub Pages CDN 缓存
+// 自动检测页面更新 —— 通过 GitHub API 获取最新 commit SHA，不受 CDN 缓存影响
 (function() {
-  var CURRENT_BUILD = "2026032012313";
+  var REPO_OWNER = 'bilinsandrali-cpu';
+  var REPO_NAME = 'Sandra';
+  var BRANCH = 'main';
+  var CHECK_INTERVAL = 2000; // 首次检测延迟(ms)
+  var STORAGE_KEY = 'last_known_commit_sha';
 
-  // 防循环：如果 URL 已经带了 _reloaded 参数，说明刚刷新过，不再检测
-  if (location.search.indexOf('_reloaded=') !== -1) {
-    // 清理 URL 中的 _reloaded 参数，保持地址栏干净
+  // 防循环：如果刚刚刷新过，5 秒内不再检测
+  var lastReload = sessionStorage.getItem('_last_reload_ts');
+  if (lastReload && (Date.now() - parseInt(lastReload)) < 10000) {
+    console.log('[auto-refresh] 最近刚刷新过，跳过检测');
+    return;
+  }
+
+  setTimeout(async function() {
     try {
-      var cleanUrl = location.href.replace(/[?&]_reloaded=[^&]+/, '').replace(/\?$/, '');
+      // 通过 GitHub API 获取最新 commit SHA（此 API 不受 Pages CDN 缓存影响）
+      var apiUrl = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/commits/' + BRANCH + '?_t=' + Date.now();
+      var resp = await fetch(apiUrl, {
+        headers: { 'Accept': 'application/vnd.github.v3.sha' },
+        cache: 'no-store'
+      });
+      if (!resp.ok) {
+        console.log('[auto-refresh] GitHub API 请求失败:', resp.status);
+        return;
+      }
+      var latestSha = (await resp.text()).trim();
+      var cachedSha = localStorage.getItem(STORAGE_KEY);
+
+      console.log('[auto-refresh] 最新 commit:', latestSha.substring(0, 7), '| 缓存:', cachedSha ? cachedSha.substring(0, 7) : '无');
+
+      if (!cachedSha) {
+        // 第一次访问，记录当前 SHA，不刷新
+        localStorage.setItem(STORAGE_KEY, latestSha);
+        console.log('[auto-refresh] 首次记录 commit SHA');
+        return;
+      }
+
+      if (cachedSha !== latestSha) {
+        console.log('[auto-refresh] 检测到新版本！即将刷新...');
+        localStorage.setItem(STORAGE_KEY, latestSha);
+        sessionStorage.setItem('_last_reload_ts', Date.now().toString());
+        // 硬刷新：利用 location.reload(true) 跳过浏览器缓存
+        // 同时在 URL 加上版本参数，确保 CDN 也返回新内容
+        var baseUrl = location.href.split('?')[0].split('#')[0];
+        location.replace(baseUrl + '?v=' + latestSha.substring(0, 7));
+      }
+    } catch(e) {
+      console.log('[auto-refresh] 检测失败:', e.message);
+    }
+  }, CHECK_INTERVAL);
+
+  // 每 60 秒持续检测（用户保持页面打开时也能自动获取更新）
+  setInterval(async function() {
+    try {
+      var lastReload2 = sessionStorage.getItem('_last_reload_ts');
+      if (lastReload2 && (Date.now() - parseInt(lastReload2)) < 10000) return;
+
+      var apiUrl = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/commits/' + BRANCH + '?_t=' + Date.now();
+      var resp = await fetch(apiUrl, {
+        headers: { 'Accept': 'application/vnd.github.v3.sha' },
+        cache: 'no-store'
+      });
+      if (!resp.ok) return;
+      var latestSha = (await resp.text()).trim();
+      var cachedSha = localStorage.getItem(STORAGE_KEY);
+      if (cachedSha && cachedSha !== latestSha) {
+        console.log('[auto-refresh] 后台检测到新版本，即将刷新...');
+        localStorage.setItem(STORAGE_KEY, latestSha);
+        sessionStorage.setItem('_last_reload_ts', Date.now().toString());
+        var baseUrl = location.href.split('?')[0].split('#')[0];
+        location.replace(baseUrl + '?v=' + latestSha.substring(0, 7));
+      }
+    } catch(e) {}
+  }, 60000);
+})();
+
+// 清理 URL 中的 v= 参数，保持地址栏干净
+(function() {
+  if (location.search.indexOf('v=') !== -1) {
+    try {
+      var cleanUrl = location.href.replace(/[?&]v=[^&]+/, '').replace(/\?$/, '');
       if (cleanUrl !== location.href) {
         history.replaceState(null, '', cleanUrl);
       }
     } catch(e) {}
-    return;
   }
-
-  // 页面加载 3 秒后检测一次是否有新版本
-  setTimeout(async function() {
-    try {
-      var baseUrl = location.href.split('#')[0].split('?')[0];
-      var resp = await fetch(baseUrl + '?_t=' + Date.now(), { cache: 'no-store' });
-      if (!resp.ok) return;
-      var text = await resp.text();
-      // 只匹配第二个 script 块中的 CURRENT_BUILD 声明
-      var marker = '// 自动检测页面更新';
-      var blockStart = text.indexOf(marker);
-      if (blockStart === -1) return;
-      var block = text.substring(blockStart, blockStart + 500);
-      var match = block.match(/CURRENT_BUILD\s*=\s*"([^"]+)"/);
-      if (match && match[1] !== CURRENT_BUILD) {
-        console.log('[auto-refresh] 检测到新版本:', match[1], '当前:', CURRENT_BUILD);
-        // 带 _reloaded 参数刷新，防止无限循环
-        var separator = location.href.indexOf('?') === -1 ? '?' : '&';
-        location.href = location.href.split('#')[0] + separator + '_reloaded=' + Date.now() + (location.hash || '');
-      }
-    } catch(e) { /* 静默失败 */ }
-  }, 3000);
 })();
 </script>
 </body>
