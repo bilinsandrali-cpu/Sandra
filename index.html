@@ -1027,8 +1027,8 @@
     </div>
   </div>
   <div class="top-tabs">
-    <button class="top-tab active-douyin" id="tabDouyin" onclick="switchTab('douyin')">🎵 抖音漫剧热播榜</button>
-    <button class="top-tab" id="tabHongguo" onclick="switchTab('hongguo')">🍎 红果漫剧热播榜</button>
+    <button class="top-tab" id="tabDouyin" onclick="switchTab('douyin')">🎵 抖音漫剧热播榜</button>
+    <button class="top-tab active-hongguo" id="tabHongguo" onclick="switchTab('hongguo')">🍎 红果漫剧热播榜</button>
   </div>
 </div>
 
@@ -1043,14 +1043,14 @@
 </div>
 
 <div class="main">
-  <div class="table-container" id="douyinTable">
+  <div class="table-container" id="douyinTable" style="display:none">
     <div class="table-header-bar">
       <div class="table-title douyin">📊 日榜 | 抖音漫剧热播榜</div>
       <div style="font-size:13px;color:var(--text-muted)" id="douyinDateLabel"></div>
     </div>
     <div id="douyinContent"></div>
   </div>
-  <div class="table-container" id="hongguoTable" style="display:none">
+  <div class="table-container" id="hongguoTable">
     <div class="table-header-bar">
       <div class="table-title hongguo">📊 日榜 | 红果漫剧热播榜</div>
       <div style="font-size:13px;color:var(--text-muted)" id="hongguoDateLabel"></div>
@@ -1819,7 +1819,7 @@ document.getElementById('syncModal').addEventListener('click', function(e) { if 
 
 let allData = loadAllData();
 let currentDate = '';
-let currentTab = 'douyin';
+let currentTab = 'hongguo';
 
 function getAvailableDates() {
   return Object.keys(allData).sort().reverse();
