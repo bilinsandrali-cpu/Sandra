@@ -1,4 +1,680 @@
 {
+  "2026-03-29": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/3/29",
+      "items": [
+        {
+          "rank": 1,
+          "name": "不敢狂龙，师姐别逼了",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5966万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 2,
+          "name": "聚宝仙盆之杂灵根才是真BOSS",
+          "tags": "玄幻/异界",
+          "publisher": "待确认",
+          "onlineDate": "03-10",
+          "episodes": 99,
+          "type": "3D",
+          "hotValue": "5956万",
+          "synopsis": "14岁杂灵根少年贺平生初入秀竹峰，偶得聚宝仙盆。凭借仙盆越阶反杀欺压他的宗门弟子，踏上逆袭修仙之路。"
+        },
+        {
+          "rank": 3,
+          "name": "捡到的小奶团，竟是玄学真千金！",
+          "tags": "剧情/家庭/都市脑洞",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 78,
+          "type": "AI仿真人",
+          "hotValue": "5695万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 4,
+          "name": "盖世神医，这个女婿有点狂",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-18",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5580万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 5,
+          "name": "风水天师",
+          "tags": "民国/剧情/悬疑",
+          "publisher": "时刻互动",
+          "onlineDate": "03-17",
+          "episodes": 61,
+          "type": "AI仿真人",
+          "hotValue": "5499万",
+          "synopsis": "民国奇门传人李乘风继承随缘堂，不顾劝阻悬壶济世。在接手叶家怪病疑案时以葫芦术声名鹊起，后勘破风水困局、揭露阴阳师阴谋，最终布铜钱阵击败九菊一派，守护大夏风水格局。"
+        },
+        {
+          "rank": 6,
+          "name": "骗我投个好胎？行，你们别后悔",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 83,
+          "type": "AI仿真人",
+          "hotValue": "5468万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 7,
+          "name": "惊！天机门小公主又在摆摊算命",
+          "tags": "都市脑洞/家庭/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 65,
+          "type": "AI仿真人",
+          "hotValue": "5466万",
+          "synopsis": "天机门少主玉洛被自家老爹一脚踹到人间历练，只留一成法力。她苦兮兮在菜市场摆摊算命维生，却不断卷入奇异事件。"
+        },
+        {
+          "rank": 8,
+          "name": "大运征途",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "03-18",
+          "episodes": 39,
+          "type": "2D",
+          "hotValue": "5435万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 9,
+          "name": "嫡女惊华：契约夫君不好惹",
+          "tags": "古风",
+          "publisher": "待确认",
+          "onlineDate": "03-24",
+          "episodes": 112,
+          "type": "AI仿真人",
+          "hotValue": "5363万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 10,
+          "name": "贾二虎的妖孽人生之皓男出狱",
+          "tags": "都市日常",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5360万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 11,
+          "name": "保洁老爸竟是绝代潜龙",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-20",
+          "episodes": 66,
+          "type": "AI仿真人",
+          "hotValue": "5330万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 12,
+          "name": "砍树成神：一斧伐木万道皆惧",
+          "tags": "都市脑洞/悬疑/逆袭/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 92,
+          "type": "AI仿真人",
+          "hotValue": "5306万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 13,
+          "name": "凤云传奇之醒掌天下权",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 87,
+          "type": "AI仿真人",
+          "hotValue": "5249万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 14,
+          "name": "749秘档：坠龙",
+          "tags": "悬疑/剧情/反转",
+          "publisher": "星火剧能",
+          "onlineDate": "03-19",
+          "episodes": 38,
+          "type": "AI仿真人",
+          "hotValue": "5202万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 15,
+          "name": "带着三娃在古代搞钱",
+          "tags": "剧情/穿越/乡村/古代",
+          "publisher": "待确认",
+          "onlineDate": "03-24",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5198万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 16,
+          "name": "封魔碑不用我守，一朝放手天下悔",
+          "tags": "",
+          "publisher": "不周山动漫",
+          "onlineDate": "",
+          "episodes": 67,
+          "type": "AI仿真人",
+          "hotValue": "5167万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 17,
+          "name": "全民公路求生：我的房车无限进化",
+          "tags": "都市脑洞/剧情/逆袭/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5112万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 18,
+          "name": "透视：我的双眼能鉴定万物",
+          "tags": "都市脑洞",
+          "publisher": "花样年华",
+          "onlineDate": "03-17",
+          "episodes": 80,
+          "type": "其他",
+          "hotValue": "5098万",
+          "synopsis": "陈天赐遭女友背叛，被卖至翡翠矿场。一次意外令其双眼觉醒，获得鉴定万物价格之能。他凭此玩转珠宝古董，积累巨额财富，更助红颜渡过危机。"
+        },
+        {
+          "rank": 19,
+          "name": "月薪三千，我造了星际母舰",
+          "tags": "剧情/喜剧",
+          "publisher": "待确认",
+          "onlineDate": "03-22",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5095万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 20,
+          "name": "小祖宗驾到，将军府宠翻啦",
+          "tags": "古风",
+          "publisher": "魔方元启",
+          "onlineDate": "03-16",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5073万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 21,
+          "name": "锤人：开局抽取灭世词条",
+          "tags": "",
+          "publisher": "武汉寻光动漫",
+          "onlineDate": "",
+          "episodes": 83,
+          "type": "AI仿真人",
+          "hotValue": "5067万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 22,
+          "name": "荒年，一个馒头成定情信物养老婆",
+          "tags": "逆袭/反转/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-20",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "5041万",
+          "synopsis": "游戏代练方寒意外穿越至民不聊生的大景朝，激活'娶妻宠妻'系统，凭借一个馒头救下白芷柔，开启双穿门能力，可往返现代搬运物资。"
+        },
+        {
+          "rank": 23,
+          "name": "爹且慢，我来了",
+          "tags": "萌宝/古代",
+          "publisher": "待确认",
+          "onlineDate": "03-09",
+          "episodes": 46,
+          "type": "3D",
+          "hotValue": "5002万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 24,
+          "name": "凤还巢：世子妃权倾天下",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 79,
+          "type": "AI仿真人",
+          "hotValue": "4784万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 25,
+          "name": "穿成兽世万人迷",
+          "tags": "时空之旅/剧情/喜剧/青春",
+          "publisher": "杭州云繁",
+          "onlineDate": "03-23",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "4780万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 26,
+          "name": "诡噬道仙",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 72,
+          "type": "",
+          "hotValue": "4776万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 27,
+          "name": "兽能转化：带着SSS级老婆无敌",
+          "tags": "都市脑洞",
+          "publisher": "巨森漫剧",
+          "onlineDate": "03-17",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "4771万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 28,
+          "name": "丧尸末日全家掰正恋爱脑",
+          "tags": "都市脑洞/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "4735万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 29,
+          "name": "重生1985，他靠空间发家致富",
+          "tags": "时空之旅",
+          "publisher": "云水方至",
+          "onlineDate": "03-09",
+          "episodes": 51,
+          "type": "AI仿真人",
+          "hotValue": "4734万",
+          "synopsis": "萧国峰带着种子铺的记忆重生回1985年，站在自家鱼塘前发誓不再被剥削。他要照顾好爷爷、保护妹妹、娶回受苦的媳妇，凭借先知和空间在风口年代白手起家。"
+        },
+        {
+          "rank": 30,
+          "name": "万兽独尊",
+          "tags": "玄幻言情/传统玄幻/东方仙侠/武侠",
+          "publisher": "待确认",
+          "onlineDate": "02-28",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "4726万",
+          "synopsis": "萧炎觉醒废武魂黑水蛇遭未婚妻悔婚、宗门欺辱，却以血契与蛇共生，靠吞噬进化。他遇酒剑仙、收丑鸟，闯险地、战宗门，涅槃突破后杀入伪善仙界，揭开炼蛊秘辛。"
+        }
+      ]
+    }
+  },
+  "2026-03-28": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/3/28",
+      "items": [
+        {
+          "rank": 1,
+          "name": "聚宝仙盆之杂灵根才是真BOSS",
+          "tags": "玄幻/异界",
+          "publisher": "待确认",
+          "onlineDate": "03-10",
+          "episodes": 99,
+          "type": "3D",
+          "hotValue": "5979万",
+          "synopsis": "14岁杂灵根少年贺平生初入秀竹峰，偶得聚宝仙盆。凭借仙盆越阶反杀欺压他的宗门弟子，踏上逆袭修仙之路。"
+        },
+        {
+          "rank": 2,
+          "name": "风水天师",
+          "tags": "民国/剧情/悬疑",
+          "publisher": "时刻互动",
+          "onlineDate": "03-17",
+          "episodes": 61,
+          "type": "AI仿真人",
+          "hotValue": "5661万",
+          "synopsis": "民国奇门传人李乘风继承随缘堂，不顾劝阻悬壶济世。在接手叶家怪病疑案时以葫芦术声名鹊起，后勘破风水困局、揭露阴阳师阴谋，最终布铜钱阵击败九菊一派，守护大夏风水格局。"
+        },
+        {
+          "rank": 3,
+          "name": "大运征途",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "03-18",
+          "episodes": 39,
+          "type": "2D",
+          "hotValue": "5604万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 4,
+          "name": "捡到的小奶团，竟是玄学真千金！",
+          "tags": "剧情/家庭/都市脑洞",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 78,
+          "type": "AI仿真人",
+          "hotValue": "5595万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 5,
+          "name": "盖世神医，这个女婿有点狂",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-18",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5570万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 6,
+          "name": "惊！天机门小公主又在摆摊算命",
+          "tags": "都市脑洞/家庭/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 65,
+          "type": "AI仿真人",
+          "hotValue": "5493万",
+          "synopsis": "天机门少主玉洛被自家老爹一脚踹到人间历练，只留一成法力。她苦兮兮在菜市场摆摊算命维生，却不断卷入奇异事件。"
+        },
+        {
+          "rank": 7,
+          "name": "贾二虎的妖孽人生之皓男出狱",
+          "tags": "都市日常",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5443万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 8,
+          "name": "砍树成神：一斧伐木万道皆惧",
+          "tags": "都市脑洞/悬疑/逆袭/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 92,
+          "type": "AI仿真人",
+          "hotValue": "5381万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 9,
+          "name": "保洁老爸竟是绝代潜龙",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-20",
+          "episodes": 66,
+          "type": "AI仿真人",
+          "hotValue": "5358万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 10,
+          "name": "嫡女惊华：契约夫君不好惹",
+          "tags": "古风",
+          "publisher": "待确认",
+          "onlineDate": "03-24",
+          "episodes": 112,
+          "type": "AI仿真人",
+          "hotValue": "5337万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 11,
+          "name": "不敢狂龙，师姐别逼了",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5217万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 12,
+          "name": "透视：我的双眼能鉴定万物",
+          "tags": "都市脑洞",
+          "publisher": "花样年华",
+          "onlineDate": "03-17",
+          "episodes": 80,
+          "type": "其他",
+          "hotValue": "5215万",
+          "synopsis": "陈天赐遭女友背叛，被卖至翡翠矿场。一次意外令其双眼觉醒，获得鉴定万物价格之能。他凭此玩转珠宝古董，积累巨额财富，更助红颜渡过危机。"
+        },
+        {
+          "rank": 13,
+          "name": "749秘档：坠龙",
+          "tags": "悬疑/剧情/反转",
+          "publisher": "星火剧能",
+          "onlineDate": "03-19",
+          "episodes": 38,
+          "type": "AI仿真人",
+          "hotValue": "5208万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 14,
+          "name": "凤云传奇之醒掌天下权",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 87,
+          "type": "AI仿真人",
+          "hotValue": "5187万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 15,
+          "name": "小祖宗驾到，将军府宠翻啦",
+          "tags": "古风",
+          "publisher": "魔方元启",
+          "onlineDate": "03-16",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5163万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 16,
+          "name": "带着三娃在古代搞钱",
+          "tags": "剧情/穿越/乡村/古代",
+          "publisher": "待确认",
+          "onlineDate": "03-24",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5157万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 17,
+          "name": "全民公路求生：我的房车无限进化",
+          "tags": "都市脑洞/剧情/逆袭/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5146万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 18,
+          "name": "封魔碑不用我守，一朝放手天下悔",
+          "tags": "",
+          "publisher": "不周山动漫",
+          "onlineDate": "",
+          "episodes": 71,
+          "type": "AI仿真人",
+          "hotValue": "5121万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 19,
+          "name": "月薪三千，我造了星际母舰",
+          "tags": "剧情/喜剧",
+          "publisher": "待确认",
+          "onlineDate": "03-22",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5100万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 20,
+          "name": "荒年，一个馒头成定情信物养老婆",
+          "tags": "逆袭/反转/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-20",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "5072万",
+          "synopsis": "游戏代练方寒意外穿越至民不聊生的大景朝，激活'娶妻宠妻'系统，凭借一个馒头救下白芷柔，开启双穿门能力，可往返现代搬运物资。"
+        },
+        {
+          "rank": 21,
+          "name": "爹且慢，我来了",
+          "tags": "萌宝/古代",
+          "publisher": "待确认",
+          "onlineDate": "03-09",
+          "episodes": 45,
+          "type": "3D",
+          "hotValue": "5015万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 22,
+          "name": "穿成兽世万人迷",
+          "tags": "时空之旅/剧情/喜剧/青春",
+          "publisher": "杭州云繁",
+          "onlineDate": "03-23",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "4795万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 23,
+          "name": "兽能转化：带着SSS级老婆无敌",
+          "tags": "都市脑洞",
+          "publisher": "巨森漫剧",
+          "onlineDate": "03-17",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "4793万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 24,
+          "name": "丧尸末日全家掰正恋爱脑",
+          "tags": "都市脑洞/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "4777万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 25,
+          "name": "重生1985，他靠空间发家致富",
+          "tags": "时空之旅",
+          "publisher": "云水方至",
+          "onlineDate": "03-09",
+          "episodes": 51,
+          "type": "AI仿真人",
+          "hotValue": "4774万",
+          "synopsis": "萧国峰带着种子铺的记忆重生回1985年，站在自家鱼塘前发誓不再被剥削。他要照顾好爷爷、保护妹妹、娶回受苦的媳妇，凭借先知和空间在风口年代白手起家。"
+        },
+        {
+          "rank": 26,
+          "name": "菩提灭世：仙师临天庭",
+          "tags": "玄幻/异界",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 33,
+          "type": "3D",
+          "hotValue": "4754万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 27,
+          "name": "柔弱如青无人娶，直到我的出现",
+          "tags": "年代",
+          "publisher": "待确认",
+          "onlineDate": "03-12",
+          "episodes": 56,
+          "type": "AI仿真人",
+          "hotValue": "4746万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 28,
+          "name": "九转神体诀",
+          "tags": "剧情/古风/武侠",
+          "publisher": "待确认",
+          "onlineDate": "03-12",
+          "episodes": 86,
+          "type": "AI仿真人",
+          "hotValue": "4735万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 29,
+          "name": "万兽独尊",
+          "tags": "玄幻言情/传统玄幻/东方仙侠/武侠",
+          "publisher": "待确认",
+          "onlineDate": "02-28",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "4753万",
+          "synopsis": "萧炎觉醒废武魂黑水蛇遭未婚妻悔婚、宗门欺辱，却以血契与蛇共生，靠吞噬进化。他遇酒剑仙、收丑鸟，闯险地、战宗门，涅槃突破后杀入伪善仙界，揭开炼蛊秘辛。"
+        },
+        {
+          "rank": 30,
+          "name": "最强逆袭：开局吞噬仙帝元神",
+          "tags": "",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 65,
+          "type": "AI仿真人",
+          "hotValue": "4687万",
+          "synopsis": "缺少公开信息"
+        }
+      ]
+    }
+  },
   "2026-03-27": {
     "douyin": null,
     "hongguo": {
@@ -275,7 +951,7 @@
           "publisher": "云繁漫剧",
           "onlineDate": "03-23",
           "episodes": 100,
-          "type": "AI仿真人",
+          "type": "2D",
           "hotValue": "4761万",
           "synopsis": "缺少公开信息"
         },
@@ -673,7 +1349,341 @@
         }
       ]
     },
-    "hongguo": null
+    "hongguo": {
+      "date": "2026/3/26",
+      "items": [
+        {
+          "rank": 1,
+          "name": "风水天师",
+          "tags": "民国/剧情/悬疑",
+          "publisher": "时刻互动",
+          "onlineDate": "03-17",
+          "episodes": 61,
+          "type": "AI仿真人",
+          "hotValue": "6241万",
+          "synopsis": "民国奇门传人李乘风继承随缘堂，不顾劝阻悬壶济世。在接手叶家怪病疑案时以葫芦术声名鹊起，后勘破风水困局、揭露阴阳师阴谋，最终布铜钱阵击败九菊一派，守护大夏风水格局。"
+        },
+        {
+          "rank": 2,
+          "name": "聚宝仙盆之杂灵根才是真BOSS",
+          "tags": "玄幻/异界",
+          "publisher": "待确认",
+          "onlineDate": "03-10",
+          "episodes": 99,
+          "type": "3D",
+          "hotValue": "6033万",
+          "synopsis": "14岁杂灵根少年贺平生初入秀竹峰，偶得聚宝仙盆。凭借仙盆越阶反杀欺压他的宗门弟子，踏上逆袭修仙之路。"
+        },
+        {
+          "rank": 3,
+          "name": "大运征途",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "03-18",
+          "episodes": 39,
+          "type": "2D",
+          "hotValue": "5728万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 4,
+          "name": "贾二虎的妖孽人生之皓男出狱",
+          "tags": "都市日常",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5606万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 5,
+          "name": "捡到的小奶团，竟是玄学真千金！",
+          "tags": "剧情/家庭/都市脑洞",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 78,
+          "type": "AI仿真人",
+          "hotValue": "5560万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 6,
+          "name": "惊！天机门小公主又在摆摊算命",
+          "tags": "都市脑洞/家庭/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 65,
+          "type": "AI仿真人",
+          "hotValue": "5374万",
+          "synopsis": "天机门少主玉洛被自家老爹一脚踹到人间历练，只留一成法力。她苦兮兮在菜市场摆摊算命维生，却不断卷入奇异事件。"
+        },
+        {
+          "rank": 7,
+          "name": "砍树成神：一斧伐木万道皆惧",
+          "tags": "都市脑洞/悬疑/逆袭/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 92,
+          "type": "AI仿真人",
+          "hotValue": "5342万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 8,
+          "name": "透视：我的双眼能鉴定万物",
+          "tags": "都市脑洞",
+          "publisher": "花样年华",
+          "onlineDate": "03-17",
+          "episodes": 80,
+          "type": "其他",
+          "hotValue": "5324万",
+          "synopsis": "陈天赐遭女友背叛，被卖至翡翠矿场。一次意外令其双眼觉醒，获得鉴定万物价格之能。他凭此玩转珠宝古董，积累巨额财富，更助红颜渡过危机。"
+        },
+        {
+          "rank": 9,
+          "name": "将星一怒震东海",
+          "tags": "都市日常",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 41,
+          "type": "2D",
+          "hotValue": "5281万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 10,
+          "name": "小祖宗驾到，将军府宠翻啦",
+          "tags": "古风",
+          "publisher": "魔方元启",
+          "onlineDate": "03-16",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5251万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 11,
+          "name": "全民公路求生：我的房车无限进化",
+          "tags": "都市脑洞/剧情/逆袭/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5219万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 12,
+          "name": "保洁老爸竟是绝代潜龙",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-20",
+          "episodes": 66,
+          "type": "AI仿真人",
+          "hotValue": "5195万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 13,
+          "name": "重生1985，他靠空间发家致富",
+          "tags": "时空之旅",
+          "publisher": "云水方至",
+          "onlineDate": "03-09",
+          "episodes": 51,
+          "type": "AI仿真人",
+          "hotValue": "5055万",
+          "synopsis": "萧国峰带着种子铺的记忆重生回1985年，站在自家鱼塘前发誓不再被剥削。他要照顾好爷爷、保护妹妹、娶回受苦的媳妇，凭借先知和空间在风口年代白手起家。"
+        },
+        {
+          "rank": 14,
+          "name": "柔弱如青无人娶，直到我的出现",
+          "tags": "年代",
+          "publisher": "待确认",
+          "onlineDate": "03-12",
+          "episodes": 56,
+          "type": "AI仿真人",
+          "hotValue": "5045万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 15,
+          "name": "三千庇护第十一季",
+          "tags": "古风",
+          "publisher": "阅文漫鸣剧场",
+          "onlineDate": "03-21",
+          "episodes": 37,
+          "type": "2D",
+          "hotValue": "5044万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 16,
+          "name": "万兽独尊",
+          "tags": "玄幻言情/传统玄幻/东方仙侠/武侠",
+          "publisher": "待确认",
+          "onlineDate": "02-28",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5035万",
+          "synopsis": "萧炎觉醒废武魂黑水蛇遭未婚妻悔婚、宗门欺辱，却以血契与蛇共生，靠吞噬进化。他遇酒剑仙、收丑鸟，闯险地、战宗门，涅槃突破后杀入伪善仙界，揭开炼蛊秘辛。"
+        },
+        {
+          "rank": 17,
+          "name": "荒年，一个馒头成定情信物养老婆",
+          "tags": "逆袭/反转/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-20",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "5019万",
+          "synopsis": "游戏代练方寒意外穿越至民不聊生的大景朝，激活'娶妻宠妻'系统，凭借一个馒头救下白芷柔，开启双穿门能力，可往返现代搬运物资。"
+        },
+        {
+          "rank": 18,
+          "name": "爹且慢，我来了",
+          "tags": "萌宝/古代",
+          "publisher": "待确认",
+          "onlineDate": "03-09",
+          "episodes": 43,
+          "type": "3D",
+          "hotValue": "5008万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 19,
+          "name": "兽能转化：带着SSS级老婆无敌",
+          "tags": "都市脑洞",
+          "publisher": "巨森漫剧",
+          "onlineDate": "03-17",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "4796万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 20,
+          "name": "九转神体诀",
+          "tags": "剧情/古风/武侠",
+          "publisher": "待确认",
+          "onlineDate": "03-12",
+          "episodes": 86,
+          "type": "AI仿真人",
+          "hotValue": "4751万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 21,
+          "name": "菩提灭世：仙师临天庭",
+          "tags": "玄幻/异界",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 33,
+          "type": "3D",
+          "hotValue": "4744万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 22,
+          "name": "丧尸末日全家掰正恋爱脑",
+          "tags": "都市脑洞/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "4739万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 23,
+          "name": "749秘档：坠龙",
+          "tags": "悬疑/剧情/反转",
+          "publisher": "待确认",
+          "onlineDate": "03-19",
+          "episodes": 38,
+          "type": "AI仿真人",
+          "hotValue": "4709万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 24,
+          "name": "恨别前世，主母重生要绝嗣",
+          "tags": "剧情/古风",
+          "publisher": "待确认",
+          "onlineDate": "03-17",
+          "episodes": 82,
+          "type": "AI仿真人",
+          "hotValue": "4703万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 25,
+          "name": "罪妻缘铁",
+          "tags": "剧情/穿越/逆袭/古代",
+          "publisher": "待确认",
+          "onlineDate": "03-12",
+          "episodes": 45,
+          "type": "3D",
+          "hotValue": "4658万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 26,
+          "name": "仙缘劫起凌天传",
+          "tags": "都市日常/都市脑洞/剧情/逆袭",
+          "publisher": "待确认",
+          "onlineDate": "03-18",
+          "episodes": 79,
+          "type": "2D",
+          "hotValue": "4651万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 27,
+          "name": "玉颜为聘：多子多福系统",
+          "tags": "脑洞/穿越/系统/逆袭",
+          "publisher": "巨森漫剧",
+          "onlineDate": "03-16",
+          "episodes": 71,
+          "type": "3D",
+          "hotValue": "4641万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 28,
+          "name": "三千庇护第十季",
+          "tags": "脑洞/异界",
+          "publisher": "待确认",
+          "onlineDate": "03-16",
+          "episodes": 40,
+          "type": "2D",
+          "hotValue": "4611万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 29,
+          "name": "SSS级天骄，我的卧底身份瞒不住了",
+          "tags": "脑洞/都市",
+          "publisher": "待确认",
+          "onlineDate": "03-11",
+          "episodes": 51,
+          "type": "3D",
+          "hotValue": "4604万",
+          "synopsis": "主角本是潜入敌对势力的顶级卧底，靠伪装低调行事。随着实力不断暴露，SSS级天骄的真实身份逐渐瞒不住，一路碾压对手逆袭崛起。"
+        },
+        {
+          "rank": 30,
+          "name": "读心奶娃带飞爹",
+          "tags": "古风/剧情",
+          "publisher": "待确认",
+          "onlineDate": "03-10",
+          "episodes": 52,
+          "type": "AI仿真人",
+          "hotValue": "4599万",
+          "synopsis": "重生成奶娃的李玥，心声竟能被父皇听见，意外揭露太子、二皇子等皆非亲生的惊天秘密。父皇震怒展开雷霆清洗，父女联手肃清后宫阴谋。"
+        }
+      ]
+    }
   },
   "2026-03-25": {
     "douyin": {
