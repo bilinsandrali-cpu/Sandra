@@ -1,6 +1,677 @@
 {
-  "2026-04-06": {
+  "2026-04-07": {
     "douyin": null,
+    "hongguo": {
+      "date": "2026/4/7",
+      "items": [
+        {
+          "rank": 1,
+          "name": "真千金偏要又争又抢",
+          "tags": "都市日常",
+          "publisher": "掌阅科技",
+          "onlineDate": "03-27",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5661万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 2,
+          "name": "不敢狂龙，师姐别追了",
+          "tags": "战神/战斗/都市",
+          "publisher": "树下的椰子",
+          "onlineDate": "03-25",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5548万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 3,
+          "name": "初心未改，逆袭不负韶华",
+          "tags": "年代/逆袭",
+          "publisher": "短剧版权7471352534",
+          "onlineDate": "03-31",
+          "episodes": 58,
+          "type": "AI仿真人",
+          "hotValue": "5500万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 4,
+          "name": "开局一条蛇，无限进化",
+          "tags": "逆袭/时空之旅/剧情/反转",
+          "publisher": "杭州书王文化传媒有限公司",
+          "onlineDate": "03-30",
+          "episodes": 83,
+          "type": "3D",
+          "hotValue": "5489万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 5,
+          "name": "我养殖后堂哥哭了",
+          "tags": "都市日常/逆袭/反转",
+          "publisher": "短剧版权1284653240",
+          "onlineDate": "03-28",
+          "episodes": 34,
+          "type": "AI仿真人",
+          "hotValue": "5485万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 6,
+          "name": "我在灾荒年装傻成传奇",
+          "tags": "武侠/暗情",
+          "publisher": "咏鸦文学",
+          "onlineDate": "03-31",
+          "episodes": 87,
+          "type": "AI仿真人",
+          "hotValue": "5461万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 7,
+          "name": "虎群团宠小公主",
+          "tags": "年代/反转/古风/剧情",
+          "publisher": "南京清音漫文化传媒有限公司",
+          "onlineDate": "03-27",
+          "episodes": 84,
+          "type": "AI仿真人",
+          "hotValue": "5444万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 8,
+          "name": "团宠狗牌妹，我的门门金是败家",
+          "tags": "剧情",
+          "publisher": "南昌不周山文化",
+          "onlineDate": "03-31",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5374万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 9,
+          "name": "山野香春",
+          "tags": "乡村/都市日常",
+          "publisher": "树下的椰子",
+          "onlineDate": "03-25",
+          "episodes": 71,
+          "type": "AI仿真人",
+          "hotValue": "5306万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 10,
+          "name": "不疯不活",
+          "tags": "剧情/古风",
+          "publisher": "武汉曦空小雨传媒有限公司",
+          "onlineDate": "03-31",
+          "episodes": 47,
+          "type": "AI仿真人",
+          "hotValue": "5324万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 11,
+          "name": "莲生万劫，漫馨归位",
+          "tags": "古风",
+          "publisher": "落米花知剧",
+          "onlineDate": "03-31",
+          "episodes": 72,
+          "type": "AI仿真人",
+          "hotValue": "5320万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 12,
+          "name": "化身锦鲤，我逆袭成龙",
+          "tags": "逆袭/反转/剧情/喜剧",
+          "publisher": "亿禧魅影视",
+          "onlineDate": "03-31",
+          "episodes": 70,
+          "type": "3D",
+          "hotValue": "5319万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 13,
+          "name": "归田伴春翁，满驮金满溃",
+          "tags": "反转/剧情/逆袭",
+          "publisher": "短剧版权1628943433",
+          "onlineDate": "03-28",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5299万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 14,
+          "name": "全家听我心声后觉醒了，我吃瓜",
+          "tags": "剧情/古风",
+          "publisher": "爱看互动短剧",
+          "onlineDate": "04-01",
+          "episodes": 89,
+          "type": "AI仿真人",
+          "hotValue": "5273万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 15,
+          "name": "前夫嫌我是个瘸子，我转身离开",
+          "tags": "恋爱/都市",
+          "publisher": "树下的椰子",
+          "onlineDate": "03-26",
+          "episodes": 73,
+          "type": "AI仿真人",
+          "hotValue": "5222万"
+        },
+        {
+          "rank": 16,
+          "name": "没好时半分竞百万分赚十万",
+          "tags": "剧情/逆袭",
+          "publisher": "次元秀色",
+          "onlineDate": "03-31",
+          "episodes": 41,
+          "type": "AI仿真人",
+          "hotValue": "5181万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 17,
+          "name": "聚宝仙盆之杂灵根才是真BOSS",
+          "tags": "玄幻/异界",
+          "publisher": "短剧版权6058249392",
+          "onlineDate": "03-10",
+          "episodes": 99,
+          "type": "3D",
+          "hotValue": "5171万",
+          "synopsis": "14岁杂灵根少年贺平生初入秀竹峰，偶得聚宝仙盆。凭借仙盆越阶反杀欺压他的宗门弟子，踏上逆袭修仙之路。"
+        },
+        {
+          "rank": 18,
+          "name": "飞升当天，被天道一脚踹回高三",
+          "tags": "时空之旅",
+          "publisher": "tomatotv",
+          "onlineDate": "03-30",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5149万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 19,
+          "name": "紫翠薄世",
+          "tags": "精彩/古代",
+          "publisher": "短剧版权4784887130",
+          "onlineDate": "03-27",
+          "episodes": 68,
+          "type": "AI仿真人",
+          "hotValue": "5118万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 20,
+          "name": "花都战狼",
+          "tags": "都市日常",
+          "publisher": "灵犀动漫",
+          "onlineDate": "03-26",
+          "episodes": 65,
+          "type": "AI仿真人",
+          "hotValue": "5098万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 21,
+          "name": "我的婆婆是软柿子",
+          "tags": "乡村/年代/剧情/反转/喜剧",
+          "publisher": "短剧版权0412236",
+          "onlineDate": "03-28",
+          "episodes": 53,
+          "type": "AI仿真人",
+          "hotValue": "5079万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 22,
+          "name": "翻了广东千金印",
+          "tags": "都市日常",
+          "publisher": "",
+          "onlineDate": "03-27",
+          "episodes": 41,
+          "type": "AI仿真人",
+          "hotValue": "5077万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 23,
+          "name": "捡到的小奶团，竟是玄学真千金！",
+          "tags": "剧情/家庭/都市脑洞",
+          "publisher": "爱看互动短剧",
+          "onlineDate": "03-17",
+          "episodes": 78,
+          "type": "AI仿真人",
+          "hotValue": "5076万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 24,
+          "name": "盖世神医，这个女婿有点狂",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "爱看互动短剧",
+          "onlineDate": "03-18",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5068万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 25,
+          "name": "漫说传球，称霸欧洲",
+          "tags": "都市日常/青春/剧情/反转",
+          "publisher": "短剧版权2798667063",
+          "onlineDate": "04-03",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5059万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 26,
+          "name": "过年回家，和三个精神小妹挤大巴",
+          "tags": "都市脑洞/剧情",
+          "publisher": "叠和漫剧",
+          "onlineDate": "04-02",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5046万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 27,
+          "name": "万妖囚录传第一季",
+          "tags": "玄幻/穿越/逆袭/东方仙侠",
+          "publisher": "梦绘星界动漫",
+          "onlineDate": "03-25",
+          "episodes": 81,
+          "type": "2D",
+          "hotValue": "5045万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 28,
+          "name": "1982我拳乐器街唱赢工厂",
+          "tags": "乡村/青春/剧情",
+          "publisher": "爱看互动短剧",
+          "onlineDate": "03-29",
+          "episodes": 73,
+          "type": "AI仿真人",
+          "hotValue": "5038万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 29,
+          "name": "阮的杜纪",
+          "tags": "",
+          "publisher": "短剧版权0761560830",
+          "onlineDate": "03-30",
+          "episodes": 47,
+          "type": "AI仿真人",
+          "hotValue": "5037万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 30,
+          "name": "繁殖逆世",
+          "tags": "",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 68,
+          "type": "",
+          "hotValue": "5056万",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
+  "2026-04-06": {
+    "douyin": {
+      "date": "2026/4/6",
+      "items": [
+        {
+          "rank": 1,
+          "name": "被抓后，我成了前东家的噩梦",
+          "account": "步步是好剧",
+          "affiliate": "待确认",
+          "episodes": 40,
+          "type": "AI仿真人解说漫",
+          "newPlay": "1.13亿",
+          "totalPlay": "1.13亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 2,
+          "name": "拾光流年",
+          "account": "如夏短剧",
+          "affiliate": "待确认",
+          "episodes": 60,
+          "type": "AI仿真人剧",
+          "newPlay": "7586万",
+          "totalPlay": "1.51亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 3,
+          "name": "爷爷的遗产是604",
+          "account": "澄澄梦工厂",
+          "affiliate": "待确认",
+          "episodes": 36,
+          "type": "AI仿真人解说漫",
+          "newPlay": "7151万",
+          "totalPlay": "3.05亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 4,
+          "name": "坐地起价，萱姐悔青肠",
+          "account": "根旺副业",
+          "affiliate": "待确认",
+          "episodes": 51,
+          "type": "AI仿真人解说漫",
+          "newPlay": "7079万",
+          "totalPlay": "7345万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 5,
+          "name": "小小曜鑫",
+          "account": "小小漫文化",
+          "affiliate": "待确认",
+          "episodes": 30,
+          "type": "AI仿真人解说漫",
+          "newPlay": "6880万",
+          "totalPlay": "1.34亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 6,
+          "name": "天后归来之青春恋歌",
+          "account": "剧影影视",
+          "affiliate": "待确认",
+          "episodes": 60,
+          "type": "AI仿真人剧",
+          "newPlay": "6728万",
+          "totalPlay": "2.19亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 7,
+          "name": "春年觉醒",
+          "account": "如夏短剧",
+          "affiliate": "待确认",
+          "episodes": 70,
+          "type": "AI仿真人剧",
+          "newPlay": "6284万",
+          "totalPlay": "8605万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 8,
+          "name": "辞退拉面师傅后我慌火了",
+          "account": "强迫",
+          "affiliate": "待确认",
+          "episodes": 25,
+          "type": "AI仿真人解说漫",
+          "newPlay": "5977万",
+          "totalPlay": "9414万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 9,
+          "name": "艳生花",
+          "account": "人间烟相遇",
+          "affiliate": "待确认",
+          "episodes": 50,
+          "type": "AI仿真人剧",
+          "newPlay": "5707万",
+          "totalPlay": "7068万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 10,
+          "name": "纸巾的故事",
+          "account": "马克动漫",
+          "affiliate": "待确认",
+          "episodes": 47,
+          "type": "AI仿真人解说漫",
+          "newPlay": "5372万",
+          "totalPlay": "1.36亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 11,
+          "name": "重生小奶团：破局换子风波",
+          "account": "善言故事社",
+          "affiliate": "待确认",
+          "episodes": 40,
+          "type": "AI仿真人剧",
+          "newPlay": "4677万",
+          "totalPlay": "9241万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 12,
+          "name": "独自灿烂",
+          "account": "待确认",
+          "affiliate": "待确认",
+          "episodes": 45,
+          "type": "AI仿真人剧",
+          "newPlay": "4494万",
+          "totalPlay": "4823万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 13,
+          "name": "山野香春",
+          "account": "清雯短剧",
+          "affiliate": "待确认",
+          "episodes": 71,
+          "type": "AI仿真人剧",
+          "newPlay": "4396万",
+          "totalPlay": "2.57亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 14,
+          "name": "她的清醒归途",
+          "account": "山海宿平宇",
+          "affiliate": "待确认",
+          "episodes": 19,
+          "type": "AI仿真人剧",
+          "newPlay": "4112万",
+          "totalPlay": "4663万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 15,
+          "name": "初心未改，逆袭不负韶华",
+          "account": "万盛缘AI剧场",
+          "affiliate": "待确认",
+          "episodes": 58,
+          "type": "AI仿真人剧",
+          "newPlay": "4047万",
+          "totalPlay": "3.79亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 16,
+          "name": "嫡女重生：凤雪护柩门",
+          "account": "光影重叠流生",
+          "affiliate": "待确认",
+          "episodes": 61,
+          "type": "AI仿真人剧",
+          "newPlay": "3382万",
+          "totalPlay": "3450万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 17,
+          "name": "莲生万劫，漫馨归位",
+          "account": "光影看剧",
+          "affiliate": "待确认",
+          "episodes": 72,
+          "type": "AI仿真人解说漫",
+          "newPlay": "3357万",
+          "totalPlay": "4.80亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 18,
+          "name": "末日都市，终极一战",
+          "account": "消超短剧",
+          "affiliate": "待确认",
+          "episodes": 81,
+          "type": "AI仿真人剧",
+          "newPlay": "3328万",
+          "totalPlay": "4458万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 19,
+          "name": "赡养身份前夫慌了",
+          "account": "比翼短剧场",
+          "affiliate": "待确认",
+          "episodes": 64,
+          "type": "AI仿真人剧",
+          "newPlay": "3314万",
+          "totalPlay": "1.82亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 20,
+          "name": "重生后代亲出征，王妃却急红了眼",
+          "account": "茶浅动漫短剧",
+          "affiliate": "待确认",
+          "episodes": 64,
+          "type": "AI仿真人剧",
+          "newPlay": "3119万",
+          "totalPlay": "3889万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 21,
+          "name": "神牛报恩：饥荒年跑翌大小姐",
+          "account": "多多小剧场",
+          "affiliate": "待确认",
+          "episodes": 62,
+          "type": "AI仿真人剧",
+          "newPlay": "3096万",
+          "totalPlay": "8761万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 22,
+          "name": "外卖箱里的王爷",
+          "account": "生花剧场",
+          "affiliate": "待确认",
+          "episodes": 42,
+          "type": "AI仿真人剧",
+          "newPlay": "2850万",
+          "totalPlay": "5988万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 23,
+          "name": "山野逢春",
+          "account": "田埂上的烟火剧",
+          "affiliate": "待确认",
+          "episodes": 59,
+          "type": "AI仿真人剧",
+          "newPlay": "2744万",
+          "totalPlay": "3444万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 24,
+          "name": "心有微光向归途",
+          "account": "叮当追剧",
+          "affiliate": "待确认",
+          "episodes": 52,
+          "type": "AI仿真人剧",
+          "newPlay": "2729万",
+          "totalPlay": "5114万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 25,
+          "name": "锦衣逆晓",
+          "account": "故事简安提",
+          "affiliate": "待确认",
+          "episodes": 38,
+          "type": "AI仿真人解说漫",
+          "newPlay": "2522万",
+          "totalPlay": "3547万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 26,
+          "name": "陌的杜纪",
+          "account": "古风AI影剧",
+          "affiliate": "待确认",
+          "episodes": 47,
+          "type": "AI仿真人解说漫",
+          "newPlay": "2391万",
+          "totalPlay": "2.40亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 27,
+          "name": "八岁光头女儿",
+          "account": "硕芯漫剧场",
+          "affiliate": "待确认",
+          "episodes": 21,
+          "type": "AI仿真人剧",
+          "newPlay": "2348万",
+          "totalPlay": "2.02亿",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 28,
+          "name": "今日宜飞升",
+          "account": "夜深浅谈",
+          "affiliate": "待确认",
+          "episodes": 59,
+          "type": "2D/3D解说漫",
+          "newPlay": "2251万",
+          "totalPlay": "2735万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 29,
+          "name": "此心安处是我家",
+          "account": "每日看看剧",
+          "affiliate": "待确认",
+          "episodes": 60,
+          "type": "AI仿真人剧",
+          "newPlay": "2173万",
+          "totalPlay": "6315万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 30,
+          "name": "藏锋十载",
+          "account": "蓝猫剧场",
+          "affiliate": "待确认",
+          "episodes": 34,
+          "type": "AI仿真人剧",
+          "newPlay": "2116万",
+          "totalPlay": "8034万",
+          "synopsis": "缺少公开信息"
+        }
+      ]
+    },
     "hongguo": {
       "date": "2026/4/6",
       "items": [
