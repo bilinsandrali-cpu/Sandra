@@ -33,7 +33,7 @@
           "publisher": "短剧版权7471352534",
           "onlineDate": "03-31",
           "episodes": 58,
-          "type": "AI仿真人演绎剧",
+          "type": "AI仿真人",
           "hotValue": "5669万",
           "synopsis": ""
         },
@@ -371,7 +371,7 @@
           "publisher": "短剧版权7471352534",
           "onlineDate": "03-31",
           "episodes": 58,
-          "type": "AI仿真人演绎剧",
+          "type": "AI仿真人",
           "hotValue": "5731万",
           "synopsis": ""
         },
@@ -631,7 +631,7 @@
         {
           "rank": 27,
           "name": "绝世狂医",
-          "tags": "",
+          "tags": "都市修真/都市脑洞/剧情/反转/逆袭",
           "publisher": "",
           "onlineDate": "",
           "episodes": 60,
@@ -642,11 +642,11 @@
         {
           "rank": 28,
           "name": "萌宝巡途",
-          "tags": "",
+          "tags": "乡村/都市日常/都市脑洞/家庭",
           "publisher": "",
           "onlineDate": "",
           "episodes": 38,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5029万",
           "synopsis": ""
         },
@@ -664,11 +664,11 @@
         {
           "rank": 30,
           "name": "狙击之王",
-          "tags": "",
+          "tags": "抗战谍战/剧情",
           "publisher": "",
           "onlineDate": "",
           "episodes": 64,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5024万",
           "synopsis": ""
         }
@@ -698,7 +698,7 @@
           "publisher": "短剧版权7471352534",
           "onlineDate": "03-31",
           "episodes": 58,
-          "type": "AI仿真人演绎剧",
+          "type": "AI仿真人",
           "hotValue": "5671万",
           "synopsis": ""
         },
@@ -951,7 +951,7 @@
           "publisher": "树下的椰子",
           "onlineDate": "03-25",
           "episodes": 71,
-          "type": "AI仿真人演绎剧",
+          "type": "AI仿真人",
           "hotValue": "5063万",
           "synopsis": ""
         },
@@ -969,11 +969,11 @@
         {
           "rank": 27,
           "name": "萌宝巡途",
-          "tags": "",
+          "tags": "乡村/都市日常/都市脑洞/家庭",
           "publisher": "",
           "onlineDate": "",
           "episodes": 38,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5034万",
           "synopsis": ""
         },
@@ -990,23 +990,23 @@
         },
         {
           "rank": 29,
-          "name": "火傅七零：婆妇不好惹",
-          "tags": "",
+          "name": "火爆七零：媳妇不好惹",
+          "tags": "剧情/青春",
           "publisher": "",
           "onlineDate": "",
           "episodes": 80,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5026万",
           "synopsis": ""
         },
         {
           "rank": 30,
           "name": "狙击之王",
-          "tags": "",
+          "tags": "抗战谍战/剧情",
           "publisher": "",
           "onlineDate": "",
           "episodes": 64,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5024万",
           "synopsis": ""
         }
