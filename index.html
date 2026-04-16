@@ -2684,11 +2684,6 @@ function renderTable() {
   
   const hongguoContent = document.getElementById('hongguoContent');
 
-  // 渲染抖音数据
-  
-   暂无抖音榜数据</div></div>`;
-  }
-
   // 渲染红果数据
   const hongguoData = dayData.hongguo;
   if (hongguoData && hongguoData.items.length > 0) {
@@ -2715,9 +2710,10 @@ function renderTable() {
     hongguoContent.innerHTML = `<div class="no-data"><div class="no-data-icon">📭</div><div class="no-data-text">${currentDate} 暂无红果榜数据</div></div>`;
   }
 
-  // 更新日期标签（根据当前选中的平台）
-  dateLabel.textContent = activeData && activeData.items && activeData.items.length > 0
-    ? `统计时间：${activeData.date || currentDate}` : '';
+  // 更新日期标签
+  const hongguoData2 = dayData.hongguo;
+  dateLabel.textContent = hongguoData2 && hongguoData2.items && hongguoData2.items.length > 0
+    ? `统计时间：${hongguoData2.date || currentDate}` : '';
 }
 
 function showAddModal() {
