@@ -1,5 +1,6 @@
 {
   "2026-04-17": {
+    "douyin": null,
     "hongguo": {
       "date": "2026/4/17",
       "items": [
@@ -137,12 +138,12 @@
         },
         {
           "rank": 13,
-          "name": "暖暖入怀川",
-          "tags": "",
+          "name": "卿卿入怀川",
+          "tags": "逆袭/民国",
           "publisher": "",
           "onlineDate": "",
           "episodes": 60,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5205万",
           "synopsis": ""
         },
@@ -203,7 +204,7 @@
         },
         {
           "rank": 19,
-          "name": "暖漆新娘",
+          "name": "糊涂新娘",
           "tags": "都市日常/反转",
           "publisher": "海鱼影业",
           "onlineDate": "",
@@ -225,18 +226,18 @@
         },
         {
           "rank": 21,
-          "name": "守空房，京少夜夜跪她生质",
-          "tags": "",
+          "name": "守空房，京少夜夜哄她生崽",
+          "tags": "剧情/年代",
           "publisher": "",
           "onlineDate": "",
           "episodes": 81,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5064万",
           "synopsis": ""
         },
         {
           "rank": 22,
-          "name": "遁宅闹五福",
+          "name": "孤宅筑云端",
           "tags": "都市脑洞",
           "publisher": "小橘长",
           "onlineDate": "04-07",
@@ -247,12 +248,12 @@
         },
         {
           "rank": 23,
-          "name": "拾湘女后，嫡妃寺重翻三界",
-          "tags": "",
+          "name": "捡闺女后，废仙帝重塑三界",
+          "tags": "古风/玄幻脑洞",
           "publisher": "",
           "onlineDate": "",
           "episodes": 78,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5035万",
           "synopsis": ""
         },
@@ -270,11 +271,11 @@
         {
           "rank": 25,
           "name": "小小少年，神拳无敌",
-          "tags": "",
+          "tags": "都市日常/逆袭",
           "publisher": "",
           "onlineDate": "",
           "episodes": 60,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5031万",
           "synopsis": ""
         },
