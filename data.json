@@ -1,5 +1,343 @@
 {
-  "updatedAt": "2026-05-07T09:07:07.846Z",
+  "updatedAt": "2026-05-08T08:01:41.951Z",
+  "2026-05-08": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/5/8",
+      "items": [
+        {
+          "rank": 1,
+          "name": "桃源乡村小神医",
+          "tags": "脑洞/逆袭/乡村",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 68,
+          "type": "AI仿真人",
+          "hotValue": "5805w",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "一纸休书后，我带娘家暴富吃肉",
+          "tags": "种田/重生/逆袭/古代",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 88,
+          "type": "AI仿真人",
+          "hotValue": "5733w",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "1987，砖瓦厂食堂散伙",
+          "tags": "年代/逆袭⚠️待核对",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 81,
+          "type": "AI仿真人",
+          "hotValue": "5693w",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "换亲成皇",
+          "tags": "古言/逆袭",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 45,
+          "type": "AI仿真人",
+          "hotValue": "5648w",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "乱葬岗醒来，我扛着AK嫁王爷",
+          "tags": "恋爱/穿越/逆袭/系统/古代",
+          "publisher": "西安秋元影视",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5529w",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "破船的秘密：风浪越大鱼越贵",
+          "tags": "种田/逆袭/都市",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5361w",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "散伙开店，坐拥豪宅佳人",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "一路笔花",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5293w",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "十斤猪肉，我成厨神",
+          "tags": "年代/都市日常/都市脑洞",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5289w",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "后妈驾到，继子们没招了",
+          "tags": "剧情/都市/豪门",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5261w",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "凤印谋：旧容惊六宫",
+          "tags": "宫廷/逆袭/古代",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 62,
+          "type": "AI仿真人",
+          "hotValue": "5231w",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "我在末世讲道",
+          "tags": "末世/异能/逆袭⚠️待核对",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 38,
+          "type": "AI仿真人",
+          "hotValue": "5195w",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "以身入局，逃出大山",
+          "tags": "诡秘/乡村",
+          "publisher": "杭州刚刚好影视",
+          "onlineDate": "",
+          "episodes": 58,
+          "type": "AI仿真人",
+          "hotValue": "5185w",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "穿越洪荒：我给巫族当军师",
+          "tags": "奇幻/穿越/逆袭/异界",
+          "publisher": "武汉沃艺霖",
+          "onlineDate": "",
+          "episodes": 165,
+          "type": "AI仿真人",
+          "hotValue": "5176w",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "拾光荀攸：带崽流放又逃荒",
+          "tags": "古风/种田/乡村/剧情",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 76,
+          "type": "AI仿真人",
+          "hotValue": "5158w",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "三千庇护第十九季",
+          "tags": "脑洞/穿越/逆袭/系统/异界",
+          "publisher": "阅文漫鸣剧场",
+          "onlineDate": "",
+          "episodes": 82,
+          "type": "2D",
+          "hotValue": "5143w",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "小蟒不发威，你当我是泥鳅啊！",
+          "tags": "奇幻/重生/系统/逆袭",
+          "publisher": "重庆四月联盟",
+          "onlineDate": "",
+          "episodes": 105,
+          "type": "AI仿真人",
+          "hotValue": "5114w",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "被困百年修为尽废，我决定重启修仙路",
+          "tags": "玄幻/修真/逆袭⚠️待核对",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 89,
+          "type": "AI仿真人",
+          "hotValue": "5108w",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "八零安暖",
+          "tags": "年代/逆袭⚠️待核对",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 102,
+          "type": "AI仿真人",
+          "hotValue": "5090w",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "说好合伙开店，你把我当打工的？",
+          "tags": "剧情/逆袭/都市⚠️待核对",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 38,
+          "type": "AI仿真人",
+          "hotValue": "5079w",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "团宠狗师妹我的师门全是大妖第二季",
+          "tags": "剧情",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 72,
+          "type": "AI仿真人",
+          "hotValue": "5072w",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "平凡老货，传奇老货",
+          "tags": "都市/逆袭⚠️待核对剧名",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 79,
+          "type": "AI仿真人",
+          "hotValue": "5060w",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "我的弟弟表妹",
+          "tags": "都市/家庭⚠️待核对剧名",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 59,
+          "type": "AI仿真人",
+          "hotValue": "5057w",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "枯井的秘密",
+          "tags": "种田/逆袭/年代",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 64,
+          "type": "AI仿真人",
+          "hotValue": "5048w",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "盖世神医，这个女婿有点狂",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "爱看互动短剧",
+          "onlineDate": "03-18",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5032w",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "我功夫天满空软椒他们耳竟见呈打扔",
+          "tags": "⚠️OCR严重失真待核对",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 49,
+          "type": "AI仿真人",
+          "hotValue": "5024w",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "女帝的御兽是只猫",
+          "tags": "脑洞/穿越/系统/逆袭/异界",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "3D",
+          "hotValue": "5007w",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "钓鱼：让你开钓场，你击开会所？",
+          "tags": "钓鱼漫/系统/乡村",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "2D",
+          "hotValue": "5002w",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "末世战神穿农家，靠万能空间养患暴富",
+          "tags": "种田/穿越/逆袭/异能/古代/农村",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 74,
+          "type": "AI仿真人",
+          "hotValue": "4805w",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "别惹赘婿，我是祖师爷",
+          "tags": "玄幻/穿越/修真/逆袭",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 95,
+          "type": "3D",
+          "hotValue": "4804w",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "规则怪谈：我能听到万物的心声",
+          "tags": "脑洞/异能/求生/逆袭/异界",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 63,
+          "type": "3D",
+          "hotValue": "4791w",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-05-07": {
     "douyin": null,
     "hongguo": {
