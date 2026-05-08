@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-08T08:01:41.951Z",
+  "updatedAt": "2026-05-08T08:26:02.423Z",
   "2026-05-08": {
     "douyin": null,
     "hongguo": {
@@ -30,7 +30,7 @@
         {
           "rank": 3,
           "name": "1987，砖瓦厂食堂散伙",
-          "tags": "年代/逆袭⚠️待核对",
+          "tags": "年代/剧情",
           "publisher": "",
           "onlineDate": "",
           "episodes": 81,
@@ -117,8 +117,8 @@
         },
         {
           "rank": 11,
-          "name": "我在末世讲道",
-          "tags": "末世/异能/逆袭⚠️待核对",
+          "name": "我在末世逍遥",
+          "tags": "末世/求生/逆袭/都市",
           "publisher": "",
           "onlineDate": "",
           "episodes": 38,
@@ -183,19 +183,19 @@
         },
         {
           "rank": 17,
-          "name": "被困百年修为尽废，我决定重启修仙路",
-          "tags": "玄幻/修真/逆袭⚠️待核对",
+          "name": "被困百年修为尽废，我决定重走修仙路",
+          "tags": "玄幻/修真/逆袭/异界",
           "publisher": "",
           "onlineDate": "",
           "episodes": 89,
-          "type": "AI仿真人",
+          "type": "3D",
           "hotValue": "5108w",
           "synopsis": ""
         },
         {
           "rank": 18,
-          "name": "八零安暖",
-          "tags": "年代/逆袭⚠️待核对",
+          "name": "八零安晴",
+          "tags": "剧情/重生/年代",
           "publisher": "",
           "onlineDate": "",
           "episodes": 102,
@@ -206,7 +206,7 @@
         {
           "rank": 19,
           "name": "说好合伙开店，你把我当打工的？",
-          "tags": "剧情/逆袭/都市⚠️待核对",
+          "tags": "剧情/逆袭/都市",
           "publisher": "",
           "onlineDate": "",
           "episodes": 38,
@@ -227,8 +227,8 @@
         },
         {
           "rank": 21,
-          "name": "平凡老货，传奇老货",
-          "tags": "都市/逆袭⚠️待核对剧名",
+          "name": "平凡老张，传奇老爸",
+          "tags": "总裁/都市/豪门",
           "publisher": "",
           "onlineDate": "",
           "episodes": 79,
@@ -238,12 +238,12 @@
         },
         {
           "rank": 22,
-          "name": "我的弟弟表妹",
-          "tags": "都市/家庭⚠️待核对剧名",
+          "name": "我的诡异表妹",
+          "tags": "脑洞/穿越/求生/异界",
           "publisher": "",
           "onlineDate": "",
           "episodes": 59,
-          "type": "AI仿真人",
+          "type": "2D",
           "hotValue": "5057w",
           "synopsis": ""
         },
@@ -271,8 +271,8 @@
         },
         {
           "rank": 25,
-          "name": "我功夫天满空软椒他们耳竟见呈打扔",
-          "tags": "⚠️OCR严重失真待核对",
+          "name": "我劝果农清空砂糖橘，他们骂我吃差价",
+          "tags": "剧情/乡村",
           "publisher": "",
           "onlineDate": "",
           "episodes": 49,
