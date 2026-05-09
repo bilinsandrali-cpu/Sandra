@@ -1,5 +1,342 @@
 {
-  "updatedAt": "2026-05-08T08:26:02.423Z",
+  "updatedAt": "2026-05-09T09:03:42.522Z",
+  "2026-05-09": {
+    "hongguo": {
+      "date": "2026/5/9",
+      "items": [
+        {
+          "rank": 1,
+          "name": "桃源乡村小神医",
+          "tags": "脑洞/逆袭/乡村",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 68,
+          "type": "AI仿真人",
+          "hotValue": "5850万",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "一纸休书后，我带娘家暴富",
+          "tags": "古言脑洞/逆袭",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 88,
+          "type": "AI仿真人",
+          "hotValue": "5814万",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "换亲成皇",
+          "tags": "古言/逆袭",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 45,
+          "type": "AI仿真人",
+          "hotValue": "5604万",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "1987，砖瓦厂食堂散伙",
+          "tags": "年代/剧情",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 81,
+          "type": "AI仿真人",
+          "hotValue": "5564万",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "乱葬岗醒来，我扛着AK嫁王爷",
+          "tags": "恋爱/穿越/逆袭/系统/古代",
+          "publisher": "西安秋禾影视",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5495万",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "被困百年修为尽废，我决定重走修仙路",
+          "tags": "玄幻/修真/逆袭/异界",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 89,
+          "type": "3D",
+          "hotValue": "5484万",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "破船的秘密：风浪越大鱼越贵",
+          "tags": "种田/逆袭/都市",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5355万",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "散伙开店，坐拥豪宅佳人",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "一路繁花",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5319万",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "后妈驾到，继子们没招了",
+          "tags": "剧情/都市/豪门",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5253万",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "凤印谋：旧容惊六宫",
+          "tags": "宫廷/逆袭/古代",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 62,
+          "type": "AI仿真人",
+          "hotValue": "5197万",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "闪婚之后，老公马甲掉了",
+          "tags": "都市日常",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 73,
+          "type": "AI仿真人",
+          "hotValue": "5194万",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "八零安晴",
+          "tags": "剧情/重生/年代",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 102,
+          "type": "AI仿真人",
+          "hotValue": "5189万",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "十斤猪肉，我成厨神",
+          "tags": "年代/都市日常/都市脑洞",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5175万",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "小娇不娶娃，你当我是泥糊啊！",
+          "tags": "",
+          "publisher": "重庆四月联盟",
+          "onlineDate": "",
+          "episodes": 105,
+          "type": "",
+          "hotValue": "5173万",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "以身入局，逃出大山",
+          "tags": "诡秘/乡村",
+          "publisher": "杭州刚刚好影视",
+          "onlineDate": "",
+          "episodes": 58,
+          "type": "AI仿真人",
+          "hotValue": "5146万",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "我修仙归来，把众神训成了小学生",
+          "tags": "",
+          "publisher": "新美红星",
+          "onlineDate": "",
+          "episodes": 62,
+          "type": "",
+          "hotValue": "5152万",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "穿越洪荒：我给巫族当军师",
+          "tags": "奇幻/穿越/逆袭/异界",
+          "publisher": "武汉沃艺霖",
+          "onlineDate": "",
+          "episodes": 165,
+          "type": "AI仿真人",
+          "hotValue": "5130万",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "平凡老张，传奇老爸",
+          "tags": "总裁/都市/豪门",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 79,
+          "type": "AI仿真人",
+          "hotValue": "5129万",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "拾光君归：带崽流浪又逃荒",
+          "tags": "",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 76,
+          "type": "",
+          "hotValue": "5111万",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "三千庇护第十九季",
+          "tags": "脑洞/穿越/逆袭/系统/异界",
+          "publisher": "阅文漫鸣剧场",
+          "onlineDate": "",
+          "episodes": 82,
+          "type": "2D",
+          "hotValue": "5074万",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "枯井的秘密",
+          "tags": "种田/逆袭/年代",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 64,
+          "type": "AI仿真人",
+          "hotValue": "5052万",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "我劝果农清空砂糖橘，他们骂我吃差价",
+          "tags": "剧情/乡村",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 49,
+          "type": "AI仿真人",
+          "hotValue": "5047万",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "我的诡异表妹",
+          "tags": "脑洞/穿越/求生/异界",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 59,
+          "type": "2D",
+          "hotValue": "5033万",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "团宠狗师妹我的师门全是大妖第二季",
+          "tags": "剧情",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 72,
+          "type": "AI仿真人",
+          "hotValue": "5032万",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "侯门嫡母归",
+          "tags": "",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "",
+          "hotValue": "5025万",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "盖世神医，这个女婿有点狂",
+          "tags": "都市脑洞/剧情/反转",
+          "publisher": "爱看互动短剧",
+          "onlineDate": "03-18",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5024万",
+          "synopsis": "缺少公开信息"
+        },
+        {
+          "rank": 27,
+          "name": "说好合伙开店，你把我当打工的？",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 38,
+          "type": "AI仿真人",
+          "hotValue": "5020万",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "医妃撩人，残王他沦陷了",
+          "tags": "",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 108,
+          "type": "",
+          "hotValue": "5019万",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "恶魔寻光",
+          "tags": "",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 47,
+          "type": "",
+          "hotValue": "5014万",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "钓鱼：让你开钓场，你击开会所？",
+          "tags": "钓鱼漫/系统/乡村",
+          "publisher": "",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "2D",
+          "hotValue": "5002万",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-05-08": {
     "douyin": null,
     "hongguo": {
