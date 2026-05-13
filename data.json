@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-13T09:22:01.384Z",
+  "updatedAt": "2026-05-13T09:41:09.473Z",
   "2026-05-13": {
     "douyin": null,
     "hongguo": {
@@ -52,7 +52,7 @@
         {
           "rank": 5,
           "name": "饭店风云",
-          "tags": "待核对",
+          "tags": "剧情/逆袭/都市",
           "publisher": "果燃影视",
           "onlineDate": "",
           "episodes": 51,
@@ -117,8 +117,8 @@
         },
         {
           "rank": 11,
-          "name": "苒苒迎龙音，老天救养活了全家",
-          "tags": "待核对",
+          "name": "两界跑龙套，老太我养活了全家",
+          "tags": "剧情/穿越/逆袭/都市",
           "publisher": "待确认",
           "onlineDate": "",
           "episodes": 80,
@@ -150,12 +150,12 @@
         },
         {
           "rank": 14,
-          "name": "渔舟晚梦，我接女儿上文国家",
-          "tags": "待核对",
+          "name": "诡异复苏，我接女儿上交国家",
+          "tags": "脑洞/穿越/系统/逆袭/都市",
           "publisher": "杭州喜橫雲蘯",
           "onlineDate": "",
           "episodes": 60,
-          "type": "AI仿真人",
+          "type": "2D",
           "hotValue": "5195w",
           "synopsis": ""
         },
