@@ -1,5 +1,343 @@
 {
-  "updatedAt": "2026-05-22T08:32:33.472Z",
+  "updatedAt": "2026-05-25T03:40:49.450Z",
+  "2026-05-22": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/5/22",
+      "items": [
+        {
+          "rank": 1,
+          "name": "十八年的婚姻终章",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 79,
+          "type": "待核对",
+          "hotValue": "5832万",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "日薪一万，我在博物馆值夜班",
+          "tags": "玄幻/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5667万",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "重生70我当家林志强的故事",
+          "tags": "种田/重生/逆袭/年代/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 106,
+          "type": "AI仿真人",
+          "hotValue": "5532万",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "万妖图录传第五季",
+          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "3D",
+          "hotValue": "5428万",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "翻身",
+          "tags": "剧情/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 53,
+          "type": "AI仿真人",
+          "hotValue": "5414万",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "赵雪机车：有梦想就去追",
+          "tags": "种田/逆袭/热血/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 77,
+          "type": "AI仿真人",
+          "hotValue": "5370万",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "不争风月自逢春",
+          "tags": "剧情/重生/古代",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5368万",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "大唐兕子来敲门第二季",
+          "tags": "快穿/历史古代",
+          "publisher": "徐州创循新升",
+          "onlineDate": "",
+          "episodes": 52,
+          "type": "3D",
+          "hotValue": "5365万",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "凡人百世书",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 81,
+          "type": "待核对",
+          "hotValue": "5355万",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "两界跑龙套，老太我养活了全家",
+          "tags": "剧情/穿越/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5344万",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "上岸斩我？参加恋综火爆全网",
+          "tags": "恋爱/穿越/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 79,
+          "type": "AI仿真人",
+          "hotValue": "5314万",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "穿成炮灰后，全家觉醒了",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 85,
+          "type": "待核对",
+          "hotValue": "5313万",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "她与人类为邻",
+          "tags": "末世/异能/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 106,
+          "type": "3D",
+          "hotValue": "5250万",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "离婚认亲记",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 108,
+          "type": "待核对",
+          "hotValue": "5222万",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "我开汽修厂后，大舅子悔哭了",
+          "tags": "都市日常/剧情/家庭/逆袭",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 86,
+          "type": "AI仿真人",
+          "hotValue": "5207万",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "忘恩抢滩终翻车，守得规矩方长久",
+          "tags": "剧情/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 71,
+          "type": "AI仿真人",
+          "hotValue": "5194万",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "穿越荒年之我在深山当猎神",
+          "tags": "穿越/种田/逆袭/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5182万",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "骗我度假？我挖空了全族灵脉",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "待核对",
+          "hotValue": "5176万",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "闪婚之后，老公马甲掉了",
+          "tags": "都市日常",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "5161万",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "骗心还前情商失去",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 62,
+          "type": "待核对",
+          "hotValue": "5155万",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "过年回家，与三个精神小妹耍疯狂",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 74,
+          "type": "待核对",
+          "hotValue": "5153万",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "被舅舅赶出猎场后，我称霸大兴安岭",
+          "tags": "都市日常/户外/逆袭/剧情",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 54,
+          "type": "AI仿真人",
+          "hotValue": "5143万",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "调皮乐宝大佬爹",
+          "tags": "萌宝/都市/豪门",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5142万",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "我体内有条龙，他觉醒了！",
+          "tags": "都市日常/都市脑洞/反转/剧情",
+          "publisher": "爱源星尼",
+          "onlineDate": "",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "5125万",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "聚宝仙盆之杂灵根才是真BOSS第三季",
+          "tags": "传统玄幻/逆袭/古风",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 119,
+          "type": "3D",
+          "hotValue": "5115万",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "尹心坏坏之少逼逼歪歪，反派火力全开",
+          "tags": "青春/都市/豪门",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 37,
+          "type": "3D",
+          "hotValue": "5114万",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "锦墨风华：重生后我掀翻了太子第二季",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "待核对",
+          "hotValue": "5071万",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "溪涧获灵泉真人AI版",
+          "tags": "种田/修真/逆袭/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 121,
+          "type": "AI仿真人",
+          "hotValue": "5059万",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "魔圈少爷的小蛋仔",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 72,
+          "type": "待核对",
+          "hotValue": "5043万",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "以爱为家！橙换人生的双向温满",
+          "tags": "待核对",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 100,
+          "type": "待核对",
+          "hotValue": "5039万",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-05-21": {
     "douyin": null,
     "hongguo": {
