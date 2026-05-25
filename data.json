@@ -1,5 +1,343 @@
 {
-  "updatedAt": "2026-05-25T09:28:38.184Z",
+  "updatedAt": "2026-05-25T09:32:55.292Z",
+  "2026-05-25": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/5/25",
+      "items": [
+        {
+          "rank": 1,
+          "name": "山海藏墟，无眼窥天",
+          "tags": "玄幻/逆袭/修真/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 110,
+          "type": "3D",
+          "hotValue": "6975w",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "万妖图录传第五季",
+          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 64,
+          "type": "3D",
+          "hotValue": "5761w",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "八年质子归京，岂知天下已刻吾名",
+          "tags": "宫廷/穿越/逆袭/古代",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 64,
+          "type": "AI仿真人",
+          "hotValue": "5542w",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "凡人百世书",
+          "tags": "玄幻/重生/系统/逆袭/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 81,
+          "type": "3D",
+          "hotValue": "5533w",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "重生70我当家林志强的故事",
+          "tags": "种田/重生/逆袭/年代/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 106,
+          "type": "AI仿真人",
+          "hotValue": "5501w",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "离婚认亲记",
+          "tags": "剧情/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 108,
+          "type": "AI仿真人",
+          "hotValue": "5459w",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "青狱战龙战神，无敌",
+          "tags": "战神/都市/豪门",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 61,
+          "type": "AI仿真人",
+          "hotValue": "5443w",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "谁让这个悍匪修仙的",
+          "tags": "玄幻/修真/逆袭/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "3D",
+          "hotValue": "5344w",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "翻身",
+          "tags": "剧情/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 53,
+          "type": "AI仿真人",
+          "hotValue": "5343w",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "透视之眼",
+          "tags": "脑洞/逆袭/异能/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 90,
+          "type": "AI仿真人",
+          "hotValue": "5334w",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "我有空间种异能，末世坚役战，我的ATM机（待核对）",
+          "tags": "末世/异能/系统/逆袭/穿越",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 85,
+          "type": "AI仿真人",
+          "hotValue": "5315w",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "上岸斩我？参加恋综火爆全网",
+          "tags": "恋爱/穿越/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 79,
+          "type": "AI仿真人",
+          "hotValue": "5314w",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "日薪一万，我在博物馆值夜班",
+          "tags": "玄幻/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5285w",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "偏心过后流落街头了",
+          "tags": "剧情/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 62,
+          "type": "AI仿真人",
+          "hotValue": "5277w",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "穿成炮灰后，全家觉醒了",
+          "tags": "总裁/穿越/异能/逆袭/都市/豪门",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 85,
+          "type": "AI仿真人",
+          "hotValue": "5236w",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "嫌我废根？我挖空了全宗灵脉",
+          "tags": "玄幻/逆袭/复仇/修真/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5201w",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "不争风月自逢春",
+          "tags": "剧情/重生/古代",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5189w",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "我把水稻田变成了红金矿",
+          "tags": "种田/逆袭/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 36,
+          "type": "AI仿真人",
+          "hotValue": "5179w",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "大唐兕子来敲门第二季",
+          "tags": "快穿/历史古代",
+          "publisher": "徐州创循新升",
+          "onlineDate": "",
+          "episodes": 52,
+          "type": "3D",
+          "hotValue": "5178w",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "古今两界跑龙套，老太我养活了全家",
+          "tags": "剧情/穿越/逆袭/古代",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 118,
+          "type": "AI仿真人",
+          "hotValue": "5170w",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "万妖图录传第五季（待核对，疑似第六季）",
+          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "3D",
+          "hotValue": "5168w",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "风水天师第三季",
+          "tags": "脑洞/民国",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 83,
+          "type": "AI仿真人",
+          "hotValue": "5158w",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "调皮乐宝大佬爹",
+          "tags": "萌宝/都市/豪门",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5132w",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "我有一双透视眼",
+          "tags": "脑洞/异能/逆袭/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 83,
+          "type": "AI仿真人",
+          "hotValue": "5103w",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "精通八国语言，我却复了二年度物馆译（待核对）",
+          "tags": "剧情/都市",
+          "publisher": "相阅",
+          "onlineDate": "",
+          "episodes": 43,
+          "type": "AI仿真人",
+          "hotValue": "5102w",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "闪婚之后，老公马甲掉了",
+          "tags": "都市日常",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 73,
+          "type": "AI仿真人",
+          "hotValue": "5083w",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "仙尊归来：谁说我有元芑兄？第二季（待核对）",
+          "tags": "玄幻/穿越/逆袭/修真/异界",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 83,
+          "type": "AI仿真人",
+          "hotValue": "5071w",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "神地师妹之青蛋衣宝第二季（待核对）",
+          "tags": "剧情/古代",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5063w",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "狂浪：深海帝王",
+          "tags": "剧情/逆袭/乡村",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 46,
+          "type": "AI仿真人",
+          "hotValue": "5061w",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "八年功臣被踢走，公司一夜丢了48亿",
+          "tags": "总裁/逆袭/复仇/都市",
+          "publisher": "待确认",
+          "onlineDate": "",
+          "episodes": 57,
+          "type": "AI仿真人",
+          "hotValue": "5060w",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-05-24": {
     "douyin": null,
     "hongguo": {
