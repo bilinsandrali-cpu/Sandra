@@ -1,4 +1,42 @@
 {
+  "2026-05-31": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/5/31",
+      "items": [
+        {"rank": 1, "name": "聚宝仙盆之杂灵根才是真BOSS第三季", "tags": "传统玄幻/逆袭/古风", "publisher": "短剧版权6058249392", "onlineDate": "", "episodes": 119, "type": "3D", "hotValue": "8044w", "synopsis": ""},
+        {"rank": 2, "name": "山海藏墟，无眼窥天", "tags": "玄幻/逆袭/修真/异界", "publisher": "待确认", "onlineDate": "", "episodes": 110, "type": "3D", "hotValue": "6202w", "synopsis": ""},
+        {"rank": 3, "name": "花瓶千年", "tags": "脑洞", "publisher": "待确认", "onlineDate": "", "episodes": 65, "type": "3D", "hotValue": "5947w", "synopsis": ""},
+        {"rank": 4, "name": "别人赶海靠运气，我靠系统报点发家致富", "tags": "脑洞/重生/系统/逆袭/乡村", "publisher": "待确认", "onlineDate": "", "episodes": 80, "type": "AI仿真人", "hotValue": "5677w", "synopsis": ""},
+        {"rank": 5, "name": "皓首问道，我以仙葫求长生", "tags": "玄幻/穿越/逆袭/修真/异界", "publisher": "魔方元岳", "onlineDate": "", "episodes": 67, "type": "AI仿真人", "hotValue": "5645w", "synopsis": ""},
+        {"rank": 6, "name": "情起屋檐下", "tags": "恋爱/穿越/都市", "publisher": "待确认", "onlineDate": "", "episodes": 66, "type": "AI仿真人", "hotValue": "5371w", "synopsis": ""},
+        {"rank": 7, "name": "双宝助攻复婚记", "tags": "恋爱/都市/豪门", "publisher": "待确认", "onlineDate": "", "episodes": 41, "type": "AI仿真人", "hotValue": "5360w", "synopsis": ""},
+        {"rank": 8, "name": "青狱战龙战神，无敌", "tags": "战神/都市/豪门", "publisher": "待确认", "onlineDate": "", "episodes": 61, "type": "AI仿真人", "hotValue": "5354w", "synopsis": ""},
+        {"rank": 9, "name": "我有空间异能：末世垃圾堆，我的ATM机", "tags": "脑洞/异能/都市/逆袭/穿越", "publisher": "待确认", "onlineDate": "", "episodes": 85, "type": "AI仿真人", "hotValue": "5334w", "synopsis": ""},
+        {"rank": 10, "name": "八年质子归京，岂知天下已刻吾名", "tags": "宫廷/穿越/逆袭/古代", "publisher": "待确认", "onlineDate": "", "episodes": 64, "type": "AI仿真人", "hotValue": "5319w", "synopsis": ""},
+        {"rank": 11, "name": "谁让这个悍匪修仙的", "tags": "玄幻/修真/逆袭/异界", "publisher": "待确认", "onlineDate": "", "episodes": 60, "type": "3D", "hotValue": "5304w", "synopsis": ""},
+        {"rank": 12, "name": "炤炤其华", "tags": "宫廷/复仇/古代", "publisher": "乐加", "onlineDate": "", "episodes": 86, "type": "AI仿真人", "hotValue": "5296w", "synopsis": ""},
+        {"rank": 13, "name": "透视之眼", "tags": "脑洞/逆袭/异能/都市", "publisher": "待确认", "onlineDate": "", "episodes": 90, "type": "AI仿真人", "hotValue": "5281w", "synopsis": ""},
+        {"rank": 14, "name": "万妖图录传第五季", "tags": "奇幻/穿越/系统/逆袭/异界", "publisher": "待确认", "onlineDate": "", "episodes": 64, "type": "3D", "hotValue": "5275w", "synopsis": ""},
+        {"rank": 15, "name": "渡魂月", "tags": "脑洞/都市/豪门", "publisher": "待确认", "onlineDate": "", "episodes": 104, "type": "3D", "hotValue": "5256w", "synopsis": ""},
+        {"rank": 16, "name": "农户的修仙旅行日记", "tags": "", "publisher": "待确认", "onlineDate": "", "episodes": 60, "type": "", "hotValue": "5252w", "synopsis": ""},
+        {"rank": 17, "name": "香城来山", "tags": "", "publisher": "待确认", "onlineDate": "", "episodes": 47, "type": "", "hotValue": "5238w", "synopsis": ""},
+        {"rank": 18, "name": "超市通异界，我在修真各界搞倒卖AI真人版", "tags": "脑洞/都市", "publisher": "待确认", "onlineDate": "", "episodes": 68, "type": "AI仿真人", "hotValue": "5228w", "synopsis": ""},
+        {"rank": 19, "name": "百岁永生", "tags": "玄幻/穿越/逆袭/修真/异界", "publisher": "待确认", "onlineDate": "", "episodes": 12, "type": "3D", "hotValue": "5220w", "synopsis": ""},
+        {"rank": 20, "name": "留痕反击，我从乙方逆袭", "tags": "剧情/逆袭/都市/职场", "publisher": "待确认", "onlineDate": "", "episodes": 62, "type": "AI仿真人", "hotValue": "5217w", "synopsis": ""},
+        {"rank": 21, "name": "落榜后我靠害虫成为虾王", "tags": "年代/剧情/反转/家庭/乡村", "publisher": "待确认", "onlineDate": "", "episodes": 79, "type": "AI仿真人", "hotValue": "5202w", "synopsis": ""},
+        {"rank": 22, "name": "镇国傻婿：绝美老婆爱疯我了", "tags": "战神/都市/豪门", "publisher": "待确认", "onlineDate": "", "episodes": 100, "type": "AI仿真人", "hotValue": "5197w", "synopsis": ""},
+        {"rank": 23, "name": "尹心坏坏第二季", "tags": "青春/都市/豪门", "publisher": "待确认", "onlineDate": "", "episodes": 60, "type": "3D", "hotValue": "5182w", "synopsis": ""},
+        {"rank": 24, "name": "花数物宫，我的小吃店去通古今", "tags": "", "publisher": "待确认", "onlineDate": "", "episodes": 77, "type": "", "hotValue": "5179w", "synopsis": ""},
+        {"rank": 25, "name": "生财记之八零：天降福宝家庭来直接亲眷女", "tags": "", "publisher": "待确认", "onlineDate": "", "episodes": 77, "type": "", "hotValue": "5150w", "synopsis": ""},
+        {"rank": 26, "name": "1985：寻龙赶山成首富", "tags": "种田/逆袭/复仇/年代/乡村", "publisher": "待确认", "onlineDate": "", "episodes": 78, "type": "AI仿真人", "hotValue": "5107w", "synopsis": ""},
+        {"rank": 27, "name": "怒海狂涛，我单干后兄弟悔疯了", "tags": "剧情/逆袭/都市", "publisher": "待确认", "onlineDate": "", "episodes": 54, "type": "AI仿真人", "hotValue": "5103w", "synopsis": ""},
+        {"rank": 28, "name": "离婚认亲记", "tags": "剧情/逆袭/都市", "publisher": "待确认", "onlineDate": "", "episodes": 108, "type": "AI仿真人", "hotValue": "5097w", "synopsis": ""},
+        {"rank": 29, "name": "嫡女她是山大王", "tags": "家族/古代", "publisher": "待确认", "onlineDate": "", "episodes": 66, "type": "AI仿真人", "hotValue": "5089w", "synopsis": ""},
+        {"rank": 30, "name": "五灵根修仙：我有一个吞噬空间", "tags": "玄幻逆袭修真异界", "publisher": "待确认", "onlineDate": "", "episodes": 71, "type": "3D", "hotValue": "5083w", "synopsis": ""}
+      ]
+    }
+  },
   "2026-05-30": {
     "douyin": null,
     "hongguo": {
