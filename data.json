@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T06:06:33.263Z",
+  "updatedAt": "2026-06-03T06:27:13.481Z",
   "2026-06-03": {
     "douyin": null,
     "hongguo": {
@@ -106,12 +106,12 @@
         },
         {
           "rank": 10,
-          "name": "一碗热粥予人心",
-          "tags": "⚠️待核对",
+          "name": "一碗热菜守人心",
+          "tags": "剧情/乡村",
           "publisher": "待确认",
           "onlineDate": "",
           "episodes": 54,
-          "type": "⚠️",
+          "type": "3D",
           "hotValue": "5383w",
           "synopsis": ""
         },
@@ -206,11 +206,11 @@
         {
           "rank": 19,
           "name": "急诊科：开局看见疾病词条",
-          "tags": "⚠️待核对",
+          "tags": "脑洞/系统/职场/都市",
           "publisher": "待确认",
           "onlineDate": "",
           "episodes": 62,
-          "type": "⚠️",
+          "type": "AI仿真人",
           "hotValue": "5189w",
           "synopsis": ""
         },
@@ -238,23 +238,23 @@
         },
         {
           "rank": 22,
-          "name": "百岁悟道仙逝第三季",
-          "tags": "⚠️待核对",
+          "name": "百岁悟道仙途第三季",
+          "tags": "玄幻/逆袭/穿越/修真/异界",
           "publisher": "待确认",
           "onlineDate": "",
-          "episodes": 81,
-          "type": "⚠️",
+          "episodes": 80,
+          "type": "3D",
           "hotValue": "5142w",
           "synopsis": ""
         },
         {
           "rank": 23,
           "name": "开局契约废机娘，誓要征服这片天",
-          "tags": "⚠️待核对",
+          "tags": "脑洞/穿越/都市",
           "publisher": "待确认",
           "onlineDate": "",
-          "episodes": 115,
-          "type": "⚠️",
+          "episodes": 113,
+          "type": "AI仿真人",
           "hotValue": "5135w",
           "synopsis": ""
         },
@@ -294,11 +294,11 @@
         {
           "rank": 27,
           "name": "龙隐之狂龙归来",
-          "tags": "⚠️待核对",
+          "tags": "脑洞/修真/都市/豪门",
           "publisher": "待确认",
           "onlineDate": "",
           "episodes": 70,
-          "type": "⚠️",
+          "type": "AI仿真人",
           "hotValue": "5102w",
           "synopsis": ""
         },
@@ -315,12 +315,12 @@
         },
         {
           "rank": 29,
-          "name": "离婚后，奶妈身份藏不住了",
-          "tags": "⚠️待核对",
+          "name": "离婚后，爸妈身份藏不住了",
+          "tags": "都市日常",
           "publisher": "待确认",
           "onlineDate": "",
           "episodes": 60,
-          "type": "⚠️",
+          "type": "AI仿真人",
           "hotValue": "5101w",
           "synopsis": ""
         },
