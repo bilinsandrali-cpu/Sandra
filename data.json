@@ -1,5 +1,6 @@
 {
   "2026-06-05": {
+    "douyin": null,
     "hongguo": {
       "date": "2026/6/5",
       "items": [
@@ -71,12 +72,12 @@
         },
         {
           "rank": 7,
-          "name": "杀神崛起之永夜君王第二季",
-          "tags": "",
+          "name": "杀戮崛起之永夜君王第二季",
+          "tags": "奇幻/逆袭/都市",
           "publisher": "",
           "onlineDate": "",
           "episodes": 50,
-          "type": "",
+          "type": "2D",
           "hotValue": "5504w",
           "synopsis": ""
         },
@@ -204,11 +205,11 @@
         {
           "rank": 19,
           "name": "重回高中时代：这次我绝不放手",
-          "tags": "",
+          "tags": "剧情/重生/逆袭/都市/校园",
           "publisher": "",
           "onlineDate": "",
           "episodes": 62,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5318w",
           "synopsis": ""
         },
@@ -269,12 +270,12 @@
         },
         {
           "rank": 25,
-          "name": "厨神逆袭：掌勺人归来，三顿镇匠心",
-          "tags": "",
+          "name": "厨神逆袭：掌勺人归来，三载镇匠心",
+          "tags": "剧情/逆袭/都市",
           "publisher": "",
           "onlineDate": "",
           "episodes": 95,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5199w",
           "synopsis": ""
         },
@@ -313,12 +314,12 @@
         },
         {
           "rank": 29,
-          "name": "穿越之乖乖女应归记",
-          "tags": "",
+          "name": "穿越之丧彪楚迟后娘记",
+          "tags": "剧情/穿越/古代",
           "publisher": "",
           "onlineDate": "",
           "episodes": 82,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5157w",
           "synopsis": ""
         },
