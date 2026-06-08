@@ -1,5 +1,6 @@
 {
   "2026-06-08": {
+    "douyin": null,
     "hongguo": {
       "date": "2026/6/8",
       "items": [
@@ -108,8 +109,8 @@
           "tags": "脑洞/异能/逆袭/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 77,
+          "type": "3D",
           "hotValue": "5544w",
           "synopsis": ""
         },
@@ -280,12 +281,12 @@
         },
         {
           "rank": 26,
-          "name": "全家一起解，雨里大换血",
+          "name": "全家一起搬，商家大换血",
           "tags": "剧情/逆袭/都市",
           "publisher": "杭州刚刚好影视",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 60,
+          "type": "AI仿真人",
           "hotValue": "5223w",
           "synopsis": ""
         },
@@ -295,8 +296,8 @@
           "tags": "种田/古言脑洞/玄幻/脑洞/传统玄幻",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 100,
+          "type": "3D",
           "hotValue": "5205w",
           "synopsis": ""
         },
@@ -313,12 +314,12 @@
         },
         {
           "rank": 29,
-          "name": "离婚后，我成了我少心尖宠",
+          "name": "替嫁后，我成了残少心尖宠",
           "tags": "剧情/都市/豪门",
-          "publisher": "待认领",
+          "publisher": "81",
           "onlineDate": "",
           "episodes": 0,
-          "type": "",
+          "type": "AI仿真人",
           "hotValue": "5182w",
           "synopsis": ""
         },
@@ -328,8 +329,8 @@
           "tags": "战神/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 100,
+          "type": "AI仿真人",
           "hotValue": "5167w",
           "synopsis": ""
         }
