@@ -1,5 +1,6 @@
 {
   "2026-06-09": {
+    "douyin": null,
     "hongguo": {
       "date": "2026/6/9",
       "items": [
@@ -75,8 +76,8 @@
           "tags": "古风",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 100,
+          "type": "AI仿真人",
           "hotValue": "5505w",
           "synopsis": ""
         },
@@ -170,12 +171,12 @@
         },
         {
           "rank": 16,
-          "name": "凡人百世令第二季",
+          "name": "凡人百世书第二季",
           "tags": "玄幻/重生/系统/逆袭/异界",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 81,
+          "type": "3D",
           "hotValue": "5406w",
           "synopsis": ""
         },
@@ -192,12 +193,12 @@
         },
         {
           "rank": 18,
-          "name": "契约百世后我无敌了",
+          "name": "契约百兽后我无敌了",
           "tags": "种田/逆袭/异能/年代/乡村",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 70,
+          "type": "AI仿真人",
           "hotValue": "5401w",
           "synopsis": ""
         },
@@ -295,8 +296,8 @@
           "tags": "剧情/穿越/都市/豪门",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 81,
+          "type": "AI仿真人",
           "hotValue": "5242w",
           "synopsis": ""
         },
@@ -324,12 +325,12 @@
         },
         {
           "rank": 30,
-          "name": "逆袭之99岁不遂",
-          "tags": "剧情/都市",
+          "name": "逆鳞之阎罗不渡",
+          "tags": "剧情/复仇/都市",
           "publisher": "翰人喵喵",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 80,
+          "type": "AI仿真人",
           "hotValue": "5221w",
           "synopsis": ""
         }
