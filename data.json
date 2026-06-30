@@ -1,4 +1,341 @@
 {
+  "2026-06-30": {
+    "hongguo": {
+      "date": "2026/6/30",
+      "items": [
+        {
+          "rank": 1,
+          "name": "聚宝仙盆之杂灵根才是真BOSS第五季",
+          "tags": "传统玄幻/剧情/反转/逆袭/古风",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 128,
+          "type": "3D",
+          "hotValue": "7282w",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "发配边关，罪妻开荒养出战神第六季",
+          "tags": "种田/穿越/异能/逆袭",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 75,
+          "type": "AI仿真人",
+          "hotValue": "7209w",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "发配边关，罪妻开荒养出战神第五季",
+          "tags": "种田/异能/穿越/逆袭",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 74,
+          "type": "3D",
+          "hotValue": "6386w",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "装穷回家，亲戚悔青肠子",
+          "tags": "总裁/都市",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 81,
+          "type": "AI仿真人",
+          "hotValue": "6146w",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "夫人一个过肩摔，瘸子总裁站起来了",
+          "tags": "都市日常/青春甜宠/喜剧",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 90,
+          "type": "AI仿真人",
+          "hotValue": "6120w",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "醒转天师：得到道家传承后我终于发达了",
+          "tags": "脑洞/逆袭/都市/豪门",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 68,
+          "type": "3D",
+          "hotValue": "6058w",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "聚宝仙盆之杂灵根才是真BOSS第六季",
+          "tags": "玄幻/修真/逆袭/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 78,
+          "type": "3D",
+          "hotValue": "6013w",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "凡人百世书第三季",
+          "tags": "玄幻/重生/系统/逆袭/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 103,
+          "type": "3D",
+          "hotValue": "5852w",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "都重生了，谁还装富二代啊",
+          "tags": "剧情/重生/逆袭/都市/校园",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 71,
+          "type": "AI仿真人",
+          "hotValue": "5700w",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "逆流重生",
+          "tags": "种田/重生/异能/逆袭/年代/乡村",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 116,
+          "type": "AI仿真人",
+          "hotValue": "5688w",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "开局大帝：我的亲子全是逆天体质第二季",
+          "tags": "玄幻/穿越/系统/修真/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 134,
+          "type": "3D",
+          "hotValue": "5667w",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "深山修炼十几年下山镇八方",
+          "tags": "脑洞/都市",
+          "publisher": "北京麟文影视",
+          "onlineDate": "",
+          "episodes": 74,
+          "type": "AI仿真人",
+          "hotValue": "5620w",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "烈火之路：穿越无人区",
+          "tags": "剧情/都市",
+          "publisher": "郑州一源万相/不断更文化",
+          "onlineDate": "",
+          "episodes": 48,
+          "type": "AI仿真人",
+          "hotValue": "5575w",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "发配边关，罪妻开荒养出战神",
+          "tags": "种田/异能/穿越/逆袭",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 66,
+          "type": "3D",
+          "hotValue": "5457w",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "帅府福崽：福星奶团来旺家，帅府全家宠不停",
+          "tags": "萌宝/民国",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 68,
+          "type": "3D",
+          "hotValue": "5439w",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "发配边关，罪妻开荒养出战神第四季",
+          "tags": "种田/穿越/逆袭/异能",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 59,
+          "type": "3D",
+          "hotValue": "5407w",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "太玄胎珠传",
+          "tags": "玄幻/逆袭/修真/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5328w",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "渔乡守真心",
+          "tags": "脑洞/重生/逆袭/异能/乡村",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 94,
+          "type": "AI仿真人",
+          "hotValue": "5326w",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "回到88，带着老板娘发家致富",
+          "tags": "剧情/重生/乡村/年代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 65,
+          "type": "AI仿真人",
+          "hotValue": "5305w",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "铁锤来了：七零铁锤欢乐记",
+          "tags": "萌宝/穿越/系统/年代/乡村",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5291w",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "闪婚后，总裁把我宠上了天",
+          "tags": "都市日常",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 100,
+          "type": "AI仿真人",
+          "hotValue": "5255w",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "六零真千金，沈青梧回家了。",
+          "tags": "剧情/年代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5251w",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "发配边关，罪妻开荒养出战神第二季",
+          "tags": "种田/异能/穿越/逆袭",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 66,
+          "type": "3D",
+          "hotValue": "5245w",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "又惹到那条癫鱼了",
+          "tags": "脑洞/古代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 83,
+          "type": "AI仿真人",
+          "hotValue": "5237w",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "让你护林，你把国宝养满山",
+          "tags": "脑洞/系统/逆袭",
+          "publisher": "吃瓜漫创",
+          "onlineDate": "",
+          "episodes": 70,
+          "type": "AI仿真人",
+          "hotValue": "5235w",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "让我全家流放，我掀翻你朝堂",
+          "tags": "恋爱/穿越/逆袭/异能",
+          "publisher": "元聘人工智能",
+          "onlineDate": "",
+          "episodes": 76,
+          "type": "AI仿真人",
+          "hotValue": "5190w",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "分家只给枯井？我挖出灵泉",
+          "tags": "种田/年代/逆袭",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "AI仿真人",
+          "hotValue": "5178w",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "地府来的大佬她巨沙雕",
+          "tags": "脑洞/穿越/系统/古代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 82,
+          "type": "3D",
+          "hotValue": "5175w",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "地仙归来",
+          "tags": "战神/复仇/都市/豪门",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5174w",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "万妖图录传第七季",
+          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 90,
+          "type": "3D",
+          "hotValue": "5165w",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-06-29": {
     "douyin": null,
     "hongguo": {
