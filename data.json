@@ -1,5 +1,6 @@
 {
   "2026-07-01": {
+    "douyin": null,
     "hongguo": {
       "date": "2026/7/1",
       "items": [
@@ -174,8 +175,8 @@
           "tags": "剧情/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 57,
+          "type": "3D",
           "hotValue": "5423w",
           "synopsis": ""
         },
@@ -196,7 +197,7 @@
           "tags": "脑洞/系统/都市/职场",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
+          "episodes": 0,
           "type": "3D",
           "hotValue": "5392w",
           "synopsis": ""
@@ -251,8 +252,8 @@
           "tags": "剧情/都市/职场",
           "publisher": "杭州十方萤聚",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 56,
+          "type": "3D",
           "hotValue": "5249w",
           "synopsis": ""
         },
@@ -273,8 +274,8 @@
           "tags": "恋爱/重生/都市/豪门",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 51,
+          "type": "3D",
           "hotValue": "5235w",
           "synopsis": ""
         },
@@ -306,8 +307,8 @@
           "tags": "脑洞/重生/系统/逆袭/乡村",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 120,
+          "type": "AI仿真人",
           "hotValue": "5178w",
           "synopsis": ""
         },
@@ -317,8 +318,8 @@
           "tags": "玄幻/穿越/系统/逆袭/异界",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 115,
+          "type": "3D",
           "hotValue": "5174w",
           "synopsis": ""
         },
@@ -328,7 +329,7 @@
           "tags": "玄幻/古代",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
+          "episodes": 0,
           "type": "3D",
           "hotValue": "5168w",
           "synopsis": ""
