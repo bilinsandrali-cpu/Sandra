@@ -5433,6 +5433,30 @@ function loadAllData() {
   return defaultData;
 }
 
+// 注意：此函数必须放在 loadAllData 之后（网页端 GitHub 同步会以 "function loadAllData()"
+// 为锚点截取 getDefaultData 数据块，夹在 getDefaultData 与 loadAllData 之间的代码会被丢弃）。
+// 依赖 JS 函数声明提升，loadAllData 中仍可正常调用。
+function computeFingerprint(data) {
+  // 基于内嵌数据的"日期数 + 每个日期的条目数 + 各条目关键字段"生成轻量指纹。
+  // 只要作者更新了 getDefaultData 的内容（新增日期、补全集数/画风等），指纹就会变化。
+  try {
+    const dates = Object.keys(data).sort();
+    let sig = dates.length + '|';
+    for (const d of dates) {
+      const items = (data[d] && data[d].hongguo && data[d].hongguo.items) || [];
+      sig += d + ':' + items.length + ';';
+      for (const it of items) {
+        sig += (it.name || '') + '~' + (it.episodes || '') + '~' + (it.type || '') + '~' + (it.hotValue || '') + ',';
+      }
+    }
+    let h = 5381;
+    for (let i = 0; i < sig.length; i++) { h = ((h << 5) + h + sig.charCodeAt(i)) | 0; }
+    return String(h >>> 0);
+  } catch (e) {
+    return '0';
+  }
+}
+
 function saveAllData(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   // 标记当前缓存基于"最新内嵌数据版本"。用户本地编辑会保留在缓存中，
