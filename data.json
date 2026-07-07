@@ -31,8 +31,8 @@
           "tags": "奇幻/穿越/异界",
           "publisher": "畅语网络科技",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 135,
+          "type": "3D",
           "hotValue": "5766w",
           "synopsis": ""
         },
@@ -163,7 +163,7 @@
           "tags": "恋爱/穿越/古代",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
+          "episodes": 63,
           "type": "3D",
           "hotValue": "5360w",
           "synopsis": ""
@@ -240,8 +240,8 @@
           "tags": "脑洞/重生/逆袭/乡村",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 99,
+          "type": "AI仿真人",
           "hotValue": "5238w",
           "synopsis": ""
         },
@@ -251,7 +251,7 @@
           "tags": "剧情/穿越/逆袭",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
+          "episodes": 145,
           "type": "3D",
           "hotValue": "5228w",
           "synopsis": ""
@@ -273,8 +273,8 @@
           "tags": "剧情/都市/豪门",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 70,
+          "type": "3D",
           "hotValue": "5223w",
           "synopsis": ""
         },
@@ -284,7 +284,7 @@
           "tags": "奇幻/逆袭/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
+          "episodes": 91,
           "type": "2D",
           "hotValue": "5217w",
           "synopsis": ""
@@ -295,8 +295,8 @@
           "tags": "种田/系统/逆袭",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": "",
-          "type": "",
+          "episodes": 79,
+          "type": "AI仿真人",
           "hotValue": "5204w",
           "synopsis": ""
         },
@@ -337,7 +337,6 @@
     }
   },
   "2026-07-06": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/7/6",
       "items": [
@@ -567,7 +566,7 @@
           "tags": "奇幻/逆袭/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 91,
           "type": "2D",
           "hotValue": "5234w",
           "synopsis": ""
@@ -633,7 +632,7 @@
           "tags": "剧情/穿越/逆袭/架空",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 145,
           "type": "3D",
           "hotValue": "5196w",
           "synopsis": ""
@@ -675,7 +674,6 @@
     }
   },
   "2026-07-05": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/7/5",
       "items": [
@@ -1013,7 +1011,6 @@
     }
   },
   "2026-07-04": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/7/4",
       "items": [
@@ -1351,7 +1348,6 @@
     }
   },
   "2026-07-03": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/7/3",
       "items": [
@@ -1689,7 +1685,6 @@
     }
   },
   "2026-07-02": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/7/2",
       "items": [
@@ -2027,7 +2022,6 @@
     }
   },
   "2026-07-01": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/7/1",
       "items": [
@@ -2365,7 +2359,6 @@
     }
   },
   "2026-06-30": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/30",
       "items": [
@@ -2703,7 +2696,6 @@
     }
   },
   "2026-06-29": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/29",
       "items": [
@@ -3041,7 +3033,6 @@
     }
   },
   "2026-06-28": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/28",
       "items": [
@@ -3379,7 +3370,6 @@
     }
   },
   "2026-06-27": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/27",
       "items": [
@@ -3717,7 +3707,6 @@
     }
   },
   "2026-06-26": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/26",
       "items": [
@@ -4055,7 +4044,6 @@
     }
   },
   "2026-06-25": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/25",
       "items": [
@@ -4393,7 +4381,6 @@
     }
   },
   "2026-06-24": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/24",
       "items": [
@@ -4731,7 +4718,6 @@
     }
   },
   "2026-06-23": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/23",
       "items": [
@@ -5069,7 +5055,6 @@
     }
   },
   "2026-06-22": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/22",
       "items": [
@@ -5407,7 +5392,6 @@
     }
   },
   "2026-06-21": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/21",
       "items": [
@@ -5745,7 +5729,6 @@
     }
   },
   "2026-06-20": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/20",
       "items": [
@@ -6083,7 +6066,6 @@
     }
   },
   "2026-06-19": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/19",
       "items": [
@@ -6421,7 +6403,6 @@
     }
   },
   "2026-06-18": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/18",
       "items": [
@@ -6759,7 +6740,6 @@
     }
   },
   "2026-06-17": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/17",
       "items": [
@@ -7097,7 +7077,6 @@
     }
   },
   "2026-06-16": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/16",
       "items": [
@@ -7435,7 +7414,6 @@
     }
   },
   "2026-06-15": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/15",
       "items": [
@@ -7773,7 +7751,6 @@
     }
   },
   "2026-06-14": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/14",
       "items": [
@@ -8111,7 +8088,6 @@
     }
   },
   "2026-06-13": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/13",
       "items": [
@@ -8449,7 +8425,6 @@
     }
   },
   "2026-06-12": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/12",
       "items": [
@@ -8787,7 +8762,6 @@
     }
   },
   "2026-06-11": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/11",
       "items": [
@@ -9125,7 +9099,6 @@
     }
   },
   "2026-06-10": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/10",
       "items": [
@@ -9463,7 +9436,6 @@
     }
   },
   "2026-06-09": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/9",
       "items": [
@@ -9801,7 +9773,6 @@
     }
   },
   "2026-06-08": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/8",
       "items": [
@@ -10119,7 +10090,7 @@
           "tags": "剧情/都市/豪门",
           "publisher": "81",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": "",
           "type": "AI仿真人",
           "hotValue": "5182w",
           "synopsis": ""
@@ -10139,7 +10110,6 @@
     }
   },
   "2026-06-07": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/7",
       "items": [
@@ -10477,7 +10447,6 @@
     }
   },
   "2026-06-06": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/6",
       "items": [
@@ -10815,7 +10784,6 @@
     }
   },
   "2026-06-05": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/5",
       "items": [
@@ -11153,7 +11121,6 @@
     }
   },
   "2026-06-04": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/4",
       "items": [
@@ -11491,7 +11458,6 @@
     }
   },
   "2026-06-03": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/3",
       "items": [
@@ -11829,7 +11795,6 @@
     }
   },
   "2026-06-02": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/2",
       "items": [
@@ -12167,7 +12132,6 @@
     }
   },
   "2026-06-01": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/6/1",
       "items": [
@@ -12505,7 +12469,6 @@
     }
   },
   "2026-05-31": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/31",
       "items": [
@@ -12843,7 +12806,6 @@
     }
   },
   "2026-05-30": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/30",
       "items": [
@@ -13181,7 +13143,6 @@
     }
   },
   "2026-05-29": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/29",
       "items": [
@@ -13519,7 +13480,6 @@
     }
   },
   "2026-05-28": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/28",
       "items": [
@@ -13857,7 +13817,6 @@
     }
   },
   "2026-05-27": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/27",
       "items": [
@@ -14195,7 +14154,6 @@
     }
   },
   "2026-05-26": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/26",
       "items": [
@@ -14533,7 +14491,6 @@
     }
   },
   "2026-05-25": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/25",
       "items": [
@@ -14871,7 +14828,6 @@
     }
   },
   "2026-05-24": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/24",
       "items": [
@@ -15209,7 +15165,6 @@
     }
   },
   "2026-05-23": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/23",
       "items": [
@@ -15547,7 +15502,6 @@
     }
   },
   "2026-05-22": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/22",
       "items": [
@@ -15885,7 +15839,6 @@
     }
   },
   "2026-05-21": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/21",
       "items": [
@@ -16223,7 +16176,6 @@
     }
   },
   "2026-05-20": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/20",
       "items": [
@@ -16561,7 +16513,6 @@
     }
   },
   "2026-05-19": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-19",
       "items": [
@@ -16899,7 +16850,6 @@
     }
   },
   "2026-05-18": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-18",
       "items": [
@@ -17237,7 +17187,6 @@
     }
   },
   "2026-05-17": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-17",
       "items": [
@@ -17575,7 +17524,6 @@
     }
   },
   "2026-05-16": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-16",
       "items": [
@@ -17913,7 +17861,6 @@
     }
   },
   "2026-05-15": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-15",
       "items": [
@@ -18251,7 +18198,6 @@
     }
   },
   "2026-05-14": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-14",
       "items": [
@@ -18589,7 +18535,6 @@
     }
   },
   "2026-05-13": {
-    "douyin": null,
     "hongguo": {
       "date": "2026-05-13",
       "items": [
@@ -18927,7 +18872,6 @@
     }
   },
   "2026-05-12": {
-    "douyin": null,
     "hongguo": {
       "date": "undefined",
       "items": [
@@ -19265,7 +19209,6 @@
     }
   },
   "2026-05-11": {
-    "douyin": null,
     "hongguo": {
       "date": "undefined",
       "items": [
@@ -19603,7 +19546,6 @@
     }
   },
   "2026-05-10": {
-    "douyin": null,
     "hongguo": {
       "date": "undefined",
       "items": [
@@ -19941,7 +19883,6 @@
     }
   },
   "2026-05-09": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/9",
       "items": [
@@ -20279,7 +20220,6 @@
     }
   },
   "2026-05-08": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/8",
       "items": [
@@ -20617,7 +20557,6 @@
     }
   },
   "2026-05-07": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/7",
       "items": [
@@ -20955,7 +20894,6 @@
     }
   },
   "2026-05-06": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/6",
       "items": [
@@ -21293,7 +21231,6 @@
     }
   },
   "2026-05-05": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/5",
       "items": [
@@ -21631,7 +21568,6 @@
     }
   },
   "2026-05-04": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/4",
       "items": [
@@ -21969,7 +21905,6 @@
     }
   },
   "2026-05-03": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/3",
       "items": [
@@ -22307,7 +22242,6 @@
     }
   },
   "2026-05-02": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/2",
       "items": [
@@ -22645,7 +22579,6 @@
     }
   },
   "2026-05-01": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/5/1",
       "items": [
@@ -22983,7 +22916,6 @@
     }
   },
   "2026-04-30": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/30",
       "items": [
@@ -23321,7 +23253,6 @@
     }
   },
   "2026-04-29": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/29",
       "items": [
@@ -23659,7 +23590,6 @@
     }
   },
   "2026-04-28": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/28",
       "items": [
@@ -23997,7 +23927,6 @@
     }
   },
   "2026-04-27": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/27",
       "items": [
@@ -24335,7 +24264,6 @@
     }
   },
   "2026-04-26": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/26",
       "items": [
@@ -24673,7 +24601,6 @@
     }
   },
   "2026-04-25": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/25",
       "items": [
@@ -25011,7 +24938,6 @@
     }
   },
   "2026-04-24": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/24",
       "items": [
@@ -25349,7 +25275,6 @@
     }
   },
   "2026-04-23": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/23",
       "items": [
@@ -25687,7 +25612,6 @@
     }
   },
   "2026-04-22": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/22",
       "items": [
@@ -26025,7 +25949,6 @@
     }
   },
   "2026-04-21": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/21",
       "items": [
@@ -26363,7 +26286,6 @@
     }
   },
   "2026-04-20": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/20",
       "items": [
@@ -26701,7 +26623,6 @@
     }
   },
   "2026-04-19": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/19",
       "items": [
@@ -27039,7 +26960,6 @@
     }
   },
   "2026-04-18": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/18",
       "items": [
@@ -27377,7 +27297,6 @@
     }
   },
   "2026-04-17": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/17",
       "items": [
@@ -27715,7 +27634,6 @@
     }
   },
   "2026-04-16": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/16",
       "items": [
@@ -28053,7 +27971,6 @@
     }
   },
   "2026-04-15": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/15",
       "items": [
@@ -28391,7 +28308,6 @@
     }
   },
   "2026-04-14": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/14",
       "items": [
@@ -28729,7 +28645,6 @@
     }
   },
   "2026-04-12": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/12",
       "items": [
@@ -29067,7 +28982,6 @@
     }
   },
   "2026-04-11": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/11",
       "items": [
@@ -29405,7 +29319,6 @@
     }
   },
   "2026-04-10": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/10",
       "items": [
@@ -29743,7 +29656,6 @@
     }
   },
   "2026-04-09": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/9",
       "items": [
@@ -30081,7 +29993,6 @@
     }
   },
   "2026-04-08": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/8",
       "items": [
@@ -30419,7 +30330,6 @@
     }
   },
   "2026-04-07": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/7",
       "items": [
@@ -30757,7 +30667,6 @@
     }
   },
   "2026-04-06": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/6",
       "items": [
@@ -31095,7 +31004,6 @@
     }
   },
   "2026-04-05": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/5",
       "items": [
@@ -31433,7 +31341,6 @@
     }
   },
   "2026-04-04": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/4",
       "items": [
@@ -31771,7 +31678,6 @@
     }
   },
   "2026-04-03": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/3",
       "items": [
@@ -32109,7 +32015,6 @@
     }
   },
   "2026-04-02": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/2",
       "items": [
@@ -32447,7 +32352,6 @@
     }
   },
   "2026-04-01": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/4/1",
       "items": [
@@ -32785,7 +32689,6 @@
     }
   },
   "2026-03-31": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/31",
       "items": [
@@ -33123,7 +33026,6 @@
     }
   },
   "2026-03-30": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/30",
       "items": [
@@ -33461,7 +33363,6 @@
     }
   },
   "2026-03-29": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/29",
       "items": [
@@ -33799,7 +33700,6 @@
     }
   },
   "2026-03-28": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/28",
       "items": [
@@ -34137,7 +34037,6 @@
     }
   },
   "2026-03-27": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/27",
       "items": [
@@ -34475,7 +34374,6 @@
     }
   },
   "2026-03-26": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/26",
       "items": [
@@ -34813,7 +34711,6 @@
     }
   },
   "2026-03-25": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/25",
       "items": [
@@ -35151,7 +35048,6 @@
     }
   },
   "2026-03-24": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/24",
       "items": [
@@ -35489,7 +35385,6 @@
     }
   },
   "2026-03-23": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/23",
       "items": [
@@ -35827,7 +35722,6 @@
     }
   },
   "2026-03-22": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/22",
       "items": [
@@ -36165,7 +36059,6 @@
     }
   },
   "2026-03-21": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/21",
       "items": [
@@ -36503,7 +36396,6 @@
     }
   },
   "2026-03-20": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/20",
       "items": [
@@ -36841,7 +36733,6 @@
     }
   },
   "2026-03-19": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/19",
       "items": [
@@ -37179,7 +37070,6 @@
     }
   },
   "2026-03-18": {
-    "douyin": null,
     "hongguo": {
       "date": "2026/3/18",
       "items": [
