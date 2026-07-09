@@ -39487,7 +39487,15 @@ const GITHUB_FILE_PATH = 'index.html';
 const GITHUB_BRANCH = 'main';
 
 function getGitHubToken() {
-  return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+  const raw = localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+  // 清洗 token：去除首尾空白 + 去除非 ASCII 字符（防止复制粘贴带入零宽字符/BOM等）
+  const cleaned = raw.replace(/[^\x20-\x7E]/g, '').trim();
+  // 如果清洗后不一致，自动修正存储（静默修复）
+  if (cleaned !== raw && cleaned.length > 0) {
+    localStorage.setItem(GITHUB_TOKEN_KEY, cleaned);
+    console.warn('[sync] Token 已自动清洗非ASCII字符');
+  }
+  return cleaned;
 }
 
 function saveGitHubToken() {
