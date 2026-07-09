@@ -39499,7 +39499,9 @@ function getGitHubToken() {
 }
 
 function saveGitHubToken() {
-  const token = document.getElementById('syncToken').value.trim();
+  let token = document.getElementById('syncToken').value;
+  // 保存时也清洗：去除非 ASCII 字符 + 首尾空白（输入时的不可见字符在此拦截）
+  token = token.replace(/[^\x20-\x7E]/g, '').trim();
   if (!token) { alert('请输入 Token'); return; }
   localStorage.setItem(GITHUB_TOKEN_KEY, token);
   showSyncReady();
