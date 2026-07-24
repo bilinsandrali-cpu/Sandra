@@ -1,4 +1,342 @@
 {
+  "2026-07-24": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/7/24",
+      "items": [
+        {
+          "rank": 1,
+          "name": "咱家剑宗团宠小师妹第二季",
+          "tags": "萌宝/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 304,
+          "type": "3D",
+          "hotValue": "7741万",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "万妖图录传第九季",
+          "tags": "玄幻/穿越/系统/逆袭/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 107,
+          "type": "3D",
+          "hotValue": "7253万",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "苏忆穿书第一季",
+          "tags": "种田/古言脑洞/乡村",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 154,
+          "type": "AI仿真人",
+          "hotValue": "6172万",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "咱家剑宗团宠小师妹",
+          "tags": "萌宝/异界",
+          "publisher": "待认领",
+          "onlineDate": "2026-07-09",
+          "episodes": 80,
+          "type": "3D",
+          "hotValue": "6126万",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "予你深情侵入余生第四季",
+          "tags": "恋爱/重生/都市/豪门",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 78,
+          "type": "3D",
+          "hotValue": "6126万",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "凡人百世书第四季",
+          "tags": "玄幻/重生/系统/逆袭/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 108,
+          "type": "3D",
+          "hotValue": "5984万",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "苏忆穿书第二季",
+          "tags": "种田/历史古代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "AI仿真人",
+          "hotValue": "5980万",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "烛九阴第二季",
+          "tags": "玄幻/系统/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 100,
+          "type": "3D",
+          "hotValue": "5655万",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "帅府福崽，卯卯驾到",
+          "tags": "萌宝/民国",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 94,
+          "type": "3D",
+          "hotValue": "5653万",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "精神小妹也要修机甲吗第二季",
+          "tags": "科幻/穿越/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 140,
+          "type": "3D",
+          "hotValue": "5603万",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "开局大帝：我的弟子全是逆天体质第四季",
+          "tags": "玄幻/穿越/系统/修真/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 102,
+          "type": "3D",
+          "hotValue": "5664万",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "冰冷重遇第三季",
+          "tags": "恋爱/都市/豪门",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 72,
+          "type": "3D",
+          "hotValue": "5645万",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "完美人设撑不住，坐等亲姐姐接手负重人生",
+          "tags": "剧情/都市/豪门",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 54,
+          "type": "3D",
+          "hotValue": "5441万",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "灵宠不乖直接换",
+          "tags": "恋爱/异能/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 49,
+          "type": "3D",
+          "hotValue": "5391万",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "逃跑男友第二季",
+          "tags": "脑洞/穿越/求生/无限流/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 96,
+          "type": "3D",
+          "hotValue": "5365万",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "师尊明明无敌为何怂如蝼蚁",
+          "tags": "玄幻/系统/穿越/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 97,
+          "type": "3D",
+          "hotValue": "5342万",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "塑料兄妹俩不语，一味拿大哥颜面扫地第三季",
+          "tags": "剧情/穿越/都市/娱乐圈",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "AI仿真人",
+          "hotValue": "5340万",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "唢呐修仙，一曲炸翻修仙界第二季",
+          "tags": "玄幻/穿越/逆袭",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 103,
+          "type": "3D",
+          "hotValue": "5323万",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "假装在月亮心口撒个娇",
+          "tags": "恋爱/重生/都市/豪门",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 74,
+          "type": "3D",
+          "hotValue": "5292万",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "开学那天，我被当成传说",
+          "tags": "剧情/重生/都市/校园",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "3D",
+          "hotValue": "5292万",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "发配边关，罪妻开荒养出战神第八季",
+          "tags": "种田/穿越/异能/逆袭/架空",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 51,
+          "type": "3D",
+          "hotValue": "5266万",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "九渊",
+          "tags": "萌宝/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 40,
+          "type": "3D",
+          "hotValue": "5242万",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "疯娘逆袭，穿越宠崽！",
+          "tags": "种田/穿越/逆袭/古代/乡村",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 94,
+          "type": "3D",
+          "hotValue": "5233万",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "黄金掌柜第三季",
+          "tags": "脑洞/系统/逆袭/古代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5233万",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "母亲是巨龙我咋是山海异兽呢？",
+          "tags": "奇幻/穿越/逆袭/系统/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 109,
+          "type": "3D",
+          "hotValue": "5216万",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "山海藏墟，无眼窥天第二季",
+          "tags": "玄幻/逆袭/修真/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 110,
+          "type": "3D",
+          "hotValue": "5210万",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "万妖图录传第八季",
+          "tags": "玄幻/穿越/系统/逆袭/异界",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 109,
+          "type": "3D",
+          "hotValue": "5197万",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "田野之上的新生，青青田园",
+          "tags": "种田/逆袭/乡村",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5196万",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "青礁潮起，鲛人归",
+          "tags": "奇幻/古代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 51,
+          "type": "3D",
+          "hotValue": "5184万",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "黄金掌柜第二季",
+          "tags": "脑洞/穿越/逆袭/系统/古代",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "",
+          "hotValue": "5171万",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-07-23": {
     "douyin": null,
     "hongguo": {
@@ -120,8 +458,8 @@
           "tags": "恋爱/都市/豪门",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 72,
+          "type": "3D",
           "hotValue": "5594万",
           "synopsis": ""
         },
@@ -263,8 +601,8 @@
           "tags": "恋爱/重生/都市/豪门",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 74,
+          "type": "3D",
           "hotValue": "5240万",
           "synopsis": ""
         },
@@ -329,8 +667,8 @@
           "tags": "奇幻/穿越/逆袭/系统/异界",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "",
+          "episodes": 109,
+          "type": "3D",
           "hotValue": "5166万",
           "synopsis": ""
         }
