@@ -1,4 +1,680 @@
 {
+  "2026-08-12": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/8/12",
+      "items": [
+        {
+          "rank": 1,
+          "name": "万妖图录传第十季",
+          "tags": "传统玄幻/东方仙侠",
+          "publisher": "光宇出品",
+          "onlineDate": "",
+          "episodes": 116,
+          "type": "3D",
+          "hotValue": "8060万",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "凡人百世书第五季",
+          "tags": "玄幻/重生/系统/逆袭/异界",
+          "publisher": "七秒传媒",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "7048万",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "冰冷重遇第五季",
+          "tags": "都市日常",
+          "publisher": "青风漫剧",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5920万",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "咱家剑宗团宠小师妹第二季",
+          "tags": "萌宝/异界",
+          "publisher": "四川天漫传媒",
+          "onlineDate": "",
+          "episodes": 304,
+          "type": "3D",
+          "hotValue": "5904万",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "咱家剑宗团宠小师妹第三季",
+          "tags": "萌宝/修真/异界/3D",
+          "publisher": "四川天漫传媒",
+          "onlineDate": "",
+          "episodes": 240,
+          "type": "3D",
+          "hotValue": "5864万",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "苏忆穿书第五季",
+          "tags": "种田",
+          "publisher": "小语剧场",
+          "onlineDate": "",
+          "episodes": 139,
+          "type": "3D",
+          "hotValue": "5716万",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "都重生了，这富二代我不装了第十季",
+          "tags": "总裁/重生/都市/3D",
+          "publisher": "风云剧场",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5592万",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "谁说没灵根不能修仙的？之无灵证道",
+          "tags": "东方仙侠",
+          "publisher": "不鸣文化剧场",
+          "onlineDate": "",
+          "episodes": 78,
+          "type": "3D",
+          "hotValue": "5533万",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "假装在月亮心口撒个娇第三季",
+          "tags": "恋爱/重生/豪门/都市/3D",
+          "publisher": "不鸣文化",
+          "onlineDate": "",
+          "episodes": 119,
+          "type": "3D",
+          "hotValue": "5515万",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "我以童言号令八王第二季",
+          "tags": "都市高武",
+          "publisher": "叁次方动漫",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5505万",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "咱家剑宗团宠小师妹",
+          "tags": "萌宝/异界",
+          "publisher": "四川天漫传媒",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "3D",
+          "hotValue": "5492万",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "苏忆穿书第四季",
+          "tags": "种田/穿越/逆袭/古代/乡村",
+          "publisher": "小语剧场",
+          "onlineDate": "",
+          "episodes": 148,
+          "type": "3D",
+          "hotValue": "5426万",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "帅府福崽，卯卯驾到第四季",
+          "tags": "民国/家庭",
+          "publisher": "江屿剧场",
+          "onlineDate": "",
+          "episodes": 94,
+          "type": "3D",
+          "hotValue": "5415万",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "谁让这个文盲修仙的",
+          "tags": "玄幻/穿越/修真/逆袭/异界",
+          "publisher": "魔王Ai剧场",
+          "onlineDate": "",
+          "episodes": 144,
+          "type": "3D",
+          "hotValue": "5381万",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "予你深情侵入余生第五季",
+          "tags": "恋爱/重生/都市/豪门/3D",
+          "publisher": "不鸣文化",
+          "onlineDate": "",
+          "episodes": 89,
+          "type": "3D",
+          "hotValue": "5377万",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "谁说没灵根不能修仙的？之无灵证道第十二季",
+          "tags": "东方仙侠/3D",
+          "publisher": "不鸣文化剧场",
+          "onlineDate": "",
+          "episodes": 113,
+          "type": "3D",
+          "hotValue": "5280万",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "我刻薄不是装的",
+          "tags": "青春/重生/都市/校园/3D",
+          "publisher": "讯迈安看漫剧",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5270万",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "精通婴语满朝权贵求我带娃",
+          "tags": "种田/历史古代/历史脑洞",
+          "publisher": "狸狸动漫",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5248万",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "谢家小厨娘",
+          "tags": "脑洞/穿越/逆袭/古代",
+          "publisher": "可爱多剧场",
+          "onlineDate": "",
+          "episodes": 119,
+          "type": "3D",
+          "hotValue": "5235万",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "烛九阴第三季",
+          "tags": "传统玄幻/玄幻脑洞",
+          "publisher": "梦绘星界",
+          "onlineDate": "",
+          "episodes": 108,
+          "type": "3D",
+          "hotValue": "5213万",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "丧尸也是俺闺女",
+          "tags": "都市日常",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 77,
+          "type": "3D",
+          "hotValue": "5201万",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "疯娘逆袭，穿越宠崽！第四季",
+          "tags": "种田/历史脑洞/历史古代/反转/乡村/古风",
+          "publisher": "半夏繁花剧场",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5197万",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "穿成炮灰后：不是反派吗？怎么要抱抱第六季",
+          "tags": "古风",
+          "publisher": "小旺仔动画",
+          "onlineDate": "",
+          "episodes": 66,
+          "type": "3D",
+          "hotValue": "5195万",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "御兽学院第二季",
+          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "publisher": "夏寻动漫剧场",
+          "onlineDate": "",
+          "episodes": 170,
+          "type": "3D",
+          "hotValue": "5185万",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "疯娘逆袭，穿越宠崽！第三季",
+          "tags": "种田/穿越/逆袭/古代/乡村",
+          "publisher": "半夏繁花剧场",
+          "onlineDate": "",
+          "episodes": 117,
+          "type": "3D",
+          "hotValue": "5170万",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "红妆送君葬",
+          "tags": "宫廷/重生/古代/3D",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 140,
+          "type": "3D",
+          "hotValue": "5169万",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "苏忆穿书第一季",
+          "tags": "种田/古言脑洞/乡村",
+          "publisher": "小语剧场",
+          "onlineDate": "",
+          "episodes": 154,
+          "type": "3D",
+          "hotValue": "5164万",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "精神小妹也要修机甲吗第三季",
+          "tags": "科幻末世/都市脑洞/青春/逆袭/3D",
+          "publisher": "畅语网络科技",
+          "onlineDate": "",
+          "episodes": 142,
+          "type": "3D",
+          "hotValue": "5145万",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "逃跑男友第三季",
+          "tags": "都市日常/都市脑洞",
+          "publisher": "星耀文化",
+          "onlineDate": "",
+          "episodes": 87,
+          "type": "3D",
+          "hotValue": "5140万",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "错缘芜霜",
+          "tags": "恋爱/重生/古代/3D",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5140万",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
+  "2026-08-11": {
+    "douyin": null,
+    "hongguo": {
+      "date": "2026/8/11",
+      "items": [
+        {
+          "rank": 1,
+          "name": "万妖图录传第十季",
+          "tags": "传统玄幻/东方仙侠",
+          "publisher": "光宇出品",
+          "onlineDate": "",
+          "episodes": 116,
+          "type": "3D",
+          "hotValue": "8775万",
+          "synopsis": ""
+        },
+        {
+          "rank": 2,
+          "name": "冰冷重遇第五季",
+          "tags": "都市日常",
+          "publisher": "青风漫剧",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "6126万",
+          "synopsis": ""
+        },
+        {
+          "rank": 3,
+          "name": "咱家剑宗团宠小师妹第三季",
+          "tags": "萌宝/修真/异界/3D",
+          "publisher": "四川天漫传媒",
+          "onlineDate": "",
+          "episodes": 240,
+          "type": "3D",
+          "hotValue": "6080万",
+          "synopsis": ""
+        },
+        {
+          "rank": 4,
+          "name": "都重生了，这富二代我不装了第十季",
+          "tags": "总裁/重生/都市/3D",
+          "publisher": "风云剧场",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5988万",
+          "synopsis": ""
+        },
+        {
+          "rank": 5,
+          "name": "咱家剑宗团宠小师妹第二季",
+          "tags": "萌宝/异界",
+          "publisher": "四川天漫传媒",
+          "onlineDate": "",
+          "episodes": 304,
+          "type": "3D",
+          "hotValue": "5976万",
+          "synopsis": ""
+        },
+        {
+          "rank": 6,
+          "name": "苏忆穿书第五季",
+          "tags": "种田",
+          "publisher": "小语剧场",
+          "onlineDate": "",
+          "episodes": 139,
+          "type": "3D",
+          "hotValue": "5867万",
+          "synopsis": ""
+        },
+        {
+          "rank": 7,
+          "name": "垃圾桶里的寻人启事",
+          "tags": "家庭/都市日常/逆袭",
+          "publisher": "初循剧场",
+          "onlineDate": "",
+          "episodes": 60,
+          "type": "AI仿真人",
+          "hotValue": "5840万",
+          "synopsis": ""
+        },
+        {
+          "rank": 8,
+          "name": "予你深情侵入余生第五季",
+          "tags": "恋爱/重生/都市/豪门/3D",
+          "publisher": "不鸣文化",
+          "onlineDate": "",
+          "episodes": 89,
+          "type": "3D",
+          "hotValue": "5702万",
+          "synopsis": ""
+        },
+        {
+          "rank": 9,
+          "name": "苏忆穿书第四季",
+          "tags": "种田/穿越/逆袭/古代/乡村",
+          "publisher": "小语剧场",
+          "onlineDate": "",
+          "episodes": 148,
+          "type": "3D",
+          "hotValue": "5611万",
+          "synopsis": ""
+        },
+        {
+          "rank": 10,
+          "name": "假装在月亮心口撒个娇第三季",
+          "tags": "恋爱/重生/豪门/都市/3D",
+          "publisher": "不鸣文化",
+          "onlineDate": "",
+          "episodes": 119,
+          "type": "3D",
+          "hotValue": "5593万",
+          "synopsis": ""
+        },
+        {
+          "rank": 11,
+          "name": "我以童言号令八王第二季",
+          "tags": "都市高武",
+          "publisher": "叁次方动漫",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5571万",
+          "synopsis": ""
+        },
+        {
+          "rank": 12,
+          "name": "咱家剑宗团宠小师妹",
+          "tags": "萌宝/异界",
+          "publisher": "四川天漫传媒",
+          "onlineDate": "",
+          "episodes": 80,
+          "type": "3D",
+          "hotValue": "5533万",
+          "synopsis": ""
+        },
+        {
+          "rank": 13,
+          "name": "谁说没灵根不能修仙的？之无灵证道第十二季",
+          "tags": "东方仙侠/3D",
+          "publisher": "不鸣文化剧场",
+          "onlineDate": "",
+          "episodes": 113,
+          "type": "3D",
+          "hotValue": "5503万",
+          "synopsis": ""
+        },
+        {
+          "rank": 14,
+          "name": "精神小妹也要修机甲吗第三季",
+          "tags": "科幻末世/都市脑洞/青春/逆袭/3D",
+          "publisher": "畅语网络科技",
+          "onlineDate": "",
+          "episodes": 142,
+          "type": "3D",
+          "hotValue": "5495万",
+          "synopsis": ""
+        },
+        {
+          "rank": 15,
+          "name": "帅府福崽，卯卯驾到第四季",
+          "tags": "民国/家庭",
+          "publisher": "江屿剧场",
+          "onlineDate": "",
+          "episodes": 94,
+          "type": "3D",
+          "hotValue": "5480万",
+          "synopsis": ""
+        },
+        {
+          "rank": 16,
+          "name": "许我余生长暖孤夜第二季",
+          "tags": "都市日常",
+          "publisher": "不鸣文化官方号",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5374万",
+          "synopsis": ""
+        },
+        {
+          "rank": 17,
+          "name": "穿成炮灰后：不是反派吗？怎么要抱抱第六季",
+          "tags": "古风",
+          "publisher": "小旺仔动画",
+          "onlineDate": "",
+          "episodes": 66,
+          "type": "3D",
+          "hotValue": "5282万",
+          "synopsis": ""
+        },
+        {
+          "rank": 18,
+          "name": "都重生了，这富二代我不装了第九季",
+          "tags": "都市日常/剧情/反转/逆袭",
+          "publisher": "风云剧场",
+          "onlineDate": "",
+          "episodes": 104,
+          "type": "3D",
+          "hotValue": "5272万",
+          "synopsis": ""
+        },
+        {
+          "rank": 19,
+          "name": "栀栀复栀栀！太子爷非她不可第二季",
+          "tags": "都市日常/豪门总裁",
+          "publisher": "星雪剧场",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5265万",
+          "synopsis": ""
+        },
+        {
+          "rank": 20,
+          "name": "烛九阴第三季",
+          "tags": "传统玄幻/玄幻脑洞",
+          "publisher": "梦绘星界",
+          "onlineDate": "",
+          "episodes": 108,
+          "type": "3D",
+          "hotValue": "5264万",
+          "synopsis": ""
+        },
+        {
+          "rank": 21,
+          "name": "御兽学院第二季",
+          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "publisher": "夏寻动漫剧场",
+          "onlineDate": "",
+          "episodes": 170,
+          "type": "3D",
+          "hotValue": "5260万",
+          "synopsis": ""
+        },
+        {
+          "rank": 22,
+          "name": "谢家小厨娘",
+          "tags": "脑洞/穿越/逆袭/古代",
+          "publisher": "可爱多剧场",
+          "onlineDate": "",
+          "episodes": 119,
+          "type": "3D",
+          "hotValue": "5259万",
+          "synopsis": ""
+        },
+        {
+          "rank": 23,
+          "name": "丧尸也是俺闺女",
+          "tags": "都市日常",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 77,
+          "type": "3D",
+          "hotValue": "5239万",
+          "synopsis": ""
+        },
+        {
+          "rank": 24,
+          "name": "谁让这个文盲修仙的",
+          "tags": "玄幻/穿越/修真/逆袭/异界",
+          "publisher": "魔王Ai剧场",
+          "onlineDate": "",
+          "episodes": 144,
+          "type": "3D",
+          "hotValue": "5230万",
+          "synopsis": ""
+        },
+        {
+          "rank": 25,
+          "name": "疯娘逆袭，穿越宠崽！第三季",
+          "tags": "种田/穿越/逆袭/古代/乡村",
+          "publisher": "半夏繁花剧场",
+          "onlineDate": "",
+          "episodes": 117,
+          "type": "3D",
+          "hotValue": "5218万",
+          "synopsis": ""
+        },
+        {
+          "rank": 26,
+          "name": "红妆送君葬",
+          "tags": "宫廷/重生/古代/3D",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 140,
+          "type": "3D",
+          "hotValue": "5217万",
+          "synopsis": ""
+        },
+        {
+          "rank": 27,
+          "name": "谁说没灵根不能修仙的？之无灵证道",
+          "tags": "东方仙侠/3D",
+          "publisher": "不鸣文化剧场",
+          "onlineDate": "",
+          "episodes": 78,
+          "type": "3D",
+          "hotValue": "5205万",
+          "synopsis": ""
+        },
+        {
+          "rank": 28,
+          "name": "精通婴语满朝权贵求我带娃",
+          "tags": "种田/历史古代/历史脑洞",
+          "publisher": "狸狸动漫",
+          "onlineDate": "",
+          "episodes": 0,
+          "type": "3D",
+          "hotValue": "5192万",
+          "synopsis": ""
+        },
+        {
+          "rank": 29,
+          "name": "凡人仙珠：祖上十代气运送我一人成仙",
+          "tags": "玄幻/修真/逆袭/异界/3D",
+          "publisher": "待认领",
+          "onlineDate": "",
+          "episodes": 139,
+          "type": "3D",
+          "hotValue": "5189万",
+          "synopsis": ""
+        },
+        {
+          "rank": 30,
+          "name": "苏忆穿书第一季",
+          "tags": "种田/古言脑洞/乡村",
+          "publisher": "小语剧场",
+          "onlineDate": "",
+          "episodes": 154,
+          "type": "3D",
+          "hotValue": "5171万",
+          "synopsis": ""
+        }
+      ]
+    }
+  },
   "2026-08-10": {
     "douyin": null,
     "hongguo": {
