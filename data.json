@@ -21,7 +21,7 @@
           "tags": "萌宝/异界/3D",
           "publisher": "四川天漫传媒",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 260,
           "type": "3D",
           "hotValue": "9053万",
           "synopsis": ""
@@ -109,7 +109,7 @@
           "tags": "玄幻/系统/逆袭/异界",
           "publisher": "火钳漫剧场-女频专用",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 350,
           "type": "3D",
           "hotValue": "5647万",
           "synopsis": ""
@@ -153,7 +153,7 @@
           "tags": "剧情/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 41,
           "type": "3D",
           "hotValue": "5425万",
           "synopsis": ""
@@ -197,7 +197,7 @@
           "tags": "种田/穿越/逆袭/古代/乡村",
           "publisher": "半夏繁花剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 136,
           "type": "3D",
           "hotValue": "5274万",
           "synopsis": ""
@@ -208,7 +208,7 @@
           "tags": "脑洞/穿越/逆袭/古代",
           "publisher": "可爱多剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 118,
           "type": "3D",
           "hotValue": "5273万",
           "synopsis": ""
@@ -241,7 +241,7 @@
           "tags": "种田/穿越/重生/古代/乡村",
           "publisher": "优漫星河",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 184,
           "type": "3D",
           "hotValue": "5215万",
           "synopsis": ""
@@ -345,10 +345,10 @@
         {
           "rank": 1,
           "name": "咱家剑宗团宠小师妹第四季",
-          "tags": "萌宝/异界/3D",
+          "tags": "萌宝/异界",
           "publisher": "四川天漫传媒",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 260,
           "type": "3D",
           "hotValue": "9675万",
           "synopsis": ""
@@ -392,7 +392,7 @@
           "tags": "玄幻/系统/逆袭/异界",
           "publisher": "火钳漫剧场-女频专用",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 350,
           "type": "3D",
           "hotValue": "6106万",
           "synopsis": ""
@@ -403,7 +403,7 @@
           "tags": "总裁/重生/都市",
           "publisher": "风云剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 104,
           "type": "3D",
           "hotValue": "5841万",
           "synopsis": ""
@@ -502,7 +502,7 @@
           "tags": "种田/穿越/重生/古代/乡村",
           "publisher": "优漫星河",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 184,
           "type": "3D",
           "hotValue": "5451万",
           "synopsis": ""
@@ -524,7 +524,7 @@
           "tags": "脑洞/穿越/逆袭/古代",
           "publisher": "可爱多剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 118,
           "type": "3D",
           "hotValue": "5405万",
           "synopsis": ""
@@ -557,7 +557,7 @@
           "tags": "种田/穿越/逆袭/古代/乡村",
           "publisher": "半夏繁花剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 136,
           "type": "3D",
           "hotValue": "5321万",
           "synopsis": ""
@@ -568,8 +568,8 @@
           "tags": "剧情/都市",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
-          "type": "3D",
+          "episodes": 41,
+          "type": "AI仿真人",
           "hotValue": "5273万",
           "synopsis": ""
         },
