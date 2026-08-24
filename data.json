@@ -62,10 +62,10 @@
         {
           "rank": 6,
           "name": "帅府福崽，卯卯驾到第六季",
-          "tags": "萌宝/民国",
+          "tags": "萌宝/民国/豪门",
           "publisher": "江屿剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 111,
           "type": "3D",
           "hotValue": "5865万",
           "synopsis": ""
@@ -106,10 +106,10 @@
         {
           "rank": 10,
           "name": "我刻薄不是装的第二季",
-          "tags": "青春/重生/都市/校园/3D",
+          "tags": "青春/重生/都市/校园",
           "publisher": "讯迈安看漫剧",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 155,
           "type": "3D",
           "hotValue": "5582万",
           "synopsis": ""
@@ -171,11 +171,11 @@
         },
         {
           "rank": 16,
-          "name": "全球躲猫猫：到底谁才是诡异",
-          "tags": "",
+          "name": "全球躲猫猫：到底谁才是诡异啊！第四季",
+          "tags": "科幻末世/玄幻脑洞/悬疑脑洞",
           "publisher": "艺海星合剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 94,
           "type": "3D",
           "hotValue": "5365万",
           "synopsis": ""
@@ -226,11 +226,11 @@
         },
         {
           "rank": 21,
-          "name": "道印入体：得到道家传承后我无敌了",
-          "tags": "",
+          "name": "道印入体：得到道家传承后我终于发达了",
+          "tags": "玄幻/逆袭/都市/修真/豪门",
           "publisher": "化境AI",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 113,
           "type": "3D",
           "hotValue": "5315万",
           "synopsis": ""
@@ -241,7 +241,7 @@
           "tags": "脑洞/穿越/异能/逆袭/古代",
           "publisher": "庚午出品",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 166,
           "type": "3D",
           "hotValue": "5310万",
           "synopsis": ""
@@ -271,10 +271,10 @@
         {
           "rank": 25,
           "name": "御兽学院第三季",
-          "tags": "奇幻/穿越/系统/逆袭/异界",
+          "tags": "逆袭/都市高武/校园",
           "publisher": "夏寻动漫剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 126,
           "type": "3D",
           "hotValue": "5288万",
           "synopsis": ""
@@ -315,10 +315,10 @@
         {
           "rank": 29,
           "name": "东北阿姨：捡了个南方小土豆",
-          "tags": "",
+          "tags": "恋爱/乡村",
           "publisher": "大耳狗文化传媒",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 68,
           "type": "3D",
           "hotValue": "5254万",
           "synopsis": ""
@@ -326,10 +326,10 @@
         {
           "rank": 30,
           "name": "太玄胎珠传第七季",
-          "tags": "传统玄幻/东方仙侠",
+          "tags": "玄幻/逆袭/修真/异界",
           "publisher": "回声匣子",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 114,
           "type": "3D",
           "hotValue": "5243万",
           "synopsis": ""
@@ -730,7 +730,7 @@
           "tags": "种田/穿越/逆袭/古代/3D",
           "publisher": "小语剧场",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 400,
           "type": "3D",
           "hotValue": "6226万",
           "synopsis": ""
@@ -13868,7 +13868,7 @@
           "tags": "玄幻/穿越/系统/逆袭/异界",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 109,
           "type": "3D",
           "hotValue": "8919万",
           "synopsis": ""
@@ -13879,7 +13879,7 @@
           "tags": "校园/剧情",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 69,
           "type": "AI仿真人",
           "hotValue": "6711万",
           "synopsis": ""
@@ -14206,7 +14206,7 @@
           "tags": "玄幻/穿越/系统/逆袭/异界",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 109,
           "type": "3D",
           "hotValue": "1亿",
           "synopsis": ""
@@ -15080,7 +15080,7 @@
           "tags": "都市日常",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 42,
           "type": "",
           "hotValue": "5218w",
           "synopsis": ""
@@ -15124,7 +15124,7 @@
           "tags": "恋爱/异能/都市/豪门",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 79,
           "type": "",
           "hotValue": "5185w",
           "synopsis": ""
@@ -15157,7 +15157,7 @@
           "tags": "脑洞/穿越/逆袭/古代/乡村",
           "publisher": "杭州诗同",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 80,
           "type": "",
           "hotValue": "5169w",
           "synopsis": ""
@@ -15190,7 +15190,7 @@
           "tags": "种田/穿越/逆袭/年代/乡村",
           "publisher": "待认领",
           "onlineDate": "",
-          "episodes": 0,
+          "episodes": 106,
           "type": "",
           "hotValue": "5164w",
           "synopsis": ""
